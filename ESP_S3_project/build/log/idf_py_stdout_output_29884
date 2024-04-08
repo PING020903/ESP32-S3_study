@@ -1,0 +1,91 @@
+[1/11] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D C:\Users\12566\Desktop\get-started\espS3_project\ESP_S3_project\build\bootloader\esp-idf\esptool_py && D:\ESP_MCU_tool\ESP_IDF_TOOLS\Espressif\python_env\idf5.1_py3.11_env\Scripts\python.exe D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/bootloader/bootloader.bin"
+Bootloader binary size 0x51c0 bytes. 0x2e40 bytes (36%) free.
+[2/9] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/ESP_S3_project.c.obj
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/ESP_S3_project.c: In function 'My_main_task':
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/ESP_S3_project.c:50:20: warning: unused variable 'ret' [-Wunused-variable]
+   50 |         BaseType_t ret = xQueueReceive(task_evt_queue, &task_mark, portMAX_DELAY);
+      |                    ^~~
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/ESP_S3_project.c: At top level:
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/ESP_S3_project.c:30:13: warning: 'configure_led' defined but not used [-Wunused-function]
+   30 | static void configure_led(void)
+      |             ^~~~~~~~~~~~~
+[3/9] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/My_WIFI_init.c.obj
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c: In function 'WIFI_STA_event_handler':
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c:122:25: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  122 |             s_retry_num = 0;
+      |             ~~~~~~~~~~~~^~~
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c:124:9: note: here
+  124 |         case IP_EVENT_STA_LOST_IP:
+      |         ^~~~
+[4/9] Linking C static library esp-idf\main\libmain.a
+[5/9] Generating ld/sections.ld
+[6/9] Linking CXX executable ESP_S3_project.elf
+[7/9] Generating binary image from built executable
+esptool.py v4.7.0
+Creating esp32s3 image...
+Merged 2 ELF sections
+Successfully created esp32s3 image.
+Generated C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/ESP_S3_project.bin
+[8/9] cmd.exe /C "cd /D C:\Users\12566\Desktop\get-started\espS3_project\ESP_S3_project\build\esp-idf\esptool_py && D:\ESP_MCU_tool\ESP_IDF_TOOLS\Espressif\python_env\idf5.1_py3.11_env\Scripts\python.exe D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/partition_table/partition-table.bin C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/ESP_S3_project.bin"
+ESP_S3_project.bin binary size 0xb8160 bytes. Smallest app partition is 0x100000 bytes. 0x47ea0 bytes (28%) free.
+[8/9] cmd.exe /C "cd /D D:\ESP_MCU_tool\ESP_IDF_TOOLS\Espressif\frameworks\esp-idf-v5.1.2\components\esptool_py && D:\ESP_MCU_tool\ESP_IDF_TOOLS\Espressif\tools\cmake\3.24.0\bin\cmake.exe -D IDF_PATH=D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2 -D SERIAL_TOOL=D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/python_env/idf5.1_py3.11_env/Scripts/python.exe;;D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esptool_py/esptool/esptool.py;--chip;esp32s3 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build -P D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esptool_py/run_serial_tool.cmake"
+esptool.py --chip esp32s3 -p COM9 -b 115200 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 8MB 0x0 bootloader/bootloader.bin 0x10000 ESP_S3_project.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.7.0
+Serial port COM9
+Connecting...
+Chip is ESP32-S3 (QFN56) (revision v0.2)
+Features: WiFi, BLE, Embedded PSRAM 8MB (AP_3v3)
+Crystal is 40MHz
+MAC: dc:da:0c:4b:32:28
+Uploading stub...
+Running stub...
+Stub running...
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x000c8fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 20928 bytes to 13298...
+Writing at 0x00000000... (100 %)
+Wrote 20928 bytes (13298 compressed) at 0x00000000 in 1.5 seconds (effective 111.5 kbit/s)...
+Hash of data verified.
+Compressed 754016 bytes to 481087...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001c4c5... (6 %)
+Writing at 0x000252c0... (10 %)
+Writing at 0x00029f89... (13 %)
+Writing at 0x00034dae... (16 %)
+Writing at 0x0003ad1f... (20 %)
+Writing at 0x0004093d... (23 %)
+Writing at 0x00046c85... (26 %)
+Writing at 0x0004cfdf... (30 %)
+Writing at 0x00052bc9... (33 %)
+Writing at 0x00058884... (36 %)
+Writing at 0x0005dcc7... (40 %)
+Writing at 0x00062c23... (43 %)
+Writing at 0x00067d37... (46 %)
+Writing at 0x0006cd35... (50 %)
+Writing at 0x00072000... (53 %)
+Writing at 0x0007741f... (56 %)
+Writing at 0x0007d4e3... (60 %)
+Writing at 0x00082950... (63 %)
+Writing at 0x0008822d... (66 %)
+Writing at 0x0008db0d... (70 %)
+Writing at 0x000931f0... (73 %)
+Writing at 0x00098afc... (76 %)
+Writing at 0x0009e429... (80 %)
+Writing at 0x000a4632... (83 %)
+Writing at 0x000a9d7f... (86 %)
+Writing at 0x000b068b... (90 %)
+Writing at 0x000ba827... (93 %)
+Writing at 0x000c03b0... (96 %)
+Writing at 0x000c5b76... (100 %)
+Wrote 754016 bytes (481087 compressed) at 0x00010000 in 43.2 seconds (effective 139.6 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 320.1 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

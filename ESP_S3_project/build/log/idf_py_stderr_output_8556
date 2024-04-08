@@ -1,0 +1,22 @@
+Compiler supported targets: xtensa-esp32s3-elf
+
+CMake Error in main/CMakeLists.txt:
+  Cannot find source file:
+
+    C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/server_root_cert.pem
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm .h
+  .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90 .f95 .f03 .hip .ispc
+
+
+CMake Error in main/CMakeLists.txt:
+  Cannot find source file:
+
+    C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/local_server_cert.pem
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm .h
+  .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90 .f95 .f03 .hip .ispc
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.
+ninja: error: rebuilding 'build.ninja': subcommand failed

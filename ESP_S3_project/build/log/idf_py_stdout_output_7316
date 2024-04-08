@@ -1,0 +1,83 @@
+[1/11] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/My_WIFI_init.c.obj
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c: In function 'WIFI_STA_event_handler':
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c:120:25: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  120 |             s_retry_num = 0;
+      |             ~~~~~~~~~~~~^~~
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c:122:9: note: here
+  122 |         case IP_EVENT_STA_LOST_IP:
+      |         ^~~~
+[2/11] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D C:\Users\12566\Desktop\get-started\espS3_project\ESP_S3_project\build\bootloader\esp-idf\esptool_py && D:\ESP_MCU_tool\ESP_IDF_TOOLS\Espressif\python_env\idf5.1_py3.11_env\Scripts\python.exe D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/bootloader/bootloader.bin"
+Bootloader binary size 0x51c0 bytes. 0x2e40 bytes (36%) free.
+[3/9] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/My_scheme.c.obj
+[4/9] Linking C static library esp-idf\main\libmain.a
+[5/9] Generating ld/sections.ld
+[6/9] Linking CXX executable ESP_S3_project.elf
+[7/9] Generating binary image from built executable
+esptool.py v4.7.0
+Creating esp32s3 image...
+Merged 2 ELF sections
+Successfully created esp32s3 image.
+Generated C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/ESP_S3_project.bin
+[8/9] cmd.exe /C "cd /D C:\Users\12566\Desktop\get-started\espS3_project\ESP_S3_project\build\esp-idf\esptool_py && D:\ESP_MCU_tool\ESP_IDF_TOOLS\Espressif\python_env\idf5.1_py3.11_env\Scripts\python.exe D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/partition_table/partition-table.bin C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/ESP_S3_project.bin"
+ESP_S3_project.bin binary size 0xb8050 bytes. Smallest app partition is 0x100000 bytes. 0x47fb0 bytes (28%) free.
+[8/9] cmd.exe /C "cd /D D:\ESP_MCU_tool\ESP_IDF_TOOLS\Espressif\frameworks\esp-idf-v5.1.2\components\esptool_py && D:\ESP_MCU_tool\ESP_IDF_TOOLS\Espressif\tools\cmake\3.24.0\bin\cmake.exe -D IDF_PATH=D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2 -D SERIAL_TOOL=D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/python_env/idf5.1_py3.11_env/Scripts/python.exe;;D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esptool_py/esptool/esptool.py;--chip;esp32s3 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build -P D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esptool_py/run_serial_tool.cmake"
+esptool.py --chip esp32s3 -p COM9 -b 115200 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 8MB 0x0 bootloader/bootloader.bin 0x10000 ESP_S3_project.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.7.0
+Serial port COM9
+Connecting....
+Chip is ESP32-S3 (QFN56) (revision v0.2)
+Features: WiFi, BLE, Embedded PSRAM 8MB (AP_3v3)
+Crystal is 40MHz
+MAC: dc:da:0c:4b:32:28
+Uploading stub...
+Running stub...
+Stub running...
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x000c8fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 20928 bytes to 13298...
+Writing at 0x00000000... (100 %)
+Wrote 20928 bytes (13298 compressed) at 0x00000000 in 1.5 seconds (effective 110.5 kbit/s)...
+Hash of data verified.
+Compressed 753744 bytes to 480866...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001c491... (6 %)
+Writing at 0x00025291... (10 %)
+Writing at 0x00029f60... (13 %)
+Writing at 0x00034dd8... (16 %)
+Writing at 0x0003ad2c... (20 %)
+Writing at 0x0004091a... (23 %)
+Writing at 0x00046c8c... (26 %)
+Writing at 0x0004cff1... (30 %)
+Writing at 0x00052bda... (33 %)
+Writing at 0x0005889c... (36 %)
+Writing at 0x0005dcd1... (40 %)
+Writing at 0x00062c2b... (43 %)
+Writing at 0x00067d4d... (46 %)
+Writing at 0x0006cd47... (50 %)
+Writing at 0x0007201a... (53 %)
+Writing at 0x00077445... (56 %)
+Writing at 0x0007d500... (60 %)
+Writing at 0x00082994... (63 %)
+Writing at 0x0008826d... (66 %)
+Writing at 0x0008db5d... (70 %)
+Writing at 0x00093248... (73 %)
+Writing at 0x00098b26... (76 %)
+Writing at 0x0009e486... (80 %)
+Writing at 0x000a467d... (83 %)
+Writing at 0x000a9f0e... (86 %)
+Writing at 0x000b0b44... (90 %)
+Writing at 0x000ba870... (93 %)
+Writing at 0x000c03f9... (96 %)
+Writing at 0x000c5b7f... (100 %)
+Wrote 753744 bytes (480866 compressed) at 0x00010000 in 43.2 seconds (effective 139.6 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 314.6 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

@@ -1,0 +1,90 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0xb (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3818,len:0x1758
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xc00
+load:0x403cc700,len:0x2e04
+entry 0x403c9908
+I (27) boot: ESP-IDF v5.1.2-dirty 2nd stage bootloader
+I (27) boot: compile time Feb  8 2024 01:59:38
+I (27) boot: Multicore bootloader
+I (30) boot: chip revision: v0.2
+I (34) boot.esp32s3: Boot SPI Speed : 80MHz
+I (39) boot.esp32s3: SPI Mode       : DIO
+I (44) boot.esp32s3: SPI Flash Size : 2MB
+I (48) boot: Enabling RNG early entropy source...
+I (54) boot: Partition Table:
+I (57) boot: ## Label            Usage          Type ST Offset   Length
+I (65) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (72) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (80) boot:  2 factory          factory app      00 00 00010000 00100000
+I (87) boot: End of partition table
+I (91) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0a318h ( 41752) map
+I (107) esp_image: segment 1: paddr=0001a340 vaddr=3fc91800 size=0287ch ( 10364) load
+I (110) esp_image: segment 2: paddr=0001cbc4 vaddr=40374000 size=03454h ( 13396) load
+I (120) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=18c1ch (101404) map
+I (143) esp_image: segment 4: paddr=00038c44 vaddr=40377454 size=0a2d8h ( 41688) load
+I (158) boot: Loaded app from partition at offset 0x10000
+I (159) boot: Disabling RNG early entropy source...
+I (170) cpu_start: Multicore app[0m
+I (170) cpu_start: Pro cpu up.
+I (170) cpu_start: Starting app cpu, entry point is 0x40375284
+I (0) cpu_start: App cpu up.
+I (188) cpu_start: Pro cpu start user code
+I (189) cpu_start: cpu freq: 160000000 Hz
+I (189) cpu_start: Application information:
+I (192) cpu_start: Project name:     ESP_S3_project
+I (197) cpu_start: App version:      1
+I (202) cpu_start: Compile time:     Feb  8 2024 01:59:21
+I (208) cpu_start: ELF file SHA256:  06b091ff343a90bc...
+I (214) cpu_start: ESP-IDF:          v5.1.2-dirty
+I (219) cpu_start: Min chip rev:     v0.0
+I (224) cpu_start: Max chip rev:     v0.99 
+I (229) cpu_start: Chip rev:         v0.2
+I (233) heap_init: Initializing. RAM available for dynamic allocation:
+I (241) heap_init: At 3FC948F8 len 00054E18 (339 KiB): DRAM
+I (247) heap_init: At 3FCE9710 len 00005724 (21 KiB): STACK/DRAM
+I (253) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM
+I (260) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM
+I (267) spi_flash: detected chip: gd
+I (270) spi_flash: flash io: dio
+W (274) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (287) sleep: Configure to isolate all GPIO pins in sleep state
+I (294) sleep: Enable automatic switching of GPIO sleep configuration
+I (301) app_start: Starting scheduler on CPU0
+I (306) app_start: Starting scheduler on CPU1
+I (306) main_task: Started on CPU0
+I (316) main_task: Calling app_main()
+I (316) gpio: GPIO[5]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:2 
+I (326) gpio: GPIO[6]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 
+I (336) Info: Example configured to blink GPIO LED!
+GPIO[0] intr, val: 0, handler count: 1
+I (6256) Info: 'app_main' MY log ! 0, GPIO 6 is high...
+I (6256) Info: GPIO 5 is low
+GPIO[0] intr, val: 1, handler count: 6
+I (12656) Info: 'app_main' MY log ! 1, GPIO 6 is high...
+I (12656) Info: GPIO 5 is high
+remove gpio interrupt handler remove ! ! !
+GPIO[0] intr, val: 1, handler count: 6
+I (13656) Info: 'app_main' MY log ! 2, GPIO 6 is high...
+I (13656) Info: GPIO 5 is high
+remove gpio interrupt handler remove ! ! !
+GPIO[0] intr, val: 1, handler count: 6
+I (14656) Info: 'app_main' MY log ! 3, GPIO 6 is high...
+I (14656) Info: GPIO 5 is high
+remove gpio interrupt handler remove ! ! !
+GPIO[0] intr, val: 1, handler count: 6
+I (15656) Info: 'app_main' MY log ! 4, GPIO 6 is high...
+I (15656) Info: GPIO 5 is high
+remove gpio interrupt handler remove ! ! !
+GPIO[0] intr, val: 1, handler count: 6
+I (16656) Info: 'app_main' MY log ! 5, GPIO 6 is high...
+I (16656) Info: GPIO 5 is high
+remove gpio interrupt handler remove ! ! !
+
+/* 或许必须要另外开一个线程任务来处理中断发送的队列 */
+/* 中断处理程序中不能打印log */
+/* 在app_main中remove已注册的中断处理会导致卡住 */

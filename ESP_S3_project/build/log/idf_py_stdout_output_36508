@@ -1,0 +1,32 @@
+[1/9] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D C:\Users\12566\Desktop\get-started\espS3_project\ESP_S3_project\build\bootloader\esp-idf\esptool_py && D:\ESP_MCU_tool\ESP_IDF_TOOLS\Espressif\python_env\idf5.1_py3.11_env\Scripts\python.exe D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/bootloader/bootloader.bin"
+Bootloader binary size 0x51c0 bytes. 0x2e40 bytes (36%) free.
+[2/7] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/My_WIFI_init.c.obj
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c: In function 'https_get_request':
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c:197:39: warning: passing argument 2 of 'esp_tls_get_error_handle' from incompatible pointer type [-Wincompatible-pointer-types]
+  197 |         esp_tls_get_error_handle(tls, tls_err);
+      |                                       ^~~~~~~
+      |                                       |
+      |                                       esp_tls_error_handle_t {aka struct esp_tls_last_error *}
+In file included from C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c:18:
+D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp-tls/esp_tls.h:635:76: note: expected 'struct esp_tls_last_error **' but argument is of type 'esp_tls_error_handle_t' {aka 'struct esp_tls_last_error *'}
+  635 | esp_err_t esp_tls_get_error_handle(esp_tls_t *tls, esp_tls_error_handle_t *error_handle);
+      |                                                    ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c:263:9: warning: unused variable 'destroy_ret' [-Wunused-variable]
+  263 |     int destroy_ret = esp_tls_conn_destroy(tls); // 释放esp_tls
+      |         ^~~~~~~~~~~
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c: In function 'fetch_and_store_time_in_nvs':
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c:625:9: warning: variable 'state' set but not used [-Wunused-but-set-variable]
+  625 |     int state = 0;
+      |         ^~~~~
+[3/7] Linking C static library esp-idf\main\libmain.a
+[4/7] Generating ld/sections.ld
+[5/7] Linking CXX executable ESP_S3_project.elf
+[6/7] Generating binary image from built executable
+esptool.py v4.7.0
+Creating esp32s3 image...
+Merged 2 ELF sections
+Successfully created esp32s3 image.
+Generated C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/ESP_S3_project.bin
+[7/7] cmd.exe /C "cd /D C:\Users\12566\Desktop\get-started\espS3_project\ESP_S3_project\build\esp-idf\esptool_py && D:\ESP_MCU_tool\ESP_IDF_TOOLS\Espressif\python_env\idf5.1_py3.11_env\Scripts\python.exe D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/partition_table/partition-table.bin C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/ESP_S3_project.bin"
+ESP_S3_project.bin binary size 0xd3800 bytes. Smallest app partition is 0x100000 bytes. 0x2c800 bytes (17%) free.

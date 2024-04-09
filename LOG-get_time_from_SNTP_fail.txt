@@ -1,0 +1,195 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3818,len:0x1758
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xc00
+load:0x403cc700,len:0x2e04
+entry 0x403c9908
+I (27) boot: ESP-IDF v5.1.2-dirty 2nd stage bootloader
+I (27) boot: compile time Feb 18 2024 13:44:37
+I (27) boot: Multicore bootloader
+I (30) boot: chip revision: v0.2
+I (34) boot.esp32s3: Boot SPI Speed : 80MHz
+I (39) boot.esp32s3: SPI Mode       : DIO
+I (44) boot.esp32s3: SPI Flash Size : 8MB
+I (48) boot: Enabling RNG early entropy source...
+I (54) boot: Partition Table:
+I (57) boot: ## Label            Usage          Type ST Offset   Length
+I (65) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (72) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (80) boot:  2 factory          factory app      00 00 00010000 00100000
+I (87) boot: End of partition table
+I (91) esp_image: segment 0: paddr=00010020 vaddr=3c0a0020 size=261c4h (156100) map
+I (128) esp_image: segment 1: paddr=000361ec vaddr=3fc96f00 size=0457ch ( 17788) load
+I (132) esp_image: segment 2: paddr=0003a770 vaddr=40374000 size=058a8h ( 22696) load
+I (139) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=964e0h (615648) map
+I (252) esp_image: segment 4: paddr=000d6508 vaddr=403798a8 size=0d59ch ( 54684) load
+I (273) boot: Loaded app from partition at offset 0x10000
+I (273) boot: Disabling RNG early entropy source...
+I (284) cpu_start: Multicore app
+I (285) cpu_start: Pro cpu up.
+I (285) cpu_start: Starting app cpu, entry point is 0x403754cc
+I (0) cpu_start: App cpu up.
+I (303) cpu_start: Pro cpu start user code
+I (303) cpu_start: cpu freq: 160000000 Hz
+I (303) cpu_start: Application information:
+I (306) cpu_start: Project name:     ESP_S3_project
+I (311) cpu_start: App version:      2eb7044-dirty
+I (317) cpu_start: Compile time:     Apr 10 2024 00:46:46
+I (323) cpu_start: ELF file SHA256:  54f3730ec66470a0...
+I (329) cpu_start: ESP-IDF:          v5.1.2-dirty
+I (334) cpu_start: Min chip rev:     v0.0
+I (339) cpu_start: Max chip rev:     v0.99 
+I (344) cpu_start: Chip rev:         v0.2
+I (349) heap_init: Initializing. RAM available for dynamic allocation:
+I (356) heap_init: At 3FC9F4E8 len 0004A228 (296 KiB): DRAM
+I (362) heap_init: At 3FCE9710 len 00005724 (21 KiB): STACK/DRAM
+I (369) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM
+I (375) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM
+I (382) spi_flash: detected chip: gd
+I (385) spi_flash: flash io: dio
+I (390) sleep: Configure to isolate all GPIO pins in sleep state
+I (396) sleep: Enable automatic switching of GPIO sleep configuration
+I (404) app_start: Starting scheduler on CPU0
+I (408) app_start: Starting scheduler on CPU1
+I (408) main_task: Started on CPU0
+I (418) main_task: Calling app_main()
+I (418) USER_app: ESP-IDF version: v5.1.2-dirty
+I (428) USER_app: Minimum free heap size: 344656 bytes
+I (428) gpio: GPIO[5]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:2 
+I (438) USER_timer: Timer structture init ...
+I (448) USER_timer: Timer create ...
+I (448) USER_timer: Timer start ...
+I (478) pp: pp rom version: e7ae62f
+I (478) net80211: net80211 rom version: e7ae62f
+I (488) wifi:wifi driver task: 3fcaa380, prio:23, stack:6656, core=0
+I (498) wifi:wifi firmware version: 91b9630
+I (498) wifi:wifi certification version: v7.0
+I (498) wifi:config NVS flash: enabled
+I (498) wifi:config nano formating: disabled
+I (508) wifi:Init data frame dynamic rx buffer num: 32
+I (508) wifi:Init static rx mgmt buffer num: 5
+I (508) wifi:Init management short buffer num: 32
+I (518) wifi:Init dynamic tx buffer num: 32
+I (518) wifi:Init static tx FG buffer num: 2
+I (528) wifi:Init static rx buffer size: 1600
+I (528) wifi:Init static rx buffer num: 10
+I (528) wifi:Init dynamic rx buffer num: 32
+I (538) wifi_init: rx ba win: 6
+I (538) wifi_init: tcpip mbox: 32
+I (548) wifi_init: udp mbox: 6
+I (548) wifi_init: tcp mbox: 6
+I (548) wifi_init: tcp tx win: 5744
+I (558) wifi_init: tcp rx win: 5744
+I (558) wifi_init: tcp mss: 1440
+I (568) wifi_init: WiFi IRAM OP enabled
+I (568) wifi_init: WiFi RX IRAM OP enabled
+I (578) phy_init: phy_version 620,ec7ec30,Sep  5 2023,13:49:13
+I (618) wifi:mode : sta (dc:da:0c:4b:32:28)
+I (618) wifi:enable tsf
+I (618) My_wifi_STA: WIFI_EVENT_STA_START
+I (3128) My_wifi_STA: wifi scan done
+I (3138) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1
+I (3138) wifi:state: init -> auth (b0)
+I (3148) wifi:state: auth -> assoc (0)
+I (3158) wifi:state: assoc -> run (10)
+I (3158) wifi:connected with Ping, aid = 1, channel 6, BW20, bssid = d4:da:21:b7:91:24
+I (3158) wifi:security: Open Auth, phy: bgn, rssi: -45
+I (3168) wifi:pm start, type: 1
+
+I (3168) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000
+I (3178) My_wifi_STA: WIFI_EVENT_STA_CONNECTED ! ! !
+I (3188) wifi:<ba-add>idx:0 (ifx:0, d4:da:21:b7:91:24), tid:6, ssn:0, winSize:64
+I (3248) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+I (4678) esp_netif_handlers: sta ip: 192.168.31.196, mask: 255.255.255.0, gw: 192.168.31.1
+I (4678) My_wifi_STA: got ip:192.168.31.196
+I (4678) My_wifi_STA: connected to ap SSID:Ping password:, bitmap:7
+I (4688) My_https_client: updating time from NVS
+I (4688) My_https_client: initializing SNTP
+I (4698) My_https_client: List of configured NTP servers:
+I (4698) My_https_client: server 0: time.windows.com
+I (4708) My_https_client: server 1: pool.ntp.org
+I (5878) wifi:<ba-add>idx:1 (ifx:0, d4:da:21:b7:91:24), tid:0, ssn:0, winSize:64
+I (6708) My_https_client: waitting for system time to be set...(1/10)
+I (8708) My_https_client: waitting for system time to be set...(2/10)
+I (10708) My_https_client: waitting for system time to be set...(3/10)
+I (12708) My_https_client: waitting for system time to be set...(4/10)
+I (14708) My_https_client: waitting for system time to be set...(5/10)
+I (16708) My_https_client: waitting for system time to be set...(6/10)
+I (18708) My_https_client: waitting for system time to be set...(7/10)
+I (20708) My_https_client: waitting for system time to be set...(8/10)
+I (20938) My_https_client: Notification of a time synchronization event
+I (20948) My_https_client: time updated in NVS
+E (20948) My_https_client: error syncing time from SNTP server
+I (20948) main_task: Returned from app_main()
+I (20948) My_https_client: start https_request example
+I (20958) My_https_client: Minimum free heap size: 280724 bytes
+I (20958) My_https_client: https_request using cacert_buf
+I (22618) My_https_client: ---- connection established... ----
+I (22618) My_https_client: 106 bytes written
+I (22618) My_https_client: reading HTTP response...
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Connection: close
+Content-Length: 2545
+Content-Type: application/json
+Strict-Transport-Security: max-age=631138519; includeSubdomains; preload
+Vary: Accept-Encoding
+Date: Tue, 09 Apr 2024 17:20:09 GMT
+
+{"given_cipher_suites":["TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384","TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384","TLS_ECDHE_ECDSA_WITH_AES_256_CCM","TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384","TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384","TLS_ECDHE_ECDSA_WITH_AES_256_
+CBC_SHA","TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA","TLS_ECDHE_ECDSA_WITH_AES_256_CCM_8","TLS_ECDHE_ECDSA_WITH_ARIA_256_GCM_SHA384","TLS_ECDHE_RSA_WITH_ARIA_256_GCM_SHA384","TLS_ECDHE_ECDSA_WITH_ARIA_256_CBC_SHA384","TLS_ECDHE_RSA_WITH_ARIA_256_CBC_SHA384","TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256","TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256","TLS_ECDHE_ECDSA_WITH_AES_128_CCM","TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256","TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256","TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA","TLS_ECDHE_RSA_WITH_AE
+S_128_CBC_SHA","TLS_ECDHE_ECDSA_WITH_AES_128_CCM_8","TLS_ECDHE_ECDSA_WITH_ARIA_128_GCM_SHA256","TLS_ECDHE_RSA_WITH_ARIA_128_GCM_SHA256","TLS_ECDHE_ECDSA_WITH
+_ARIA_128_CBC_SHA256","TLS_ECDHE_RSA_WITH_ARIA_128_CBC_SHA256","TLS_RSA_WITH_AES_256_GCM_SHA384","TLS_RSA_WITH_AES_256_CCM","TLS_RSA_WITH_AES_256_CBC_SHA256","TLS_RSA_WITH_AES_256_CBC_SHA","TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384","TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384","TLS_ECDH_RSA_WITH_AES_256_CBC_SHA","TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384","TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA384","TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA","TLS_RSA_WITH_AES_256_CCM_8","TLS_ECDH_ECDSA_WITH_ARIA_256_GCM_SHA384","TLS_ECDH_RSA_WIT
+H_ARIA_256_GCM_SHA384","TLS_RSA_WITH_ARIA_256_GCM_SHA384","TLS_ECDH_ECDSA_WITH_ARIA_256_CBC_SHA384","TLS_ECDH_RSA_WITH_ARIA_256_CBC_SHA384","TLS_RSA_WITH_ARIA_256_CBC_SHA384","TLS_RSA_WITH_AES_128_GCM_SHA256","TLS_RSA_WITH_AES_128_CCM","TLS_RSA_WITH_AES_128_CBC_SHA256","TLS_RSA_WITH_AES_128_CBC_SHA","TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256","TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256","TLS_ECDH_RSA_WITH_AES_128_CBC_SHA","TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256","TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256","TLS_ECDH_ECDS
+A_WITH_AES_128_CBC_SHA","TLS_RSA_WITH_AES_128_CCM_8","TLS_ECDH_ECDSA_WITH_ARIA_128_GCM_SHA256","TLS_ECDH_RSA_WITH_ARIA_128_GCM_SHA256","TLS_RSA_WITH_ARIA_128_GCM_SHA256","TLS_ECDH_ECDSA_WITH_ARIA_128_CBC_SHA256","TLS_ECDH_RSA_WITH_ARIA_128_CBC_SHA256","TLS_RSA_WITH_ARIA_128_CBC_SHA256","TLS_EMPTY_RENEGOTIATION_INFO_SCSV"],"ephemeral_keys_supported":true,"session_ticket_supported":true,"tls_compression_supported":false,"unknown_cipher_suite_supported":false,"beast_vuln":false,"able_to_detect_n_minus_one_spl
+itting":false,"insecure_cipher_suites":{},"tls_version":"TLS 1.2","rating":"Probably Okay"}
+I (23158) My_https_client: connection closed
+I (23168) My_https_client: 10...
+I (24168) My_https_client: 9...
+I (25168) My_https_client: 8...
+I (26168) My_https_client: 7...
+I (27168) My_https_client: 6...
+I (28168) My_https_client: 5...
+I (29168) My_https_client: 4...
+I (30168) My_https_client: 3...
+I (31168) My_https_client: 2...
+I (32168) My_https_client: 1...
+I (33168) My_https_client: 0...
+I (34168) My_https_client: https_request using global ca_store
+I (35828) My_https_client: ---- connection established... ----
+I (35828) My_https_client: 106 bytes written
+I (35828) My_https_client: reading HTTP response...
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Connection: close
+Content-Length: 2545
+Content-Type: application/json
+Strict-Transport-Security: max-age=631138519; includeSubdomains; preload
+Vary: Accept-Encoding
+Date: Tue, 09 Apr 2024 17:20:23 GMT
+
+{"given_cipher_suites":["TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384","TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384","TLS_ECDHE_ECDSA_WITH_AES_256_CCM","TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384","TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384","TLS_ECDHE_ECDSA_WITH_AES_256_
+CBC_SHA","TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA","TLS_ECDHE_ECDSA_WITH_AES_256_CCM_8","TLS_ECDHE_ECDSA_WITH_ARIA_256_GCM_SHA384","TLS_ECDHE_RSA_WITH_ARIA_256_GCM_SHA384","TLS_ECDHE_ECDSA_WITH_ARIA_256_CBC_SHA384","TLS_ECDHE_RSA_WITH_ARIA_256_CBC_SHA384","TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256","TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256","TLS_ECDHE_ECDSA_WITH_AES_128_CCM","TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256","TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256","TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA","TLS_ECDHE_RSA_WITH_AE
+S_128_CBC_SHA","TLS_ECDHE_ECDSA_WITH_AES_128_CCM_8","TLS_ECDHE_ECDSA_WITH_ARIA_128_GCM_SHA256","TLS_ECDHE_RSA_WITH_ARIA_128_GCM_SHA256","TLS_ECDHE_ECDSA_WITH
+_ARIA_128_CBC_SHA256","TLS_ECDHE_RSA_WITH_ARIA_128_CBC_SHA256","TLS_RSA_WITH_AES_256_GCM_SHA384","TLS_RSA_WITH_AES_256_CCM","TLS_RSA_WITH_AES_256_CBC_SHA256","TLS_RSA_WITH_AES_256_CBC_SHA","TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384","TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384","TLS_ECDH_RSA_WITH_AES_256_CBC_SHA","TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384","TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA384","TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA","TLS_RSA_WITH_AES_256_CCM_8","TLS_ECDH_ECDSA_WITH_ARIA_256_GCM_SHA384","TLS_ECDH_RSA_WIT
+H_ARIA_256_GCM_SHA384","TLS_RSA_WITH_ARIA_256_GCM_SHA384","TLS_ECDH_ECDSA_WITH_ARIA_256_CBC_SHA384","TLS_ECDH_RSA_WITH_ARIA_256_CBC_SHA384","TLS_RSA_WITH_ARIA_256_CBC_SHA384","TLS_RSA_WITH_AES_128_GCM_SHA256","TLS_RSA_WITH_AES_128_CCM","TLS_RSA_WITH_AES_128_CBC_SHA256","TLS_RSA_WITH_AES_128_CBC_SHA","TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256","TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256","TLS_ECDH_RSA_WITH_AES_128_CBC_SHA","TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256","TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256","TLS_ECDH_ECDS
+A_WITH_AES_128_CBC_SHA","TLS_RSA_WITH_AES_128_CCM_8","TLS_ECDH_ECDSA_WITH_ARIA_128_GCM_SHA256","TLS_ECDH_RSA_WITH_ARIA_128_GCM_SHA256","TLS_RSA_WITH_ARIA_128_GCM_SHA256","TLS_ECDH_ECDSA_WITH_ARIA_128_CBC_SHA256","TLS_ECDH_RSA_WITH_ARIA_128_CBC_SHA256","TLS_RSA_WITH_ARIA_128_CBC_SHA256","TLS_EMPTY_RENEGOTIATION_INFO_SCSV"],"ephemeral_keys_supported":true,"session_ticket_supported":true,"tls_compression_supported":false,"unknown_cipher_suite_supported":false,"beast_vuln":false,"able_to_detect_n_minus_one_spl
+itting":false,"insecure_cipher_suites":{},"tls_version":"TLS 1.2","rating":"Probably Okay"}
+I (36368) My_https_client: connection closed
+I (36378) My_https_client: 10...
+I (37378) My_https_client: 9...
+I (38378) My_https_client: 8...
+I (39378) My_https_client: 7...
+I (40378) My_https_client: 6...
+I (41378) My_https_client: 5...
+I (42378) My_https_client: 4...
+I (43378) My_https_client: 3...
+I (44378) My_https_client: 2...
+I (45378) My_https_client: 1...
+I (46378) My_https_client: 0...
+I (47378) My_https_client: finish https_request example
+I (47378) My_https_client: NVS re_err:0, NVS status:0

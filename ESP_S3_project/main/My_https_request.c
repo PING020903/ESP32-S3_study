@@ -17,6 +17,8 @@
 #include "esp_sntp.h"
 
 #include "My_https_request.h"
+#define GET_TIME_FROM_NVS 0
+#define GET_TIME_FROM_SNTP 1
 
 static const char *TAG = "My_https_client";
 static int err_temp[2] = {0};
@@ -40,10 +42,14 @@ static void print_servers(void)
 {
     ESP_LOGI(TAG, "List of configured NTP servers:");
 
-    for (uint8_t i = 0; i < SNTP_MAX_SERVERS; ++i){
-        if (esp_sntp_getservername(i)){
+    for (uint8_t i = 0; i < SNTP_MAX_SERVERS; ++i)
+    {
+        if (esp_sntp_getservername(i))
+        {
             ESP_LOGI(TAG, "server %d: %s", i, esp_sntp_getservername(i));
-        } else {
+        }
+        else
+        {
             // we have either IPv4 or IPv6 address, let's print it
             char buff[INET6_ADDRSTRLEN];
             ip_addr_t const *ip = esp_sntp_getserver(i);
@@ -77,8 +83,10 @@ static esp_err_t obtain_time(void)
 {
     // wait for time to be set
     int retry = 0;
-    const int retry_count = 10;
-    while (esp_netif_sntp_sync_wait(pdMS_TO_TICKS(2000)) != ESP_OK &&
+    const int retry_count = 20;
+
+    /* ≈14s */
+    while (esp_netif_sntp_sync_wait(pdMS_TO_TICKS(1000)) != ESP_OK &&
            ++retry < retry_count)
     {
         ESP_LOGI(TAG, "waitting for system time to be set...(%d/%d)",
@@ -88,6 +96,7 @@ static esp_err_t obtain_time(void)
     if (retry >= retry_count)
         return ESP_FAIL;
 
+    ESP_LOGI(TAG, "SNTP sync OK");
     return ESP_OK;
 }
 
@@ -101,14 +110,12 @@ esp_err_t fetch_and_store_time_in_nvs(void *args)
     if (obtain_time() != ESP_OK)
     {
         err = ESP_FAIL;
+        err_temp[1] = 4;
         goto exit_1;
     }
 
     time_t now;
-    struct tm timeinfo;
     time(&now);
-    localtime_r(&now, &timeinfo);
-    ESP_LOGI(TAG, "time: %s", asctime(&timeinfo));
 
     // open
     err = nvs_open("storage", NVS_READWRITE, &my_handle);
@@ -154,7 +161,7 @@ exit_1:
 /* 从NVS更新时间 */
 esp_err_t update_time_from_nvs(void)
 {
-    nvs_handle_t my_handle = 0;
+    nvs_handle_t my_handle = 0; // NVS句柄
     esp_err_t err;
 
     err = nvs_open("storage", NVS_READWRITE, &my_handle);
@@ -165,8 +172,9 @@ esp_err_t update_time_from_nvs(void)
     }
 
     int64_t time_stamp = 0;
-    err = nvs_get_i64(my_handle, "time_stamp", &time_stamp);
-    if (err == ESP_ERR_NVS_NOT_FOUND)
+#if GET_TIME_FROM_NVS
+    err = nvs_get_i64(my_handle, "time_stamp", &time_stamp); // 获取时间戳
+    if (err == ESP_ERR_NVS_NOT_FOUND)                        // 这个选项一般情况是不会进入的
     {
         ESP_LOGI(TAG, "time out found in NVS. syncing time from SNTP server.");
         if (fetch_and_store_time_in_nvs(NULL) == ESP_OK)
@@ -179,7 +187,34 @@ esp_err_t update_time_from_nvs(void)
         struct timeval get_nvs_time;
         get_nvs_time.tv_sec = time_stamp;
         settimeofday(&get_nvs_time, NULL);
+        ESP_LOGI(TAG, "time: %lld", time_stamp);
     }
+#endif
+#if GET_TIME_FROM_SNTP
+    if (fetch_and_store_time_in_nvs(NULL) == ESP_OK)
+        err = ESP_OK;
+    else
+        err = ESP_FAIL;
+
+    if (err)
+    {
+        ESP_LOGE(TAG, "error syncing time from SNTP server");
+        goto exit_2;
+    }
+    else
+    {
+        err = nvs_get_i64(my_handle, "time_stamp", &time_stamp);
+        if (err >= ESP_ERR_NVS_BASE)
+        {
+            ESP_LOGE(TAG, "error getting time from NVS");
+            goto exit_2;
+        }
+        struct timeval get_nvs_time;
+        get_nvs_time.tv_sec = time_stamp;
+        settimeofday(&get_nvs_time, NULL);
+        ESP_LOGI(TAG, "time: %lld", time_stamp);
+    }
+#endif
 
 exit_2:
     if (my_handle != 0)
@@ -344,7 +379,7 @@ static void https_get_request_using_specified_ciphersuites(void)
 void https_request_task(void *pvparameters)
 {
     /* 等待https请求标志 */
-    while(!https_request_flag)
+    while (!https_request_flag)
     {
         vTaskDelay(1000 / portTICK_PERIOD_MS);
         ESP_LOGI(TAG, "https_request_task is waitting for flag...");
@@ -358,7 +393,7 @@ void https_request_task(void *pvparameters)
     https_get_request_using_specified_ciphersuites();
     ESP_LOGI(TAG, "finish https_request example");
     ESP_LOGI(TAG, "NVS re_err:%x, NVS status:%d", err_temp[0], err_temp[1]);
-    vTaskDelete(NULL);//删除任务
+    vTaskDelete(NULL); // 删除任务
 }
 
 /* https请求任务初始化 */
@@ -368,6 +403,7 @@ void https_request_init(void)
     {
         ESP_LOGI(TAG, "updating time from NVS");
         ESP_ERROR_CHECK(update_time_from_nvs());
+        //update_time_from_nvs();
     }
     xTaskCreatePinnedToCore(https_request_task, "https_request_task", 8192, NULL, 5, NULL, 1);
 }

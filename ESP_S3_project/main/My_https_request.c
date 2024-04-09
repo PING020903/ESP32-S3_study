@@ -34,6 +34,30 @@ static const char HOWSMYSSL_REQUEST[] = "GET " WEB_URL " HTTP/1.1\r\n"
                                         "User-Agent: esp-idf/1.0 esp32\r\n"
                                         "\r\n";
 
+/* 打印SNTP服务器列表 */
+static void print_servers(void)
+{
+    ESP_LOGI(TAG, "List of configured NTP servers:");
+
+    for (uint8_t i = 0; i < SNTP_MAX_SERVERS; ++i){
+        if (esp_sntp_getservername(i)){
+            ESP_LOGI(TAG, "server %d: %s", i, esp_sntp_getservername(i));
+        } else {
+            // we have either IPv4 or IPv6 address, let's print it
+            char buff[INET6_ADDRSTRLEN];
+            ip_addr_t const *ip = esp_sntp_getserver(i);
+            if (ipaddr_ntoa_r(ip, buff, INET6_ADDRSTRLEN) != NULL)
+                ESP_LOGI(TAG, "server %d: %s", i, buff);
+        }
+    }
+}
+
+/* SNTP时间同步回调函数 */
+static void time_sync_notification_cb(struct timeval *tv)
+{
+    ESP_LOGI(TAG, "Notification of a time synchronization event");
+}
+
 /* 初始化SNTP */
 static void init_sntp()
 {
@@ -41,7 +65,9 @@ static void init_sntp()
     esp_sntp_config_t config = ESP_NETIF_SNTP_DEFAULT_CONFIG_MULTIPLE(2,
                                                                       ESP_SNTP_SERVER_LIST("time.windows.com",
                                                                                            "pool.ntp.org"));
+    config.sync_cb = time_sync_notification_cb; // Note: This is only needed if we want
     esp_netif_sntp_init(&config);
+    print_servers();
     return;
 }
 

@@ -14,6 +14,7 @@
 #include "esp_netif.h"
 #include "esp_netif_sntp.h"
 #include "nvs_flash.h" // nvs相关头文件
+#include "esp_sntp.h"
 
 #include "My_https_request.h"
 
@@ -104,7 +105,10 @@ esp_err_t fetch_and_store_time_in_nvs(void *args)
     }
 
     time_t now;
+    struct tm timeinfo;
     time(&now);
+    localtime_r(&now, &timeinfo);
+    ESP_LOGI(TAG, "time: %s", asctime(&timeinfo));
 
     // open
     err = nvs_open("storage", NVS_READWRITE, &my_handle);

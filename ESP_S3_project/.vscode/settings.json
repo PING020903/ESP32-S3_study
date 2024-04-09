@@ -62,7 +62,9 @@
         "string.h": "c",
         "esp_system.h": "c",
         "my_https_request.h": "c",
-        "event_groups.h": "c"
+        "event_groups.h": "c",
+        "sntp.h": "c",
+        "esp_sntp.h": "c"
     },
     "idf.portWin": "COM9",
     "C_Cpp.errorSquiggles": "disabled",

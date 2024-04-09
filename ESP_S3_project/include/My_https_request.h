@@ -10,6 +10,10 @@
 /****************************************************/
 #define SERVER_URL_MAX_SZ 256
 
+#ifndef INET6_ADDRSTRLEN
+#define INET6_ADDRSTRLEN 48
+#endif
+
 esp_err_t fetch_and_store_time_in_nvs(void *args);
 esp_err_t update_time_from_nvs(void);
 void https_request_task(void *pvparameters);

@@ -1,0 +1,100 @@
+[1/13] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D C:\Users\12566\Desktop\get-started\espS3_project\ESP_S3_project\build\bootloader\esp-idf\esptool_py && D:\ESP_MCU_tool\ESP_IDF_TOOLS\Espressif\python_env\idf5.1_py3.11_env\Scripts\python.exe D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/bootloader/bootloader.bin"
+Bootloader binary size 0x51c0 bytes. 0x2e40 bytes (36%) free.
+[2/11] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/My_timer_init.c.obj
+[3/11] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/ESP_S3_project.c.obj
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/ESP_S3_project.c: In function 'My_main_task':
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/ESP_S3_project.c:54:20: warning: unused variable 'ret' [-Wunused-variable]
+   54 |         BaseType_t ret = xQueueReceive(task_evt_queue, &task_mark, portMAX_DELAY);
+      |                    ^~~
+[4/11] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/My_https_request.c.obj
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_https_request.c: In function 'https_get_request':
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_https_request.c:216:39: warning: passing argument 2 of 'esp_tls_get_error_handle' from incompatible pointer type [-Wincompatible-pointer-types]
+  216 |         esp_tls_get_error_handle(tls, tls_err);
+      |                                       ^~~~~~~
+      |                                       |
+      |                                       esp_tls_error_handle_t {aka struct esp_tls_last_error *}
+In file included from C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_https_request.c:13:
+D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp-tls/esp_tls.h:635:76: note: expected 'struct esp_tls_last_error **' but argument is of type 'esp_tls_error_handle_t' {aka 'struct esp_tls_last_error *'}
+  635 | esp_err_t esp_tls_get_error_handle(esp_tls_t *tls, esp_tls_error_handle_t *error_handle);
+      |                                                    ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_https_request.c:282:9: warning: unused variable 'destroy_ret' [-Wunused-variable]
+  282 |     int destroy_ret = esp_tls_conn_destroy(tls); // 释放esp_tls
+      |         ^~~~~~~~~~~
+[5/11] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/My_WIFI_init.c.obj
+[6/11] Linking C static library esp-idf\main\libmain.a
+[7/11] Generating ld/sections.ld
+[8/11] Linking CXX executable ESP_S3_project.elf
+[9/11] Generating binary image from built executable
+esptool.py v4.7.0
+Creating esp32s3 image...
+Merged 2 ELF sections
+Successfully created esp32s3 image.
+Generated C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/ESP_S3_project.bin
+[10/11] cmd.exe /C "cd /D C:\Users\12566\Desktop\get-started\espS3_project\ESP_S3_project\build\esp-idf\esptool_py && D:\ESP_MCU_tool\ESP_IDF_TOOLS\Espressif\python_env\idf5.1_py3.11_env\Scripts\python.exe D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/partition_table/partition-table.bin C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/ESP_S3_project.bin"
+ESP_S3_project.bin binary size 0xd7590 bytes. Smallest app partition is 0x100000 bytes. 0x28a70 bytes (16%) free.
+[10/11] cmd.exe /C "cd /D D:\ESP_MCU_tool\ESP_IDF_TOOLS\Espressif\frameworks\esp-idf-v5.1.2\components\esptool_py && D:\ESP_MCU_tool\ESP_IDF_TOOLS\Espressif\tools\cmake\3.24.0\bin\cmake.exe -D IDF_PATH=D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2 -D SERIAL_TOOL=D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/python_env/idf5.1_py3.11_env/Scripts/python.exe;;D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esptool_py/esptool/esptool.py;--chip;esp32s3 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build -P D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esptool_py/run_serial_tool.cmake"
+esptool.py --chip esp32s3 -p COM9 -b 115200 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 8MB 0x0 bootloader/bootloader.bin 0x10000 ESP_S3_project.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.7.0
+Serial port COM9
+Connecting....
+Chip is ESP32-S3 (QFN56) (revision v0.2)
+Features: WiFi, BLE, Embedded PSRAM 8MB (AP_3v3)
+Crystal is 40MHz
+MAC: dc:da:0c:4b:32:28
+Uploading stub...
+Running stub...
+Stub running...
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x000e7fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 20928 bytes to 13298...
+Writing at 0x00000000... (100 %)
+Wrote 20928 bytes (13298 compressed) at 0x00000000 in 1.5 seconds (effective 110.5 kbit/s)...
+Hash of data verified.
+Compressed 882064 bytes to 563929...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001b81c... (5 %)
+Writing at 0x00025b9a... (8 %)
+Writing at 0x0002aa1b... (11 %)
+Writing at 0x0003400e... (14 %)
+Writing at 0x0003da1b... (17 %)
+Writing at 0x00043ab4... (20 %)
+Writing at 0x00049d46... (22 %)
+Writing at 0x0005008c... (25 %)
+Writing at 0x00055a99... (28 %)
+Writing at 0x0005af88... (31 %)
+Writing at 0x000608dd... (34 %)
+Writing at 0x000661db... (37 %)
+Writing at 0x0006bc4d... (40 %)
+Writing at 0x000713fb... (42 %)
+Writing at 0x00076f1f... (45 %)
+Writing at 0x0007d453... (48 %)
+Writing at 0x00082f16... (51 %)
+Writing at 0x00088755... (54 %)
+Writing at 0x0008d721... (57 %)
+Writing at 0x00092815... (60 %)
+Writing at 0x0009785a... (62 %)
+Writing at 0x0009cbb5... (65 %)
+Writing at 0x000a1e20... (68 %)
+Writing at 0x000a7322... (71 %)
+Writing at 0x000acf17... (74 %)
+Writing at 0x000b2696... (77 %)
+Writing at 0x000b810a... (80 %)
+Writing at 0x000bda7f... (82 %)
+Writing at 0x000c2fce... (85 %)
+Writing at 0x000cc7d2... (88 %)
+Writing at 0x000d36f3... (91 %)
+Writing at 0x000d95ab... (94 %)
+Writing at 0x000df41f... (97 %)
+Writing at 0x000e4b51... (100 %)
+Wrote 882064 bytes (563929 compressed) at 0x00010000 in 50.6 seconds (effective 139.4 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 295.9 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

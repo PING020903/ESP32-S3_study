@@ -17,8 +17,7 @@
 #include "esp_sntp.h"
 
 #include "My_https_request.h"
-#define GET_TIME_FROM_NVS 0
-#define GET_TIME_FROM_SNTP 1
+
 
 static const char *TAG = "My_https_client";
 static int err_temp[2] = {0};
@@ -85,7 +84,7 @@ static esp_err_t obtain_time(void)
     int retry = 0;
     const int retry_count = 20;
 
-    /* ≈14s */
+    /* maybe waitting 14s */
     while (esp_netif_sntp_sync_wait(pdMS_TO_TICKS(1000)) != ESP_OK &&
            ++retry < retry_count)
     {

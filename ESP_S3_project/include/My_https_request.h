@@ -5,10 +5,17 @@
 #define GET_TIME_FROM_SNTP 1
 
 /* Constants that aren't configurable in menuconfig */
-#define WEB_SERVER "www.howsmyssl.com"
+
 #define WEB_PORT "443"
+#if 0
+#define WEB_SERVER "www.howsmyssl.com"
 #define WEB_URL "https://www.howsmyssl.com/a/check"
-//#define WEB_URL "https://cn.bing.com/"
+#endif
+
+#if 1
+#define WEB_SERVER "www.bing.com"
+#define WEB_URL "https://www.bing.com/?FORM=Z9FD1&mkt=zh-CN"
+#endif
 /****************************************************/
 #define SERVER_URL_MAX_SZ 256
 

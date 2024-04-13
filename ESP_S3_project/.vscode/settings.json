@@ -65,7 +65,16 @@
         "event_groups.h": "c",
         "sntp.h": "c",
         "esp_sntp.h": "c",
-        "set": "cpp"
+        "set": "cpp",
+        "debug.h": "c",
+        "esp_debug.h": "c",
+        "net_sockets.h": "c",
+        "entropy.h": "c",
+        "build_info.h": "c",
+        "ctr_drbg.h": "c",
+        "esp_crt_bundle.h": "c",
+        "x509_crt.h": "c",
+        "platform.h": "c"
     },
     "idf.portWin": "COM9",
     "C_Cpp.errorSquiggles": "disabled",

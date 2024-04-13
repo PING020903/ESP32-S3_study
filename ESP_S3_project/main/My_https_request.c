@@ -15,9 +15,21 @@
 #include "esp_netif_sntp.h"
 #include "nvs_flash.h" // nvs相关头文件
 #include "esp_sntp.h"
+#include "esp_crt_bundle.h"
+
+#include "mbedtls/error.h"
+#include "mbedtls/esp_debug.h"
+#include "mbedtls/platform.h"
+#include "mbedtls/net_sockets.h"
+#include "mbedtls/ssl.h"
+#include "mbedtls/x509_crt.h"
+#include "mbedtls/entropy.h"
+#include "mbedtls/ctr_drbg.h"
+
 
 #include "My_https_request.h"
-
+#define HTTPS_SSL_TLS_TASK 1
+#define HTTPS_REQUEST_TASK 0
 
 static const char *TAG = "My_https_client";
 static int err_temp[2] = {0};
@@ -39,6 +51,7 @@ static const char HOWSMYSSL_REQUEST[] = "GET " WEB_URL " HTTP/1.1\r\n"
 /* 打印SNTP服务器列表 */
 static void print_servers(void)
 {
+
     ESP_LOGI(TAG, "List of configured NTP servers:");
 
     for (uint8_t i = 0; i < SNTP_MAX_SERVERS; ++i)
@@ -395,6 +408,240 @@ void https_request_task(void *pvparameters)
     vTaskDelete(NULL); // 删除任务
 }
 
+static void https_get_task_2(void *pvParameters)
+{
+    /*
+client (client hello)                       >>>>>>>>>> server
+client (server hello)                       <<<<<<<<<< server
+client (certificate)                        <<<<<<<<<< server
+client (server key exchange)                <<<<<<<<<< server
+client (server hello done)                  <<<<<<<<<< server
+client (client key exchange,
+        change cipher spec,
+        encryted handshake messge)          >>>>>>>>>> server
+client (server encryted handshake messge)   <<<<<<<<<< server
+client (application data)                   <--------> server
+    */
+    char buf[512];
+    int ret, flags, len;
+
+    mbedtls_entropy_context entropy;   // 熵
+    mbedtls_ctr_drbg_context ctr_drbg; // 伪随机数生成器
+    mbedtls_ssl_context ssl;           // SSL上下文
+    mbedtls_ssl_config conf;           // SSL配置
+    mbedtls_x509_crt cacert;           // CA证书
+    mbedtls_net_context server_fd;     // 网络上下文
+
+    mbedtls_ssl_init(&ssl);
+    mbedtls_x509_crt_init(&cacert);
+    mbedtls_ctr_drbg_init(&ctr_drbg);
+    ESP_LOGI(TAG, "seeding the random number generator");
+
+    mbedtls_ssl_config_init(&conf);
+    mbedtls_entropy_init(&entropy);
+
+    /* 使用ctr_drbg作为随机数生成器 */
+    if ((ret = mbedtls_ctr_drbg_seed(&ctr_drbg,
+                                     mbedtls_entropy_func,
+                                     &entropy,
+                                     NULL,
+                                     0)) != 0)
+    {
+        /* 正常返回0, 则为不打印该语句 */
+        ESP_LOGE(TAG, "mbedtls_ctr_drbg_seed return %d", ret);
+        abort();
+    }
+
+    ESP_LOGI(TAG, "attching the certificate bundle...");
+
+    /* 证书验证 */
+    ret = esp_crt_bundle_attach(&conf);
+
+    if (ret != ESP_OK)
+    {
+        ESP_LOGE(TAG, "esp_crt_bundle_attach returned -0x%x", -ret);
+        abort();
+    }
+
+    ESP_LOGI(TAG, "Setting hostname for TLS session...");
+
+    /* hostname set here should match CN in server certificate
+    此处设置的主机名应与服务器证书中的 CN 匹配(设置或重置主机名以检查收到的服务器证书) */
+    if ((ret = mbedtls_ssl_set_hostname(&ssl, WEB_SERVER)) != 0)
+    {
+        ESP_LOGE(TAG, "mbedtls_ssl_set_hostname returned -0x%x", -ret);
+        abort();
+    }
+
+    ESP_LOGI(TAG, "setting up the SSL/TLS structure...");
+
+    if ((ret = mbedtls_ssl_config_defaults(&conf,
+                                           MBEDTLS_SSL_IS_CLIENT,
+                                           MBEDTLS_SSL_TRANSPORT_STREAM,
+                                           MBEDTLS_SSL_PRESET_DEFAULT)) != 0)
+    {
+        ESP_LOGE(TAG, "mbedtls_ssl_config_defaults returned %d", ret);
+        goto exit_4;
+    }
+
+    mbedtls_ssl_conf_authmode(&conf, MBEDTLS_SSL_VERIFY_REQUIRED);  // 设置证书验证模式
+    mbedtls_ssl_conf_ca_chain(&conf, &cacert, NULL);    // 设置验证对等证书所需的数据
+    mbedtls_ssl_conf_rng(&conf, mbedtls_ctr_drbg_random, &ctr_drbg);    // 设置随机数生成器回调
+
+#if CONFIG_MBEDTLS_DEBUG
+    mbedtls_esp_enable_debug_log(&conf, CONFIG_MBEDTLS_DEBUG_LEVEL);
+#endif
+
+    /* 设置要使用的 SSL 上下文 */
+    if ((ret = mbedtls_ssl_setup(&ssl, &conf)) != 0)
+    {
+        ESP_LOGE(TAG, "mbedtls_ssl_setup returned -0x%x", -ret);
+        goto exit_4;
+    }
+
+    while (1)
+    {
+        /* 初始化上下文 只是使上下文准备好安全地使用或释放 */
+        mbedtls_net_init(&server_fd);
+
+        ESP_LOGI(TAG, "connecting to %s:%s...", WEB_SERVER, WEB_PORT);
+
+        /* 在给定协议中启动与 host：port 的连接 */
+        if ((ret = mbedtls_net_connect(&server_fd,
+                                       WEB_SERVER,
+                                       WEB_PORT,
+                                       MBEDTLS_NET_PROTO_TCP)) != 0)
+        {
+            ESP_LOGE(TAG, "mbedtls_net_connect returned -%x", -ret);
+            goto exit_4;
+        }
+
+        ESP_LOGI(TAG, "connected.");
+        /* 设置写入、读取和读取超时的基础 BIO 回调。 */
+        mbedtls_ssl_set_bio(&ssl,
+                            &server_fd,
+                            mbedtls_net_send,
+                            mbedtls_net_recv,
+                            NULL);
+        ESP_LOGI(TAG, "performing the SSL/TLS handshake...");
+        while ((ret = mbedtls_ssl_handshake(&ssl)) != 0)
+        {
+            if (ret != MBEDTLS_ERR_SSL_WANT_READ &&
+                ret != MBEDTLS_ERR_SSL_WANT_WRITE)
+            {
+                ESP_LOGE(TAG, "mbedtls_ssl_handshake returned -0x%x", -ret);
+                goto exit_4;
+            }
+        }
+        ESP_LOGI(TAG, "verifying peer x.509 certificate...");
+        if ((flags = mbedtls_ssl_get_verify_result(&ssl)) != 0)
+        {
+            /* in real life, we probably want to close connection if ret != 0 */
+            ESP_LOGW(TAG, "failed to verify peer certificate! ");
+            memset(buf, 0, sizeof(buf));
+            mbedtls_x509_crt_verify_info(buf, sizeof(buf), "  ! ", flags);
+            ESP_LOGW(TAG, "verification info: %s", buf);
+        }
+        else
+        {
+            ESP_LOGI(TAG, "certificate verified.");
+        }
+
+        ESP_LOGI(TAG, "cipher suite is %s", mbedtls_ssl_get_ciphersuite(&ssl));
+        ESP_LOGI(TAG, "writing HTTP request...");
+
+        size_t written_bytes = 0;
+        do
+        {
+            ret = mbedtls_ssl_write(&ssl,
+                                    (const unsigned char *)HOWSMYSSL_REQUEST + written_bytes,
+                                    strlen(HOWSMYSSL_REQUEST) - written_bytes);
+            if (ret >= 0)
+            {
+                ESP_LOGI(TAG, "%d bytes written", ret);
+                written_bytes += ret;
+            }
+            else if (ret != MBEDTLS_ERR_SSL_WANT_READ &&
+                     ret != MBEDTLS_ERR_SSL_WANT_WRITE)
+            {
+                ESP_LOGE(TAG, "mbedtls_ssl_write returned -0x%x", -ret);
+                goto exit_4;
+            }
+        } while (written_bytes < strlen(HOWSMYSSL_REQUEST));
+        ESP_LOGI(TAG, "reading HTTP response...");
+
+        do
+        {
+            len = sizeof(buf) - 1;
+            memset(buf, 0, sizeof(buf));
+            ret = mbedtls_ssl_read(&ssl, (unsigned char *)buf, len);
+
+#if CONFIG_MEBDTLS_SSL_PROTO_TLS1_3 && CONFIG_CLIENT_SSL_SESSION_TICKET
+            if (ret == MBEDTLS_ERR_SSL_RECEIVED_NEW_SESSION_TICKET)
+            {
+                ESP_LOGD(TAG, "got session ticket in TLS 1.3 connection, retry read");
+                continue;
+            }
+#endif
+            if (ret == MBEDTLS_ERR_SSL_WANT_READ ||
+                ret == MBEDTLS_ERR_SSL_WANT_WRITE)
+            {
+                continue;
+            }
+
+            if (ret == MBEDTLS_ERR_SSL_PEER_CLOSE_NOTIFY)
+            {
+                continue;
+            }
+
+            if (ret < 0)
+            {
+                ESP_LOGE(TAG, "mbedtls_ssl_read returned -0x%x", -ret);
+                break;
+            }
+
+            if (ret == 0)
+            {
+                ESP_LOGI(TAG, "connection closed");
+            }
+
+            len = ret;
+            ESP_LOGI(TAG, "%d bytes read", len);
+            /* print response directly to stdout as it is read */
+            for (int i = 0; i < len; i++)
+            {
+                putchar(buf[i]);
+            }
+        } while (1);
+
+        mbedtls_ssl_close_notify(&ssl);
+
+    exit_4:
+        mbedtls_ssl_session_reset(&ssl);
+        mbedtls_net_free(&server_fd);
+
+        if (ret != 0)
+        {
+            mbedtls_strerror(ret, buf, 100);
+            ESP_LOGE(TAG, "last error was: -0x%x - %s", -ret, buf);
+        }
+
+        putchar('\n'); // JSON output doesn't have a newline at end
+
+        static int request_count;
+        ESP_LOGI(TAG, "completed %d request", ++request_count);
+        printf("Minimum free heap size: %" PRIu32 " bytes\n",
+               esp_get_minimum_free_heap_size());
+
+        for (int countdown = 10; countdown >= 0; countdown--)
+        {
+            ESP_LOGI(TAG, "%d...", countdown);
+            vTaskDelay(1000 / portTICK_PERIOD_MS);
+        }
+        ESP_LOGI(TAG, "starting again! !");
+    }
+}
+
 /* https请求任务初始化 */
 void https_request_init(void)
 {
@@ -402,7 +649,24 @@ void https_request_init(void)
     {
         ESP_LOGI(TAG, "updating time from NVS");
         ESP_ERROR_CHECK(update_time_from_nvs());
-        //update_time_from_nvs();
+        // update_time_from_nvs();
     }
-    xTaskCreatePinnedToCore(https_request_task, "https_request_task", 8192, NULL, 5, NULL, 1);
+#if HTTPS_REQUEST_TASK
+    xTaskCreatePinnedToCore(https_request_task,
+                            "https_request_task",
+                            8192,
+                            NULL,
+                            5,
+                            NULL,
+                            1);
+#endif
+#if HTTPS_SSL_TLS_TASK
+    xTaskCreatePinnedToCore(https_get_task_2,
+                            "https_get_task_2",
+                            8192,
+                            NULL,
+                            5,
+                            NULL,
+                            1);
+#endif
 }

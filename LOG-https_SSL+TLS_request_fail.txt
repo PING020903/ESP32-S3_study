@@ -1,0 +1,193 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3818,len:0x1758
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xc00
+load:0x403cc700,len:0x2e04
+entry 0x403c9908
+I (27) boot: ESP-IDF v5.1.2-dirty 2nd stage bootloader
+I (27) boot: compile time Feb 18 2024 13:44:37
+I (27) boot: Multicore bootloader
+I (30) boot: chip revision: v0.2
+I (34) boot.esp32s3: Boot SPI Speed : 80MHz
+I (39) boot.esp32s3: SPI Mode       : DIO
+I (44) boot.esp32s3: SPI Flash Size : 8MB
+I (48) boot: Enabling RNG early entropy source...
+I (54) boot: Partition Table:
+I (57) boot: ## Label            Usage          Type ST Offset   Length
+I (65) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (72) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (80) boot:  2 factory          factory app      00 00 00010000 00100000
+I (87) boot: End of partition table
+I (91) esp_image: segment 0: paddr=00010020 vaddr=3c0b0020 size=36e0ch (224780) map
+I (140) esp_image: segment 1: paddr=00046e34 vaddr=3fc96e00 size=0457ch ( 17788) load
+I (144) esp_image: segment 2: paddr=0004b3b8 vaddr=40374000 size=04c60h ( 19552) load
+I (150) esp_image: segment 3: paddr=00050020 vaddr=42000020 size=a2760h (665440) map
+I (274) esp_image: segment 4: paddr=000f2788 vaddr=40378c60 size=0e154h ( 57684) load
+I (295) boot: Loaded app from partition at offset 0x10000
+I (295) boot: Disabling RNG early entropy source...
+I (306) cpu_start: Multicore app
+I (307) cpu_start: Pro cpu up.
+I (307) cpu_start: Starting app cpu, entry point is 0x403754c8
+I (0) cpu_start: App cpu up.
+I (325) cpu_start: Pro cpu start user code
+I (325) cpu_start: cpu freq: 160000000 Hz
+I (325) cpu_start: Application information:
+I (328) cpu_start: Project name:     ESP_S3_project
+I (333) cpu_start: App version:      01f8fc4-dirty
+I (339) cpu_start: Compile time:     Apr 11 2024 19:33:20
+I (345) cpu_start: ELF file SHA256:  deb86949fdb1979d...
+I (351) cpu_start: ESP-IDF:          v5.1.2-dirty
+I (356) cpu_start: Min chip rev:     v0.0
+I (361) cpu_start: Max chip rev:     v0.99 
+I (366) cpu_start: Chip rev:         v0.2
+I (371) heap_init: Initializing. RAM available for dynamic allocation:
+I (378) heap_init: At 3FC9FCA0 len 00049A70 (294 KiB): DRAM
+I (384) heap_init: At 3FCE9710 len 00005724 (21 KiB): STACK/DRAM
+I (391) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM
+I (397) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM
+I (404) spi_flash: detected chip: gd
+I (407) spi_flash: flash io: dio
+I (412) sleep: Configure to isolate all GPIO pins in sleep state
+I (418) sleep: Enable automatic switching of GPIO sleep configuration
+I (425) app_start: Starting scheduler on CPU0
+I (430) app_start: Starting scheduler on CPU1
+I (430) main_task: Started on CPU0
+I (440) main_task: Calling app_main()
+I (440) USER_app: ESP-IDF version: v5.1.2-dirty
+I (450) USER_app: Minimum free heap size: 342680 bytes
+I (450) gpio: GPIO[5]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:2 
+I (460) USER_timer: Timer structture init ...
+I (470) USER_timer: Timer create ...
+I (470) USER_timer: Timer start ...
+I (500) pp: pp rom version: e7ae62f
+I (500) net80211: net80211 rom version: e7ae62f
+I (510) wifi:wifi driver task: 3fcaab38, prio:23, stack:6656, core=0
+I (520) wifi:wifi firmware version: 91b9630
+I (520) wifi:wifi certification version: v7.0
+I (520) wifi:config NVS flash: enabled
+I (520) wifi:config nano formating: disabled
+I (530) wifi:Init data frame dynamic rx buffer num: 32
+I (530) wifi:Init static rx mgmt buffer num: 5
+I (530) wifi:Init management short buffer num: 32
+I (540) wifi:Init dynamic tx buffer num: 32
+I (540) wifi:Init static tx FG buffer num: 2
+I (550) wifi:Init static rx buffer size: 1600
+I (550) wifi:Init static rx buffer num: 10
+I (550) wifi:Init dynamic rx buffer num: 32
+I (560) wifi_init: rx ba win: 6
+I (560) wifi_init: tcpip mbox: 32
+I (570) wifi_init: udp mbox: 6
+I (570) wifi_init: tcp mbox: 6
+I (570) wifi_init: tcp tx win: 5744
+I (580) wifi_init: tcp rx win: 5744
+I (580) wifi_init: tcp mss: 1440
+I (590) wifi_init: WiFi IRAM OP enabled
+I (590) wifi_init: WiFi RX IRAM OP enabled
+I (600) phy_init: phy_version 620,ec7ec30,Sep  5 2023,13:49:13
+I (640) wifi:mode : sta (dc:da:0c:4b:32:28)
+I (640) wifi:enable tsf
+I (640) My_wifi_STA: WIFI_EVENT_STA_START
+I (3150) My_wifi_STA: wifi scan done
+I (3150) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1
+I (3150) wifi:state: init -> auth (b0)
+I (3160) wifi:state: auth -> assoc (0)
+I (3170) wifi:state: assoc -> run (10)
+I (3180) wifi:connected with Ping, aid = 1, channel 6, BW20, bssid = d4:da:21:b7:91:24
+I (3180) wifi:security: Open Auth, phy: bgn, rssi: -39
+I (3180) wifi:pm start, type: 1
+
+I (3180) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000
+I (3190) My_wifi_STA: WIFI_EVENT_STA_CONNECTED ! ! !
+I (3210) wifi:<ba-add>idx:0 (ifx:0, d4:da:21:b7:91:24), tid:6, ssn:0, winSize:64
+I (3260) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+I (4690) esp_netif_handlers: sta ip: 192.168.31.196, mask: 255.255.255.0, gw: 192.168.31.1
+I (4690) My_wifi_STA: got ip:192.168.31.196
+I (4690) My_wifi_STA: connected to ap SSID:Ping password:, bitmap:7
+I (4700) My_https_client: updating time from NVS
+I (4700) My_https_client: initializing SNTP
+I (4710) My_https_client: List of configured NTP servers:
+I (4710) My_https_client: server 0: time.windows.com
+I (4720) My_https_client: server 1: pool.ntp.org
+I (5720) My_https_client: waitting for system time to be set...(1/20)
+I (6720) My_https_client: waitting for system time to be set...(2/20)
+I (7720) My_https_client: waitting for system time to be set...(3/20)
+I (8550) wifi:<ba-add>idx:1 (ifx:0, d4:da:21:b7:91:24), tid:0, ssn:0, winSize:64
+I (8720) My_https_client: waitting for system time to be set...(4/20)
+I (9720) My_https_client: waitting for system time to be set...(5/20)
+I (10720) My_https_client: waitting for system time to be set...(6/20)
+I (11720) My_https_client: waitting for system time to be set...(7/20)
+I (12720) My_https_client: waitting for system time to be set...(8/20)
+I (13720) My_https_client: waitting for system time to be set...(9/20)
+I (14720) My_https_client: waitting for system time to be set...(10/20)
+I (15720) My_https_client: waitting for system time to be set...(11/20)
+I (16720) My_https_client: waitting for system time to be set...(12/20)
+I (17720) My_https_client: waitting for system time to be set...(13/20)
+I (18720) My_https_client: waitting for system time to be set...(14/20)
+I (19720) My_https_client: waitting for system time to be set...(15/20)
+I (20720) My_https_client: waitting for system time to be set...(16/20)
+I (21720) My_https_client: waitting for system time to be set...(17/20)
+I (22720) My_https_client: waitting for system time to be set...(18/20)
+I (23720) My_https_client: waitting for system time to be set...(19/20)
+I (23840) My_https_client: SNTP sync OK
+I (23840) My_https_client: Notification of a time synchronization event
+I (23850) My_https_client: time updated in NVS
+I (23850) My_https_client: time: 1712835385
+I (23850) main_task: Returned from app_main()
+I (23850) My_https_client: seeding the random number generator
+I (23860) My_https_client: attching the certificate bundle...
+I (23860) My_https_client: Setting hostname for TLS session...
+I (23870) My_https_client: setting up the SSL/TLS structure...
+I (23880) My_https_client: connecting to www.howsmyssl.com:443...
+I (24250) My_https_client: connected.
+I (24250) My_https_client: performing the SSL/TLS handshake...
+E (24250) My_https_client: mbedtls_ssl_handshake returned -0x6c00
+E (24250) My_https_client: last error was: -0x6c00 - SSL - Internal error (eg, unexpected failure in lower-level module)
+
+I (24260) My_https_client: completed 1 request
+Minimum free heap size: 255488 bytes
+I (24270) My_https_client: 10...
+I (25280) My_https_client: 9...
+I (26280) My_https_client: 8...
+I (27280) My_https_client: 7...
+I (28280) My_https_client: 6...
+I (29280) My_https_client: 5...
+I (30280) My_https_client: 4...
+I (31280) My_https_client: 3...
+I (32280) My_https_client: 2...
+I (33280) My_https_client: 1...
+I (34280) My_https_client: 0...
+I (35280) My_https_client: starting again! !
+I (35280) My_https_client: connecting to www.howsmyssl.com:443...
+I (35630) My_https_client: connected.
+I (35630) My_https_client: performing the SSL/TLS handshake...
+E (35630) My_https_client: mbedtls_ssl_handshake returned -0x6c00
+E (35630) My_https_client: last error was: -0x6c00 - SSL - Internal error (eg, unexpected failure in lower-level module)
+
+I (35640) My_https_client: completed 2 request
+Minimum free heap size: 255268 bytes
+I (35650) My_https_client: 10...
+I (36660) My_https_client: 9...
+I (37660) My_https_client: 8...
+I (38660) My_https_client: 7...
+I (39660) My_https_client: 6...
+I (40660) My_https_client: 5...
+I (41660) My_https_client: 4...
+I (42660) My_https_client: 3...
+I (43660) My_https_client: 2...
+I (44660) My_https_client: 1...
+I (45660) My_https_client: 0...
+I (46660) My_https_client: starting again! !
+I (46660) My_https_client: connecting to www.howsmyssl.com:443...
+I (46980) My_https_client: connected.
+I (46980) My_https_client: performing the SSL/TLS handshake...
+E (46980) My_https_client: mbedtls_ssl_handshake returned -0x6c00
+E (46990) My_https_client: last error was: -0x6c00 - SSL - Internal error (eg, unexpected failure in lower-level module)
+
+I (47000) My_https_client: completed 3 request
+Minimum free heap size: 254196 bytes
+I (47010) My_https_client: 10...
+I (48010) My_https_client: 9...

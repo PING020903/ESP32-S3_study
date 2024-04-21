@@ -1,12 +1,0 @@
-[0/1] cmd.exe /C "cd /D C:\Users\12566\Desktop\get-started\espS3_project\ESP_S3_project\build && D:\ESP_MCU_tool\ESP_IDF_TOOLS\Espressif\tools\cmake\3.24.0\bin\cmake.exe -D IDF_SIZE_TOOL=D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/python_env/idf5.1_py3.11_env/Scripts/python.exe;-m;esp_idf_size -D MAP_FILE=C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/ESP_S3_project.map -D OUTPUT_JSON= -P D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/tools/cmake/run_size_tool.cmake"
-Total sizes:
-Used static IRAM:   77234 bytes ( 285006 remain, 21.3% used)
-      .text size:   76207 bytes
-   .vectors size:    1027 bytes
-Used stat D/IRAM:   36508 bytes ( 309348 remain, 10.6% used)
-      .data size:   17788 bytes
-      .bss  size:   18720 bytes
-Used Flash size :  890219 bytes
-           .text:  665439 bytes
-         .rodata:  224524 bytes
-Total image size:  985241 bytes (.bin may be padded larger)

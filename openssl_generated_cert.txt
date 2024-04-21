@@ -1,0 +1,34 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\WINDOWS\system32> openssl version
+OpenSSL 3.3.0 9 Apr 2024 (Library: OpenSSL 3.3.0 9 Apr 2024)
+PS C:\WINDOWS\system32> openssl req -newkey rsa:2048 -nodes -keyout private.key -out csr.csr
+......+.........+......+....+..+...+.+...........+++++++++++++++++++++++++++++++++++++++*....+...+..+......+.+.....+++++++++++++++++++++++++++++++++++++++*........+.......+...+..+...+......+....+...+..+...+....+.........+......+....................+.+........+.+......+...+.....+.......+............+.....+......+.+......+...+..+.........+....++++++
+........+.+..+.......+...+......+..............+...+.............+.....+.+...+...+..+.......+......+..............+....+++++++++++++++++++++++++++++++++++++++*.....+....+...+...+++++++++++++++++++++++++++++++++++++++*.....+.....+......+...+......+...............+.............+.....+.+...............+.....+.......+...............+..+......+...............+.+........+.............+............+..+.+...+..+....+...+......+..+...+....+.....+......+..............................+.+......+.....+....+.....+......+.........+...+...+.......++++++
+-----
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:cn
+State or Province Name (full name) [Some-State]:Guangdong
+Locality Name (eg, city) []:Jiangmen
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:persons
+Organizational Unit Name (eg, section) []:persons
+Common Name (e.g. server FQDN or YOUR name) []:ESP-S3_of_JP
+Email Address []:1256677528@qq.com
+
+Please enter the following 'extra' attributes
+to be sent with your certificate request
+A challenge password []:wjpwjp
+An optional company name []:nothing
+PS C:\WINDOWS\system32> openssl x509 -req -in csr.csr -signkey private.key -out certificate.pem
+Certificate request self-signature ok
+subject=C=cn, ST=Guangdong, L=Jiangmen, O=persons, OU=persons, CN=ESP-S3_of_JP, emailAddress=1256677528@qq.com
+PS C:\WINDOWS\system32>

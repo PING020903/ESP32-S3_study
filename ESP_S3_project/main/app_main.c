@@ -118,10 +118,13 @@ void My_task_init(void)
 
 void app_main(void)
 {
+    ESP_LOGI(TAG, "ESP-IDF version: %s", esp_get_idf_version());
+    ESP_LOGI(TAG, "Minimum free heap size: %" PRIu32 " bytes\n", esp_get_minimum_free_heap_size());
+
     My_gpio_init();
     My_usb_device_init();
     My_timer_init();
-    My_LED_init();
+    //My_LED_init();    // memory leak
     My_task_init();
 #if 0
     while (1) {

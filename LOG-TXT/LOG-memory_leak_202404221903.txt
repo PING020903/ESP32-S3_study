@@ -1,0 +1,206 @@
+I (14564) USER_app: GPIO 5 is low
+I (14564) USER_app: Minimum free heap size: 362480 bytes
+I (14564) USER_app: log -> uart
+W (14564) USER_app: log -> uart
+E (14564) USER_app: log -> uart
+
+I (16564) USER_app: GPIO 5 is low
+I (16564) USER_app: Minimum free heap size: 362480 bytes
+I (16564) USER_app: log -> uart
+W (16564) USER_app: log -> uart
+E (16564) USER_app: log -> uart
+
+I (18564) USER_app: GPIO 5 is low
+I (18564) USER_app: Minimum free heap size: 362480 bytes
+I (18564) USER_app: log -> uart
+W (18564) USER_app: log -> uart
+E (18564) USER_app: log -> uart
+
+I (20564) USER_app: GPIO 5 is low
+I (20564) USER_app: Minimum free heap size: 362480 bytes
+I (20564) USER_app: log -> uart
+W (20564) USER_app: log -> uart
+E (20564) USER_app: log -> uart
+
+I (22564) USER_app: GPIO 5 is low
+I (22564) USER_app: Minimum free heap size: 362480 bytes
+I (22564) USER_app: log -> uart
+W (22564) USER_app: log -> uart
+E (22564) USER_app: log -> uart
+
+I (24564) USER_app: GPIO 5 is low
+I (24564) USER_app: Minimum free heap size: 362480 bytes
+I (24564) USER_app: log -> uart
+W (24564) USER_app: log -> uart
+E (24564) USER_app: log -> uart
+
+I (26564) USER_app: log -> USB
+W (26564) USER_app: log -> USB
+E (26564) USER_app: log -> USB
+
+I (28564) USER_app: log -> USB
+W (28564) USER_app: log -> USB
+E (28564) USER_app: log -> USB
+
+I (30564) USER_app: log -> USB
+W (30564) USER_app: log -> USB
+E (30564) USER_app: log -> USB
+
+I (32564) USER_app: log -> USB
+W (32564) USER_app: log -> USB
+E (32564) USER_app: log -> USB
+
+I (2860568) USER_app: log -> USB
+W (2860568) USER_app: log -> USB
+E (2860568) USER_app: log -> USB
+
+I (2862568) USER_app: log -> USB
+W (2862568) USER_app: log -> USB
+E (2862568) USER_app: log -> USB
+
+I (6306568) USER_app: log -> USB
+W (6306568) USER_app: log -> USB
+E (6306568) USER_app: log -> USB
+
+I (6310568) USER_app: log -> USB
+W (6310568) USER_app: log -> USB
+E (6310568) USER_app: log -> USB
+
+I (6312568) USER_app: log -> USB
+W (6312568) USER_app: log -> USB
+E (6312568) USER_app: log -> USB
+
+I (6314568) USER_app: log -> USB
+W (6314568) USER_app: log -> USB
+E (6314568) USER_app: log -> USB
+
+I (6316568) USER_app: log -> USB
+W (6316568) USER_app: log -> USB
+E (6316568) USER_app: log -> USB
+
+I (6318568) USER_app: log -> USB
+W (6318568) USER_app: log -> USB
+E (6318568) USER_app: log -> USB
+
+I (6464568) USER_app: log -> USB
+W (6464568) USER_app: log -> USB
+E (6464568) USER_app: log -> USB
+
+I (6466568) USER_app: log -> USB
+W (6466568) USER_app: log -> USB
+E (6466568) USER_app: log -> USB
+
+I (6468568) USER_app: log -> USB
+W (6468568) USER_app: log -> USB
+E (6468568) USER_app: log -> USB
+
+I (6470568) USER_app: log -> USB
+W (6470568) USER_app: log -> USB
+E (6470568) USER_app: log -> USB
+
+I (6472568) USER_app: log -> USB
+W (6472568) USER_app: log -> USB
+E (6472568) USER_app: log -> USB
+
+I (6480568) USER_app: GPIO 5 is low
+I (6480568) USER_app: Minimum free heap size: 81652 bytes
+I (6480568) USER_app: log -> uart
+W (6480568) USER_app: log -> uart
+E (6480568) USER_app: log -> uart
+
+I (6482568) USER_app: GPIO 5 is low
+I (6482568) USER_app: Minimum free heap size: 81564 bytes
+I (6482568) USER_app: log -> uart
+W (6482568) USER_app: log -> uart
+E (6482568) USER_app: log -> uart
+
+I (6484568) USER_app: GPIO 5 is low
+I (6484568) USER_app: Minimum free heap size: 81476 bytes
+I (6484568) USER_app: log -> uart
+W (6484568) USER_app: log -> uart
+E (6484568) USER_app: log -> uart
+
+I (6486568) USER_app: GPIO 5 is low
+I (6486568) USER_app: Minimum free heap size: 81388 bytes
+I (6486568) USER_app: log -> uart
+W (6486568) USER_app: log -> uart
+E (6486568) USER_app: log -> uart
+
+I (6488568) USER_app: GPIO 5 is low
+I (6488568) USER_app: Minimum free heap size: 81300 bytes
+I (6488568) USER_app: log -> uart
+W (6488568) USER_app: log -> uart
+E (6488568) USER_app: log -> uart
+
+I (6506568) USER_app: GPIO 5 is low
+I (6506568) USER_app: Minimum free heap size: 80508 bytes
+I (6506568) USER_app: log -> uart
+W (6506568) USER_app: log -> uart
+E (6506568) USER_app: log -> uart
+
+I (6508568) USER_app: GPIO 5 is low
+I (6508568) USER_app: Minimum free heap size: 80420 bytes
+I (6508568) USER_app: log -> uart
+W (6508568) USER_app: log -> uart
+E (6508568) USER_app: log -> uart
+
+I (6510568) USER_app: GPIO 5 is low
+I (6510568) USER_app: Minimum free heap size: 80332 bytes
+I (6510568) USER_app: log -> uart
+W (6510568) USER_app: log -> uart
+E (6510568) USER_app: log -> uart
+
+I (6512568) USER_app: GPIO 5 is low
+I (6512568) USER_app: Minimum free heap size: 80244 bytes
+I (6512568) USER_app: log -> uart
+W (6512568) USER_app: log -> uart
+E (6512568) USER_app: log -> uart
+
+I (6514568) USER_app: GPIO 5 is low
+I (6514568) USER_app: Minimum free heap size: 80156 bytes
+I (6514568) USER_app: log -> uart
+W (6514568) USER_app: log -> uart
+E (6514568) USER_app: log -> uart
+
+I (6516568) USER_app: GPIO 5 is low
+I (6516568) USER_app: Minimum free heap size: 80068 bytes
+I (6516568) USER_app: log -> uart
+W (6516568) USER_app: log -> uart
+E (6516568) USER_app: log -> uart
+
+I (6518568) USER_app: GPIO 5 is low
+I (6518568) USER_app: Minimum free heap size: 79980 bytes
+I (6518568) USER_app: log -> uart
+W (6518568) USER_app: log -> uart
+E (6518568) USER_app: log -> uart
+
+I (6520568) USER_app: GPIO 5 is low
+I (6520568) USER_app: Minimum free heap size: 79892 bytes
+I (6520568) USER_app: log -> uart
+W (6520568) USER_app: log -> uart
+E (6520568) USER_app: log -> uart
+
+I (6522568) USER_app: GPIO 5 is low
+I (6522568) USER_app: Minimum free heap size: 79804 bytes
+I (6522568) USER_app: log -> uart
+W (6522568) USER_app: log -> uart
+E (6522568) USER_app: log -> uart
+
+I (6524568) USER_app: GPIO 5 is low
+I (6524568) USER_app: Minimum free heap size: 79716 bytes
+I (6524568) USER_app: log -> uart
+W (6524568) USER_app: log -> uart
+E (6524568) USER_app: log -> uart
+
+I (6526568) USER_app: GPIO 5 is low
+I (6526568) USER_app: Minimum free heap size: 79628 bytes
+I (6526568) USER_app: log -> uart
+W (6526568) USER_app: log -> uart
+E (6526568) USER_app: log -> uart
+
+I (6528568) USER_app: GPIO 5 is low
+I (6528568) USER_app: Minimum free heap size: 79540 bytes
+I (6528568) USER_app: log -> uart
+W (6528568) USER_app: log -> uart
+E (6528568) USER_app: log -> uart
+

@@ -3,5 +3,10 @@
     "idf.adapterTargetName": "esp32s3",
     "idf.openOcdConfigs": [
         "board/esp32s3-bridge.cfg"
-    ]
+    ],
+    "git.ignoreLimitWarning": true,
+    "cmake.configureOnOpen": true,
+    "files.associations": {
+        "tinyusb.h": "c"
+    }
 }

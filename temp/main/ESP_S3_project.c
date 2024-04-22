@@ -46,7 +46,7 @@ void My_main_task(void *arg)
     esp_err_t tusb_ret;
     uint32_t task_mark;
     TickType_t count = 0;
-    unsigned int led_level = 0;
+    uint32_t led_level = 0;
     int64_t start_time = esp_timer_get_time();
 
     while (1)

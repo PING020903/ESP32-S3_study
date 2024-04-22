@@ -15,7 +15,7 @@
 #define RMT_LED_STRIP_GPIO_NUM      48
 
 #define EXAMPLE_LED_NUMBERS         24
-#define EXAMPLE_CHASE_SPEED_MS      100
+#define EXAMPLE_CHASE_SPEED_MS      50 // 灯闪太快会把灯烧了，板子也可能烧了
 
 static const char *TAG = "USER_LED";
 
@@ -133,6 +133,6 @@ static void LED_task(void* arg)
 void My_LED_init(void)
 {
     ESP_LOGI(TAG, "Start LED rainbow chase");
-    xTaskCreatePinnedToCore(LED_task, "My_LED_task", 3072, NULL, 2, NULL, 1);
+    xTaskCreatePinnedToCore(LED_task, "My_LED_task", 4096, NULL, 2, NULL, 1);
     return;
 }

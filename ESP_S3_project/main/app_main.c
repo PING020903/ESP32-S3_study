@@ -108,7 +108,7 @@ void My_task_init(void)
     // xTaskCreate(My_main_task, "My_main_task", 2048, NULL, 8, NULL);
 
     // 任务创建(函数入口地址, 任务名称, 任务堆栈大小, 任务参数, 任务优先级, 任务句柄, 任务创建的CPU核心编号)
-    xTaskCreatePinnedToCore(My_main_task, "My_main_task", 2048, NULL, 8, NULL, 1);
+    xTaskCreatePinnedToCore(My_main_task, "My_main_task", 4096, NULL, 8, NULL, 1);
 
     // ps: 经过测试, 同优先级下, 先打印输出了Core_0, 再打印输出了Core_1
     // xTaskCreatePinnedToCore(My_main_task_2, "My_main_task_2", 4096, NULL, 8, NULL, 0);

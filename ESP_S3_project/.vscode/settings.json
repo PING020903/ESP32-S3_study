@@ -23,6 +23,8 @@
         "my_https_request.h": "c",
         "led_strip_encoder.h": "c",
         "my_led_init.h": "c",
-        "esp_check.h": "c"
+        "esp_check.h": "c",
+        "esp_heap_caps.h": "c",
+        "freertos.h": "c"
     }
 }

@@ -18,11 +18,18 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
+#define MEM_LEAK 0
 #include "My_timer_init.h"
 #include "My_gpio_init.h"
 #include "My_usb_device.h"
 #include "My_LED_init.h"
 #include "sdkconfig.h"
+
+#if MEM_LEAK
+#include "esp_heap_caps.h"
+#endif
+
+#define USER_USB_INIT 1
 
 // 任务队列(指针)
 extern QueueSetHandle_t task_evt_queue;
@@ -30,6 +37,18 @@ extern QueueSetHandle_t task_evt_queue;
 static const char *TAG = "USER_app";
 // 计数变量
 static volatile unsigned long long P_conut = 0;
+
+#if MEM_LEAK
+void esp_heap_trace_alloc_hook(void *ptr, size_t size, uint32_t caps)
+{
+    printf("alloc_hook: %p, size: %d, caps: %ld\n", ptr, size, caps);
+}
+
+void esp_heap_trace_free_hook(void *ptr)
+{
+    printf("free_hook: %p\n", ptr);
+}
+#endif
 
 void My_main_task(void *arg)
 {
@@ -50,7 +69,7 @@ void My_main_task(void *arg)
         {
         case MAIN_TASK:
         {
-            
+
             start_time = esp_timer_get_time();
 
             ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_48, led_level));
@@ -65,7 +84,8 @@ void My_main_task(void *arg)
                 else
                     ESP_LOGI(TAG, "GPIO 5 is low");
                 ESP_LOGI(TAG, "Minimum free heap size: %" PRIu32 " bytes", esp_get_minimum_free_heap_size());
-
+                ESP_LOGI(TAG, "Largest free block size: %d", heap_caps_get_largest_free_block(MALLOC_CAP_DEFAULT));
+#if USER_USB_INIT
                 tusb_ret = esp_tusb_init_console(TINYUSB_CDC_ACM_0); // log to usb
                 if (tusb_ret != ESP_OK)
                 {
@@ -79,7 +99,7 @@ void My_main_task(void *arg)
                     ESP_LOGE(TAG, "log -> USB\n");
                 }
                 ESP_ERROR_CHECK(esp_tusb_deinit_console(TINYUSB_CDC_ACM_0));
-
+#endif
                 ESP_LOGI(TAG, "log -> uart");
                 ESP_LOGW(TAG, "log -> uart");
                 ESP_LOGE(TAG, "log -> uart\n");
@@ -119,12 +139,19 @@ void My_task_init(void)
 void app_main(void)
 {
     ESP_LOGI(TAG, "ESP-IDF version: %s", esp_get_idf_version());
+    ESP_LOGI(TAG, "heap: %d", heap_caps_get_largest_free_block(MALLOC_CAP_DEFAULT));
+#if !MEM_LEAK
     ESP_LOGI(TAG, "Minimum free heap size: %" PRIu32 " bytes\n", esp_get_minimum_free_heap_size());
+#else
+    ESP_LOGI(TAG, "Minimum free heap size: %ld bytes\n", esp_get_minimum_free_heap_size());
+#endif
 
     My_gpio_init();
+#if USER_USB_INIT
     My_usb_device_init();
+#endif
     My_timer_init();
-    //My_LED_init();    // memory leak
+    My_LED_init();
     My_task_init();
 #if 0
     while (1) {

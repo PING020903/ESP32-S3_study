@@ -9,7 +9,8 @@
                 "${config:idf.espIdfPathWin}/components/**",
                 "${config:idf.espAdfPath}/components/**",
                 "${config:idf.espAdfPathWin}/components/**",
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel-SMP/include/freertos"
             ],
             "browse": {
                 "path": [

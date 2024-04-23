@@ -30,6 +30,7 @@
 #endif
 
 #define USER_USB_INIT 1
+#define TEST 1
 
 // 任务队列(指针)
 extern QueueSetHandle_t task_evt_queue;
@@ -87,7 +88,9 @@ void My_main_task(void *arg)
                 ESP_LOGI(TAG, "Largest free block size: %d", heap_caps_get_largest_free_block(MALLOC_CAP_DEFAULT));
 #if USER_USB_INIT
                 tusb_ret = ESP_OK;
+                #if TEST
                 My_tusb_streams_change(0);  // 更改控制台USB串口控制权
+                #endif
                 if (tusb_ret != ESP_OK)
                 {
                     ESP_LOGE(TAG, "esp_tusb_init_console failed: %d", tusb_ret);
@@ -99,9 +102,9 @@ void My_main_task(void *arg)
                     ESP_LOGW(TAG, "log -> USB");
                     ESP_LOGE(TAG, "log -> USB\n");
                 }
+                #if TEST
                 My_tusb_streams_change(1);  // 更改控制台USB串口控制权归还UART
-                // 释放控制台USB串口控制权归还UART
-                // ESP_ERROR_CHECK(esp_tusb_deinit_console(TINYUSB_CDC_ACM_0));
+                #endif
 #endif
                 ESP_LOGI(TAG, "log -> uart");
                 ESP_LOGW(TAG, "log -> uart");
@@ -151,14 +154,11 @@ void app_main(void)
 
 #if USER_USB_INIT
     My_usb_device_init();
-    esp_tusb_init_console(TINYUSB_CDC_ACM_0); // log to usb
 #endif
-#if 1 //  Tiny USB function test
     My_gpio_init();
     My_timer_init();
     My_LED_init();
     My_task_init();
-#endif
 #if 0 // test tiny usb function memory lesk
     while (1) {
         ESP_LOGI(TAG, "Minimum free heap size: %" PRIu32 " bytes\n", esp_get_minimum_free_heap_size());

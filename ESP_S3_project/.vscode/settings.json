@@ -26,6 +26,10 @@
         "esp_check.h": "c",
         "esp_heap_caps.h": "c",
         "freertos.h": "c",
-        "tusb_console.h": "c"
-    }
+        "tusb_console.h": "c",
+        "cdc.h": "c",
+        "tusb.h": "c",
+        "semphr.h": "c"
+    },
+    "cmake.configureOnOpen": true
 }

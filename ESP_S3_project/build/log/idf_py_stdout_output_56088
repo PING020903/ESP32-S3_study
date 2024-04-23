@@ -1,0 +1,11 @@
+[0/1] Re-running CMake...
+-- ccache will be used for faster recompilation
+-- Building ESP-IDF components for target esp32s3
+Processing 3 dependencies:
+[1/3] espressif/esp_tinyusb (1.4.4)
+[2/3] espressif/tinyusb (0.15.0~8)
+[3/3] idf (5.1.2)
+-- Configuring incomplete, errors occurred!
+See also "C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/CMakeFiles/CMakeOutput.log".
+FAILED: build.ninja 
+D:\ESP_MCU_tool\ESP_IDF_TOOLS\Espressif\tools\cmake\3.24.0\bin\cmake.exe --regenerate-during-build -SC:\Users\12566\Desktop\get-started\espS3_project\ESP_S3_project -BC:\Users\12566\Desktop\get-started\espS3_project\ESP_S3_project\build

@@ -28,6 +28,14 @@ esp_err_t esp_tusb_init_console(int cdc_intf);
  */
 esp_err_t esp_tusb_deinit_console(int cdc_intf);
 
+/**
+ * @brief 更改串口输出模式
+ * @param mode - 串口输出模式, 0: USB输出模式, 1: 串口输出模式
+ *
+ * @return esp_err_t
+ */
+esp_err_t My_tusb_streams_change(int mode);
+
 #ifdef __cplusplus
 }
 #endif

@@ -25,6 +25,7 @@
         "my_led_init.h": "c",
         "esp_check.h": "c",
         "esp_heap_caps.h": "c",
-        "freertos.h": "c"
+        "freertos.h": "c",
+        "tusb_console.h": "c"
     }
 }

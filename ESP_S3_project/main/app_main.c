@@ -87,10 +87,7 @@ void My_main_task(void *arg)
                 ESP_LOGI(TAG, "Minimum free heap size: %" PRIu32 " bytes", esp_get_minimum_free_heap_size());
                 ESP_LOGI(TAG, "Largest free block size: %d", heap_caps_get_largest_free_block(MALLOC_CAP_DEFAULT));
 #if USER_USB_INIT
-                tusb_ret = ESP_OK;
-                #if TEST
-                My_tusb_streams_change(0);  // 更改控制台USB串口控制权
-                #endif
+                tusb_ret = My_tusb_streams_change(0); // 更改控制台USB串口控制权
                 if (tusb_ret != ESP_OK)
                 {
                     ESP_LOGE(TAG, "esp_tusb_init_console failed: %d", tusb_ret);
@@ -98,13 +95,13 @@ void My_main_task(void *arg)
                 }
                 else
                 {
+#endif
                     ESP_LOGI(TAG, "log -> USB");
                     ESP_LOGW(TAG, "log -> USB");
                     ESP_LOGE(TAG, "log -> USB\n");
+#if USER_USB_INIT
                 }
-                #if TEST
-                My_tusb_streams_change(1);  // 更改控制台USB串口控制权归还UART
-                #endif
+                My_tusb_streams_change(1); // 更改控制台USB串口控制权归还UART
 #endif
                 ESP_LOGI(TAG, "log -> uart");
                 ESP_LOGW(TAG, "log -> uart");

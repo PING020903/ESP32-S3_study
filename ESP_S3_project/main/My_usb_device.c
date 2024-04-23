@@ -9,9 +9,9 @@
 #include "esp_log.h"
 #include "esp_check.h"
 #include "My_usb_device.h"
-#define TEST 1
+
 static const char *TAG = "My_usb_device";
-#if TEST
+
 #define STRINGIFY(s) STRINGIFY2(s)
 #define STRINGIFY2(s) #s
 #define VFS_TUSB_PATH_DEFAULT "/dev/tusb_cdc"
@@ -121,7 +121,7 @@ esp_err_t My_tusb_streams_change(int mode)
         return ESP_FAIL;
     }
 }
-#endif
+
 
 void My_usb_device_init(void) 
 {

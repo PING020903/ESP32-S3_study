@@ -29,7 +29,8 @@
         "tusb_console.h": "c",
         "cdc.h": "c",
         "tusb.h": "c",
-        "semphr.h": "c"
+        "semphr.h": "c",
+        "queue.h": "c"
     },
     "cmake.configureOnOpen": true
 }

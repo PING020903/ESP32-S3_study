@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "ESP_S3_project",
-    "project_version":    "ed27eb8-dirty",
+    "project_version":    "549792e-dirty",
     "project_path":       "C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project",
     "idf_path":           "D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2",
     "build_dir":          "C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build",

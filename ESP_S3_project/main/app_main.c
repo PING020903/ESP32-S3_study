@@ -18,16 +18,12 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
-#define MEM_LEAK 0
 #include "My_timer_init.h"
 #include "My_gpio_init.h"
 #include "My_usb_device.h"
 #include "My_LED_init.h"
 #include "sdkconfig.h"
 
-#if MEM_LEAK
-#include "esp_heap_caps.h"
-#endif
 
 #define USER_USB_INIT 1
 #define TEST 1
@@ -39,26 +35,16 @@ static const char *TAG = "USER_app";
 // 计数变量
 static volatile unsigned long long P_conut = 0;
 
-#if MEM_LEAK
-void esp_heap_trace_alloc_hook(void *ptr, size_t size, uint32_t caps)
-{
-    printf("alloc_hook: %p, size: %d, caps: %ld\n", ptr, size, caps);
-}
-
-void esp_heap_trace_free_hook(void *ptr)
-{
-    printf("free_hook: %p\n", ptr);
-}
-#endif
 
 void My_main_task(void *arg)
 {
     int gpio_level;
     esp_err_t tusb_ret;
     uint32_t task_mark;
-    TickType_t count = 0;
+    TickType_t count;
     uint32_t led_level = 0;
-    int64_t start_time = esp_timer_get_time();
+    int64_t start_time;
+    unsigned int output = 0;
 
     while (1)
     {
@@ -70,7 +56,7 @@ void My_main_task(void *arg)
         {
         case MAIN_TASK:
         {
-
+            tusb_ret = My_tusb_streams_change(output); // 更改控制台USB串口控制权
             start_time = esp_timer_get_time();
 
             ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_48, led_level));
@@ -87,7 +73,8 @@ void My_main_task(void *arg)
                 ESP_LOGI(TAG, "Minimum free heap size: %" PRIu32 " bytes", esp_get_minimum_free_heap_size());
                 ESP_LOGI(TAG, "Largest free block size: %d", heap_caps_get_largest_free_block(MALLOC_CAP_DEFAULT));
 #if USER_USB_INIT
-                tusb_ret = My_tusb_streams_change(0); // 更改控制台USB串口控制权
+                
+                
                 // tusb_ret =  esp_tusb_init_console(TINYUSB_CDC_ACM_0); // log to usb
                 if (tusb_ret != ESP_OK)
                 {
@@ -103,11 +90,13 @@ void My_main_task(void *arg)
 #if USER_USB_INIT
                 }
                 // esp_tusb_deinit_console(TINYUSB_CDC_ACM_0); // log to uart
-                My_tusb_streams_change(1); // 更改控制台USB串口控制权归还UART
+                //My_tusb_streams_change(1); // 更改控制台USB串口控制权归还UART
 #endif
                 ESP_LOGI(TAG, "log -> uart");
                 ESP_LOGW(TAG, "log -> uart");
                 ESP_LOGE(TAG, "log -> uart\n");
+                
+                output = !output;   // 0: USB, 1: UART
             }
             else
                 vTaskDelay(1);
@@ -145,11 +134,7 @@ void app_main(void)
 {
     ESP_LOGI(TAG, "ESP-IDF version: %s", esp_get_idf_version());
     ESP_LOGI(TAG, "heap: %d", heap_caps_get_largest_free_block(MALLOC_CAP_DEFAULT));
-#if !MEM_LEAK
     ESP_LOGI(TAG, "Minimum free heap size: %" PRIu32 " bytes\n", esp_get_minimum_free_heap_size());
-#else
-    ESP_LOGI(TAG, "Minimum free heap size: %ld bytes\n", esp_get_minimum_free_heap_size());
-#endif
 
 #if USER_USB_INIT
     My_usb_device_init();
@@ -158,25 +143,5 @@ void app_main(void)
     My_timer_init();
     My_LED_init();
     My_task_init();
-#if 0 // test tiny usb function memory lesk
-    while (1) {
-        ESP_LOGI(TAG, "Minimum free heap size: %" PRIu32 " bytes\n", esp_get_minimum_free_heap_size());
-        ESP_LOGI(TAG, "log -> UART");
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
-        fprintf(stdout, "example: print -> stdout\n");
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
-        fprintf(stderr, "example: print -> stderr\n");
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
 
-        esp_tusb_init_console(TINYUSB_CDC_ACM_0); // log to usb
-        ESP_LOGI(TAG, "Minimum free heap size: %" PRIu32 " bytes\n", esp_get_minimum_free_heap_size());
-        ESP_LOGI(TAG, "log -> USB");
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
-        fprintf(stdout, "example: print -> stdout\n");
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
-        fprintf(stderr, "example: print -> stderr\n");
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
-        esp_tusb_deinit_console(TINYUSB_CDC_ACM_0); // log to uart
-    }
-#endif
 }

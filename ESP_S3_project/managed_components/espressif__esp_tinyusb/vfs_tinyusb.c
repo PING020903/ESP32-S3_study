@@ -102,8 +102,6 @@ static esp_err_t vfstusb_init(int cdc_intf, char const *path)
  */
 static void vfstusb_deinit(void)
 {
-    _lock_close(&(s_vfstusb.write_lock));
-    _lock_close(&(s_vfstusb.read_lock));
     memset(&s_vfstusb, 0, sizeof(s_vfstusb));
 }
 

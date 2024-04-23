@@ -26,7 +26,6 @@ typedef struct
 
 static console_handle_t con;
 
-
 /**
  * @brief Reopen standard streams using a new path
  *
@@ -122,6 +121,20 @@ esp_err_t My_tusb_streams_change(int mode)
     }
 }
 
+void My_tusb_cdcacm_callback(int itf, cdcacm_event_t *event)
+{
+    ESP_LOGI(TAG, "USB event: %d", event->type);
+    ESP_LOGI(TAG, "USB char: %d", event->rx_wanted_char_data.wanted_char);
+    ESP_LOGI(TAG, "USB DTR: %d, RTS: %d", event->line_state_changed_data.dtr,
+             event->line_state_changed_data.rts);
+#if 0   // 一旦访问这个成员的信息, OS就会reset
+    ESP_LOGI(TAG, "USB Baudrate: %ld, data_bits: %d, parity: %d, stop_bits: %d",
+             event->line_coding_changed_data.p_line_coding->bit_rate,
+             event->line_coding_changed_data.p_line_coding->data_bits,
+             event->line_coding_changed_data.p_line_coding->parity,
+             event->line_coding_changed_data.p_line_coding->stop_bits);
+#endif
+}
 
 void My_usb_device_init(void) 
 {
@@ -137,8 +150,15 @@ void My_usb_device_init(void)
 
     ESP_ERROR_CHECK(tinyusb_driver_install(&tusb_cfg));
 
-    tinyusb_config_cdcacm_t acm_cfg = { 0 }; // the configuration uses default values
+    tinyusb_config_cdcacm_t acm_cfg = {
+        .cdc_port = TINYUSB_CDC_ACM_0,
+        .usb_dev = TINYUSB_USBDEV_0,
+        .callback_rx = &My_tusb_cdcacm_callback,
+    }; // the configuration uses default values
     ESP_ERROR_CHECK(tusb_cdc_acm_init(&acm_cfg));
+    ESP_ERROR_CHECK(tinyusb_cdcacm_register_callback(TINYUSB_CDC_ACM_0,
+                                                     CDC_EVENT_RX,
+                                                     &My_tusb_cdcacm_callback));
 
     ESP_LOGI(TAG, "USB initialization DONE");
     esp_tusb_init_console(TINYUSB_CDC_ACM_0); // log to usb

@@ -30,7 +30,8 @@
         "cdc.h": "c",
         "tusb.h": "c",
         "semphr.h": "c",
-        "queue.h": "c"
+        "queue.h": "c",
+        "mutex": "c"
     },
     "cmake.configureOnOpen": true
 }

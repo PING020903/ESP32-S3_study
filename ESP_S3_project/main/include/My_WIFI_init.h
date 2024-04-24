@@ -1,7 +1,6 @@
 #ifndef _MY_WIFI_INIT_H_
 #define _MY_WIFI_INIT_H_
-#include <esp_now.h>
-#include "esp_wifi.h"
+
 
 #define MY_ESP_NOW 0
 #define MY_STA_ESP_ETH 0

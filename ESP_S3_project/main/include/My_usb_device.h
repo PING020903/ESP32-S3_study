@@ -1,9 +1,7 @@
 #ifndef __MY_USB_DEVICE_H__
 #define __MY_USB_DEVICE_H__
 
-#include "tinyusb.h"
-#include "tusb_cdc_acm.h"
-#include "tusb_console.h"
+
 
 /**
  * @brief 更改串口输出模式

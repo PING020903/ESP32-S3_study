@@ -6,6 +6,10 @@
 #include "freertos/queue.h"
 #include "freertos/timers.h"
 
+#include "tinyusb.h"
+#include "tusb_cdc_acm.h"
+#include "tusb_console.h"
+
 #include "esp_log.h"
 #include "esp_check.h"
 #include "My_usb_device.h"
@@ -161,7 +165,7 @@ void My_usb_device_init(void)
                                                      &My_tusb_cdcacm_callback));
 
     ESP_LOGI(TAG, "USB initialization DONE");
-    esp_tusb_init_console(TINYUSB_CDC_ACM_0); // log to usb
+    ESP_ERROR_CHECK(esp_tusb_init_console(TINYUSB_CDC_ACM_0)); // log to usb
     // 释放控制台USB串口控制权归还UART ( tusb_console多次注册释放后会引起内存泄漏 )
     // ESP_ERROR_CHECK(esp_tusb_deinit_console(TINYUSB_CDC_ACM_0));
     return;

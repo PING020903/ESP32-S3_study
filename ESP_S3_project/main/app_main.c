@@ -15,12 +15,17 @@
 #include "esp_check.h"
 #include "esp_log.h"
 #include "esp_vfs.h"
+#include "esp_timer.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+
+#include "driver/gpio.h"
 
 #include "My_timer_init.h"
 #include "My_gpio_init.h"
 #include "My_usb_device.h"
+#include "My_WIFI_init.h"
+#include "My_https_request.h"
 #include "My_LED_init.h"
 #include "sdkconfig.h"
 
@@ -33,6 +38,8 @@ extern QueueSetHandle_t task_evt_queue;
 static const char *TAG = "USER_app";
 // 计数变量
 static volatile unsigned long long P_conut = 0;
+
+extern void wifi_init_sta(void);
 
 void My_main_task(void *arg)
 {
@@ -99,6 +106,12 @@ void My_main_task(void *arg)
                 vTaskDelay(1);
         }
         break;
+        case MY_HTTPS_REQUEST_TASK:
+        {
+#if HTTPS_REQUEST_TIMER
+            https_request_init();
+#endif
+        }
 
         default:
         {
@@ -133,11 +146,13 @@ void app_main(void)
     ESP_LOGI(TAG, "heap: %d", heap_caps_get_largest_free_block(MALLOC_CAP_DEFAULT));
     ESP_LOGI(TAG, "Minimum free heap size: %" PRIu32 " bytes\n", esp_get_minimum_free_heap_size());
 
-#if USER_USB_INIT
-    My_usb_device_init();
-#endif
     My_gpio_init();
     My_timer_init();
     My_LED_init();
+    wifi_init_sta();
+    https_request_init();
+#if USER_USB_INIT
+    My_usb_device_init();
+#endif
     My_task_init();
 }

@@ -31,7 +31,17 @@
         "tusb.h": "c",
         "semphr.h": "c",
         "queue.h": "c",
-        "mutex": "c"
+        "mutex": "c",
+        "my_wifi_init.h": "c",
+        "sys.h": "c",
+        "err.h": "c",
+        "protocomm_console.h": "c",
+        "protocomm.h": "c",
+        "rmt_tx.h": "c",
+        "esp_timer.h": "c",
+        "stdlib.h": "c",
+        "string.h": "c",
+        "my_timer_init.h": "c"
     },
     "cmake.configureOnOpen": true
 }

@@ -399,8 +399,8 @@ void https_request_task(void *pvparameters)
     ESP_LOGI(TAG, "Minimum free heap size: %" PRIu32 " bytes",
              esp_get_minimum_free_heap_size());
     https_get_request_using_cacert_buf();
-    https_get_request_using_global_ca_store();
-    https_get_request_using_specified_ciphersuites();
+    //https_get_request_using_global_ca_store();
+    //https_get_request_using_specified_ciphersuites();
     ESP_LOGI(TAG, "finish https_request example");
     ESP_LOGI(TAG, "NVS re_err:%x, NVS status:%d", err_temp[0], err_temp[1]);
     vTaskDelete(NULL); // 删除任务

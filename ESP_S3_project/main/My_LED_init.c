@@ -7,6 +7,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_log.h"
+#include "led_strip_encoder.h"
 #include "driver/rmt_tx.h"
 #include "My_LED_init.h"
 
@@ -15,7 +16,7 @@
 #define RMT_LED_STRIP_GPIO_NUM 48
 
 #define EXAMPLE_LED_NUMBERS 24
-#define EXAMPLE_CHASE_SPEED_MS 40 // 灯闪太快会把灯烧了，板子也可能烧了
+#define EXAMPLE_CHASE_SPEED_MS 30 // 灯闪太快会把灯烧了，板子也可能烧了
 
 static const char *TAG = "USER_LED";
 

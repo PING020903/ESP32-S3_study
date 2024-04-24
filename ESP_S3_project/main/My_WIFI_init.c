@@ -13,6 +13,7 @@
 #include "esp_wifi.h"  // wifi相关头文件
 #include "esp_event.h" // wifi事件头文件
 #include "esp_log.h"
+#include "esp_check.h"
 #include "esp_now.h" // espnow相关头文件
 #include "esp_crc.h"
 #include "esp_mac.h"
@@ -20,6 +21,7 @@
 #include "esp_netif.h"
 #include "esp_netif_sntp.h"
 #include "nvs_flash.h" // nvs相关头文件
+
 
 #include <wifi_provisioning/manager.h>
 

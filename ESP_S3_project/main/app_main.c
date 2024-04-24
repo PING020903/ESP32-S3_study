@@ -24,7 +24,6 @@
 #include "My_LED_init.h"
 #include "sdkconfig.h"
 
-
 #define USER_USB_INIT 1
 #define TEST 1
 
@@ -34,7 +33,6 @@ extern QueueSetHandle_t task_evt_queue;
 static const char *TAG = "USER_app";
 // 计数变量
 static volatile unsigned long long P_conut = 0;
-
 
 void My_main_task(void *arg)
 {
@@ -56,7 +54,7 @@ void My_main_task(void *arg)
         {
         case MAIN_TASK:
         {
-            tusb_ret = My_tusb_streams_change(output); // 更改控制台USB串口控制权
+            ESP_ERROR_CHECK(My_tusb_streams_change(output)); // 更改控制台USB串口控制权
             start_time = esp_timer_get_time();
 
             ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_48, led_level));
@@ -73,15 +71,9 @@ void My_main_task(void *arg)
                 ESP_LOGI(TAG, "Minimum free heap size: %" PRIu32 " bytes", esp_get_minimum_free_heap_size());
                 ESP_LOGI(TAG, "Largest free block size: %d", heap_caps_get_largest_free_block(MALLOC_CAP_DEFAULT));
 #if USER_USB_INIT
-                
-                
+
                 // tusb_ret =  esp_tusb_init_console(TINYUSB_CDC_ACM_0); // log to usb
-                if (tusb_ret != ESP_OK)
-                {
-                    ESP_LOGE(TAG, "esp_tusb_init_console failed: %d", tusb_ret);
-                    break;
-                }
-                else
+                if (!output)
                 {
 #endif
                     ESP_LOGI(TAG, "log -> USB");
@@ -89,14 +81,19 @@ void My_main_task(void *arg)
                     ESP_LOGE(TAG, "log -> USB\n");
 #if USER_USB_INIT
                 }
-                // esp_tusb_deinit_console(TINYUSB_CDC_ACM_0); // log to uart
-                //My_tusb_streams_change(1); // 更改控制台USB串口控制权归还UART
+                else
+                {
+                    // esp_tusb_deinit_console(TINYUSB_CDC_ACM_0); // log to uart
+                    // My_tusb_streams_change(1); // 更改控制台USB串口控制权归还UART
 #endif
-                ESP_LOGI(TAG, "log -> uart");
-                ESP_LOGW(TAG, "log -> uart");
-                ESP_LOGE(TAG, "log -> uart\n");
-                
-                output = !output;   // 0: USB, 1: UART
+                    ESP_LOGI(TAG, "log -> uart");
+                    ESP_LOGW(TAG, "log -> uart");
+                    ESP_LOGE(TAG, "log -> uart\n");
+#if USER_USB_INIT
+                }
+#endif
+
+                output = !output; // 0: USB, 1: UART
             }
             else
                 vTaskDelay(1);
@@ -143,5 +140,4 @@ void app_main(void)
     My_timer_init();
     My_LED_init();
     My_task_init();
-
 }

@@ -10,17 +10,17 @@
 #include "driver/rmt_tx.h"
 #include "My_LED_init.h"
 
-
+#define LED_DARK 0                           // LED灯闪
 #define RMT_LED_STRIP_RESOLUTION_HZ 10000000 // 10MHz resolution, 1 tick = 0.1us (led strip needs a high resolution)
-#define RMT_LED_STRIP_GPIO_NUM      48
+#define RMT_LED_STRIP_GPIO_NUM 48
 
-#define EXAMPLE_LED_NUMBERS         24
-#define EXAMPLE_CHASE_SPEED_MS      50 // 灯闪太快会把灯烧了，板子也可能烧了
+#define EXAMPLE_LED_NUMBERS 24
+#define EXAMPLE_CHASE_SPEED_MS 40 // 灯闪太快会把灯烧了，板子也可能烧了
 
 static const char *TAG = "USER_LED";
 
 static uint8_t led_strip_pixels[EXAMPLE_LED_NUMBERS * 3];
-
+static rmt_channel_handle_t led_chan = NULL; // LED句柄
 
 /**
  * @brief Simple helper function, converting HSV color space to RGB color space
@@ -40,7 +40,8 @@ void led_strip_hsv2rgb(uint32_t h, uint32_t s, uint32_t v, uint32_t *r, uint32_t
     // RGB adjustment amount by hue
     uint32_t rgb_adj = (rgb_max - rgb_min) * diff / 60;
 
-    switch (i) {
+    switch (i)
+    {
     case 0:
         *r = rgb_max;
         *g = rgb_min + rgb_adj;
@@ -74,7 +75,7 @@ void led_strip_hsv2rgb(uint32_t h, uint32_t s, uint32_t v, uint32_t *r, uint32_t
     }
 }
 
-static void LED_task(void* arg)
+static void LED_task(void *arg)
 {
     uint32_t red = 0;
     uint32_t green = 0;
@@ -83,11 +84,10 @@ static void LED_task(void* arg)
     uint16_t start_rgb = 0;
 
     ESP_LOGI(TAG, "Create RMT TX channel");
-    rmt_channel_handle_t led_chan = NULL;
     rmt_tx_channel_config_t tx_chan_config = {
         .clk_src = RMT_CLK_SRC_DEFAULT, // select source clock
         .gpio_num = RMT_LED_STRIP_GPIO_NUM,
-        .mem_block_symbols = 64, // increase the block size can make the LED less flickering
+        .mem_block_symbols = 128, // increase the block size can make the LED less flickering
         .resolution_hz = RMT_LED_STRIP_RESOLUTION_HZ,
         .trans_queue_depth = 4, // set the number of transactions that can be pending in the background
     };
@@ -107,9 +107,12 @@ static void LED_task(void* arg)
     rmt_transmit_config_t tx_config = {
         .loop_count = 0, // no transfer loop
     };
-    while (1) {
-        for (int i = 0; i < 3; i++) {
-            for (int j = i; j < EXAMPLE_LED_NUMBERS; j += 3) {
+    while (1)
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = i; j < EXAMPLE_LED_NUMBERS; j += 3)
+            {
                 // Build RGB pixels
                 hue = j * 360 / EXAMPLE_LED_NUMBERS + start_rgb;
                 led_strip_hsv2rgb(hue, 100, 100, &red, &green, &blue);
@@ -121,12 +124,15 @@ static void LED_task(void* arg)
             ESP_ERROR_CHECK(rmt_transmit(led_chan, led_encoder, led_strip_pixels, sizeof(led_strip_pixels), &tx_config));
             ESP_ERROR_CHECK(rmt_tx_wait_all_done(led_chan, portMAX_DELAY));
             vTaskDelay(pdMS_TO_TICKS(EXAMPLE_CHASE_SPEED_MS));
+
+#if LED_DARK
             memset(led_strip_pixels, 0, sizeof(led_strip_pixels));
             ESP_ERROR_CHECK(rmt_transmit(led_chan, led_encoder, led_strip_pixels, sizeof(led_strip_pixels), &tx_config));
             ESP_ERROR_CHECK(rmt_tx_wait_all_done(led_chan, portMAX_DELAY));
             vTaskDelay(pdMS_TO_TICKS(EXAMPLE_CHASE_SPEED_MS));
+#endif
         }
-        start_rgb += 60;
+        start_rgb += 6;
     }
 }
 

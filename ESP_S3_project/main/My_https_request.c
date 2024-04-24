@@ -26,7 +26,6 @@
 #include "mbedtls/entropy.h"
 #include "mbedtls/ctr_drbg.h"
 
-
 #include "My_https_request.h"
 
 static const char *TAG = "My_https_client";
@@ -79,8 +78,10 @@ static void time_sync_notification_cb(struct timeval *tv)
 static void init_sntp()
 {
     ESP_LOGI(TAG, "initializing SNTP");
-    esp_sntp_config_t config = ESP_NETIF_SNTP_DEFAULT_CONFIG_MULTIPLE(2,
-                                                                      ESP_SNTP_SERVER_LIST("time.windows.com",
+    esp_sntp_config_t config = ESP_NETIF_SNTP_DEFAULT_CONFIG_MULTIPLE(4,
+                                                                      ESP_SNTP_SERVER_LIST("ntp1.aliyun.com",
+                                                                                           "ntp.ntsc.ac.cn",
+                                                                                           "cn.ntp.org.cn",
                                                                                            "pool.ntp.org"));
     config.sync_cb = time_sync_notification_cb; // Note: This is only needed if we want
     esp_netif_sntp_init(&config);
@@ -289,7 +290,7 @@ static void https_get_request(esp_tls_cfg_t cfg,
         }
     } while (written_bytes < strlen(REQUEST));
 
-    ESP_LOGI(TAG, "reading HTTP response...");// 目前只成功读HTTP1.1
+    ESP_LOGI(TAG, "reading HTTP response..."); // 目前只成功读HTTP1.1
     do
     {
         len = sizeof(buf) - 1;
@@ -399,8 +400,8 @@ void https_request_task(void *pvparameters)
     ESP_LOGI(TAG, "Minimum free heap size: %" PRIu32 " bytes",
              esp_get_minimum_free_heap_size());
     https_get_request_using_cacert_buf();
-    //https_get_request_using_global_ca_store();
-    //https_get_request_using_specified_ciphersuites();
+    // https_get_request_using_global_ca_store();
+    // https_get_request_using_specified_ciphersuites();
     ESP_LOGI(TAG, "finish https_request example");
     ESP_LOGI(TAG, "NVS re_err:%x, NVS status:%d", err_temp[0], err_temp[1]);
     vTaskDelete(NULL); // 删除任务
@@ -483,9 +484,9 @@ client (application data)                   <--------> server
         goto exit_4;
     }
 
-    mbedtls_ssl_conf_authmode(&conf, MBEDTLS_SSL_VERIFY_REQUIRED);  // 设置证书验证模式
-    mbedtls_ssl_conf_ca_chain(&conf, &cacert, NULL);    // 设置验证对等证书所需的数据
-    mbedtls_ssl_conf_rng(&conf, mbedtls_ctr_drbg_random, &ctr_drbg);    // 设置随机数生成器回调
+    mbedtls_ssl_conf_authmode(&conf, MBEDTLS_SSL_VERIFY_REQUIRED);   // 设置证书验证模式
+    mbedtls_ssl_conf_ca_chain(&conf, &cacert, NULL);                 // 设置验证对等证书所需的数据
+    mbedtls_ssl_conf_rng(&conf, mbedtls_ctr_drbg_random, &ctr_drbg); // 设置随机数生成器回调
 
 #if CONFIG_MBEDTLS_DEBUG
     mbedtls_esp_enable_debug_log(&conf, CONFIG_MBEDTLS_DEBUG_LEVEL);

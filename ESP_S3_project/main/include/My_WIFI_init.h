@@ -168,6 +168,7 @@ typedef enum
 
 
 void wifi_init_sta(void);
+void My_wifi_stop(void);
 #if MY_ESP_NOW
 int espnow_data_parse(uint8_t *data,
                       uint16_t data_len,

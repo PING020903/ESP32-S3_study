@@ -1,0 +1,127 @@
+[0/1] Re-running CMake...
+-- ccache will be used for faster recompilation
+-- Building ESP-IDF components for target esp32s3
+Processing 3 dependencies:
+[1/3] espressif/esp_tinyusb (1.4.4)
+[2/3] espressif/tinyusb (0.15.0~8)
+[3/3] idf (5.1.2)
+-- Project sdkconfig file C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/sdkconfig
+Loading defaults file C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/sdkconfig.defaults...
+-- App "ESP_S3_project" version: 30f2115-dirty
+-- Adding linker script C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/ld/esp32s3/sections.ld.in
+-- Adding linker script D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_rom/esp32s3/ld/esp32s3.rom.ld
+-- Adding linker script D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_rom/esp32s3/ld/esp32s3.rom.api.ld
+-- Adding linker script D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_rom/esp32s3/ld/esp32s3.rom.libgcc.ld
+-- Adding linker script D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_rom/esp32s3/ld/esp32s3.rom.newlib.ld
+-- Adding linker script D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_rom/esp32s3/ld/esp32s3.rom.version.ld
+-- Adding linker script D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/soc/esp32s3/ld/esp32s3.peripherals.ld
+-- Components: app_trace app_update bootloader bootloader_support bt cmock console cxx driver efuse esp-tls esp_adc esp_app_format esp_coex esp_common esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_mm esp_netif esp_netif_stack esp_partition esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_system esp_timer esp_wifi espcoredump espressif__esp_tinyusb espressif__tinyusb esptool_py fatfs freertos hal heap http_parser idf_test ieee802154 json log lwip main mbedtls mqtt newlib nvs_flash openthread partition_table perfmon protobuf-c protocomm pthread sdmmc soc spi_flash spiffs tcp_transport touch_element ulp unity usb vfs wear_levelling wifi_provisioning wpa_supplicant xtensa
+-- Component paths: D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/app_trace D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/app_update D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/bootloader D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/bootloader_support D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/bt D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/cmock D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/console D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/cxx D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/driver D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/efuse D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp-tls D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_adc D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_app_format D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_coex D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_common D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_eth D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_event D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_gdbstub D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_hid D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_http_client D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_http_server D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_https_ota D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_https_server D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_hw_support D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_lcd D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_local_ctrl D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_mm D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_netif D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_netif_stack D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_partition D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_phy D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_pm D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_psram D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_ringbuf D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_rom D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_timer D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_wifi D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/espcoredump C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/managed_components/espressif__esp_tinyusb C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/managed_components/espressif__tinyusb D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esptool_py D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/fatfs D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/hal D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/heap D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/http_parser D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/idf_test D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/ieee802154 D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/json D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/log D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/lwip C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/mbedtls D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/mqtt D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/newlib D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/nvs_flash D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/openthread D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/partition_table D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/perfmon D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/protobuf-c D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/protocomm D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/pthread D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/sdmmc D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/soc D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/spi_flash D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/spiffs D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/tcp_transport D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/touch_element D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/ulp D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/unity D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/usb D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/vfs D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/wear_levelling D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/wifi_provisioning D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/wpa_supplicant D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/xtensa
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build
+[1/14] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D C:\Users\12566\Desktop\get-started\espS3_project\ESP_S3_project\build\bootloader\esp-idf\esptool_py && D:\ESP_MCU_tool\ESP_IDF_TOOLS\Espressif\python_env\idf5.1_py3.11_env\Scripts\python.exe D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/bootloader/bootloader.bin"
+Bootloader binary size 0x51c0 bytes. 0x2e40 bytes (36%) free.
+[2/12] Building C object esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.obj
+[3/12] Linking C static library esp-idf\esp_app_format\libesp_app_format.a
+[4/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/My_mcu_sleep_init.c.obj
+[5/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/app_main.c.obj
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c: In function 'My_main_task':
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:63:20: warning: unused variable 'ret' [-Wunused-variable]
+   63 |         BaseType_t ret = xQueueReceive(task_evt_queue, &task_mark, portMAX_DELAY);
+      |                    ^~~
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:56:13: warning: variable 'start_time' set but not used [-Wunused-but-set-variable]
+   56 |     int64_t start_time;
+      |             ^~~~~~~~~~
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:54:16: warning: variable 'count' set but not used [-Wunused-but-set-variable]
+   54 |     TickType_t count;
+      |                ^~~~~
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:52:15: warning: unused variable 'tusb_ret' [-Wunused-variable]
+   52 |     esp_err_t tusb_ret;
+      |               ^~~~~~~~
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:130:13: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  130 |             only_https_request_init();
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:133:9: note: here
+  133 |         case MCU_DEEP_SLEEP:
+      |         ^~~~
+[6/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/My_WIFI_init.c.obj
+[7/12] Linking C static library esp-idf\main\libmain.a
+[8/12] Generating ld/sections.ld
+[9/12] Linking CXX executable ESP_S3_project.elf
+[10/12] Generating binary image from built executable
+esptool.py v4.7.0
+Creating esp32s3 image...
+Merged 3 ELF sections
+Successfully created esp32s3 image.
+Generated C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/ESP_S3_project.bin
+[11/12] cmd.exe /C "cd /D C:\Users\12566\Desktop\get-started\espS3_project\ESP_S3_project\build\esp-idf\esptool_py && D:\ESP_MCU_tool\ESP_IDF_TOOLS\Espressif\python_env\idf5.1_py3.11_env\Scripts\python.exe D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/partition_table/partition-table.bin C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/ESP_S3_project.bin"
+ESP_S3_project.bin binary size 0xe0660 bytes. Smallest app partition is 0x100000 bytes. 0x1f9a0 bytes (12%) free.
+[11/12] cmd.exe /C "cd /D D:\ESP_MCU_tool\ESP_IDF_TOOLS\Espressif\frameworks\esp-idf-v5.1.2\components\esptool_py && D:\ESP_MCU_tool\ESP_IDF_TOOLS\Espressif\tools\cmake\3.24.0\bin\cmake.exe -D IDF_PATH=D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2 -D SERIAL_TOOL=D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/python_env/idf5.1_py3.11_env/Scripts/python.exe;;D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esptool_py/esptool/esptool.py;--chip;esp32s3 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build -P D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esptool_py/run_serial_tool.cmake"
+esptool.py --chip esp32s3 -p COM5 -b 115200 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 8MB 0x0 bootloader/bootloader.bin 0x10000 ESP_S3_project.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.7.0
+Serial port COM5
+Connecting...
+Chip is ESP32-S3 (QFN56) (revision v0.2)
+Features: WiFi, BLE, Embedded PSRAM 8MB (AP_3v3)
+Crystal is 40MHz
+MAC: dc:da:0c:4b:32:28
+Uploading stub...
+Running stub...
+Stub running...
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x000f0fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 20928 bytes to 13294...
+Writing at 0x00000000... (100 %)
+Wrote 20928 bytes (13294 compressed) at 0x00000000 in 0.4 seconds (effective 401.8 kbit/s)...
+Hash of data verified.
+Compressed 919136 bytes to 582816...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001c022... (5 %)
+Writing at 0x0002772c... (8 %)
+Writing at 0x0002c567... (11 %)
+Writing at 0x00034280... (13 %)
+Writing at 0x0003ef40... (16 %)
+Writing at 0x00044f04... (19 %)
+Writing at 0x0004b2ed... (22 %)
+Writing at 0x00051032... (25 %)
+Writing at 0x000575da... (27 %)
+Writing at 0x0005d3f1... (30 %)
+Writing at 0x000629a3... (33 %)
+Writing at 0x000682a5... (36 %)
+Writing at 0x0006db38... (38 %)
+Writing at 0x0007342c... (41 %)
+Writing at 0x00078dda... (44 %)
+Writing at 0x0007e6e1... (47 %)
+Writing at 0x00084c80... (50 %)
+Writing at 0x0008a626... (52 %)
+Writing at 0x000900d3... (55 %)
+Writing at 0x000952cc... (58 %)
+Writing at 0x0009a2b2... (61 %)
+Writing at 0x0009f3ac... (63 %)
+Writing at 0x000a444d... (66 %)
+Writing at 0x000a98d1... (69 %)
+Writing at 0x000aebcf... (72 %)
+Writing at 0x000b4871... (75 %)
+Writing at 0x000b9ef8... (77 %)
+Writing at 0x000bfa1e... (80 %)
+Writing at 0x000c5356... (83 %)
+Writing at 0x000ca975... (86 %)
+Writing at 0x000d368f... (88 %)
+Writing at 0x000dbb9f... (91 %)
+Writing at 0x000e14ce... (94 %)
+Writing at 0x000e75fd... (97 %)
+Writing at 0x000ecf3b... (100 %)
+Wrote 919136 bytes (582816 compressed) at 0x00010000 in 6.3 seconds (effective 1162.1 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 351.1 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

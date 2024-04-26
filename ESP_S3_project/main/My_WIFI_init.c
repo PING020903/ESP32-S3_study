@@ -22,7 +22,6 @@
 #include "esp_netif_sntp.h"
 #include "nvs_flash.h" // nvs相关头文件
 
-
 #include <wifi_provisioning/manager.h>
 
 #include <protocomm.h>
@@ -100,12 +99,38 @@ static void WIFI_STA_event_handler(void *arg,
         break;
         case WIFI_EVENT_STA_DISCONNECTED:
         {
-            ESP_LOGI(TAG, "WIFI_EVENT_STA_DISCONNECTED");
+            ESP_LOGW(TAG, "WIFI_EVENT_STA_DISCONNECTED");
+            ESP_LOGI(TAG, "retry to connect to the AP");
             if (s_retry_num < EXAMPLE_ESP_MAXIMUM_RETRY) // 尝试重连
             {
-                ESP_ERROR_CHECK(esp_wifi_connect());
+                esp_err_t ret = esp_wifi_connect();
+                switch (ret)
+                {
+                case ESP_OK:
+                    ESP_LOGI(TAG, "retry connect succeed !");
+                    break;
+
+                case ESP_ERR_WIFI_NOT_INIT:
+                    ESP_LOGW(TAG, "WIFI NOT INIT...");
+                    break;
+
+                case ESP_ERR_WIFI_NOT_STARTED:
+                    ESP_LOGW(TAG, "WIFI NOT STARTED...");
+                    wifi_init_sta();
+                    break;
+
+                case ESP_ERR_WIFI_CONN:
+                    ESP_LOGW(TAG, "WIFI CONN ERROR...");
+                    break;
+
+                case ESP_ERR_WIFI_SSID:
+                    ESP_LOGW(TAG, "WIFI SSID ERROR...");
+                    break;
+
+                default:
+                    break;
+                }
                 s_retry_num++;
-                ESP_LOGI(TAG, "retry to connect to the AP");
             }
             else
             {
@@ -158,11 +183,6 @@ static void WIFI_STA_event_handler(void *arg,
     }
     return;
 }
-
-
-
-
-
 
 #if MY_ESP_NOW
 /* espnow 接收回调函数 */
@@ -417,7 +437,6 @@ static esp_err_t wired_recv_callback(void *buffer,
 }
 #endif
 
-
 /*
     初始化 wifi
     ps: 连接WiFi并非联网
@@ -435,8 +454,38 @@ void wifi_init_sta(void)
     }
     ESP_ERROR_CHECK(ret);
 
-    ESP_ERROR_CHECK(esp_netif_init());                   // 初始化网络层
-    ESP_ERROR_CHECK(esp_event_loop_create_default());    // 创建默认事件循环
+    ESP_ERROR_CHECK(esp_netif_init());                     // 初始化网络层
+    esp_err_t event_ret = esp_event_loop_create_default(); // 创建默认事件循环
+event_loop_check:
+    switch (event_ret)
+    {
+    case ESP_OK:
+        break;
+
+    case ESP_ERR_INVALID_STATE:
+        ESP_LOGW(TAG, "Default event loop has already been created, will recreate event loop");
+        ESP_ERROR_CHECK(esp_event_loop_delete_default());
+        event_ret = esp_event_loop_create_default();
+        goto event_loop_check;
+
+    case ESP_ERR_NO_MEM:
+        ESP_LOGE(TAG, "no memory create event loop! ! !\n deinit netif && deinit NVS");
+        ESP_ERROR_CHECK(esp_netif_deinit());
+        ESP_ERROR_CHECK(nvs_flash_deinit());
+        return;
+
+    case ESP_FAIL:
+        ESP_LOGE(TAG, "unknown error create event loop! ! !\n deinit netif && deinit NVS");
+        ESP_ERROR_CHECK(esp_netif_deinit());
+        ESP_ERROR_CHECK(nvs_flash_deinit());
+        return;
+
+    default:
+        ESP_LOGE(TAG, "unknown error create event loop! ! !\n deinit netif && deinit NVS");
+        ESP_ERROR_CHECK(esp_netif_deinit());
+        ESP_ERROR_CHECK(nvs_flash_deinit());
+        return;
+    }
     esp_netif_sta = esp_netif_create_default_wifi_sta(); // 创建 wifi STA 默认的网络接口
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT(); // 初始化配置, 使用宏将WiFi硬件配置初始化
     ESP_ERROR_CHECK(esp_wifi_init(&cfg));                // 初始化 wifi
@@ -521,6 +570,20 @@ void wifi_init_sta(void)
         ESP_LOGE(TAG, "UNEXPECTED EVENT ! ! !");
     }
 
+    return;
+}
+
+/* wifi 停止函数, 停止后会释放wifi资源, 需重新初始化 */
+void My_wifi_stop(void)
+{
+    esp_err_t err = esp_wifi_stop();
+    if (err != ESP_OK)
+    {
+        ESP_LOGE(TAG, "ESP WIFI not initialized...");
+        return;
+    }
+    else
+        ESP_LOGI(TAG, "ESP WIFI stopped...");
     return;
 }
 

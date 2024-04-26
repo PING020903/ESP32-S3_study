@@ -138,6 +138,8 @@ void My_main_task(void *arg)
             /* 尝试停止其他定时器导致深度休眠复苏 */
             My_timer_stop(MAIN_TASK);
             My_timer_stop(MY_HTTPS_REQUEST_TASK);
+
+            My_wifi_stop();
 #endif
             esp_deep_sleep_start();
 #endif

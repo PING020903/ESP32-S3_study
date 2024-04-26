@@ -7,7 +7,7 @@
 void sleep_init(void)
 {
     esp_sleep_pd_config(ESP_PD_DOMAIN_RTC_PERIPH,
-                        ESP_PD_OPTION_ON);
+                        ESP_PD_OPTION_AUTO);
     esp_sleep_enable_ext1_wakeup(GPIO_NUM_5,
                                  ESP_EXT1_WAKEUP_ANY_HIGH);
 #if !SOC_PM_SUPPORT_RTC_PERIPH_PD   // 不支持RTC控制器

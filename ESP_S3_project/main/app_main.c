@@ -16,6 +16,7 @@
 #include "esp_log.h"
 #include "esp_vfs.h"
 #include "esp_timer.h"
+#include "esp_sleep.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
@@ -27,10 +28,14 @@
 #include "My_WIFI_init.h"
 #include "My_https_request.h"
 #include "My_LED_init.h"
+#include "My_mcu_sleep_init.h"
 #include "sdkconfig.h"
 
 #define USER_USB_INIT 1
+#define ENABLE_D_SLEEP 1
 #define TEST 1
+#define UART_USB_SWITCH 0
+#define ENABLE_USB_BUT_USE_UART_LOG 1
 
 // 任务队列(指针)
 extern QueueSetHandle_t task_evt_queue;
@@ -61,7 +66,7 @@ void My_main_task(void *arg)
         {
         case MAIN_TASK:
         {
-            ESP_ERROR_CHECK(My_tusb_streams_change(output)); // 更改控制台USB串口控制权
+
             start_time = esp_timer_get_time();
 
             ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_48, led_level));
@@ -71,12 +76,27 @@ void My_main_task(void *arg)
 
             if (P_conut % 20 == 0) // 若1s打印一次, 定时器1ms发一次队列指令, 1000/1 = 1000
             {
+#if ENABLE_USB_BUT_USE_UART_LOG
+                while (output < 2)
+                {
+                    ESP_ERROR_CHECK(My_tusb_streams_change(output));
+                    if (output == 0)
+                        break;
+                    if (output == 1)
+                        output += 2;
+                }
+                if (output < 2)
+                    output++;
+#endif
+
                 if (gpio_level)
                     ESP_LOGI(TAG, "GPIO 5 is high");
                 else
                     ESP_LOGI(TAG, "GPIO 5 is low");
                 ESP_LOGI(TAG, "Minimum free heap size: %" PRIu32 " bytes", esp_get_minimum_free_heap_size());
                 ESP_LOGI(TAG, "Largest free block size: %d", heap_caps_get_largest_free_block(MALLOC_CAP_DEFAULT));
+                esp_sleep_wakeup_cause_t info = esp_sleep_get_wakeup_cause();
+                ESP_LOGI(TAG, "Wakeup reason: %d", info);
 #if USER_USB_INIT
 
                 // tusb_ret =  esp_tusb_init_console(TINYUSB_CDC_ACM_0); // log to usb
@@ -99,8 +119,6 @@ void My_main_task(void *arg)
 #if USER_USB_INIT
                 }
 #endif
-
-                output = !output; // 0: USB, 1: UART
             }
             else
                 vTaskDelay(1);
@@ -109,9 +127,30 @@ void My_main_task(void *arg)
         case MY_HTTPS_REQUEST_TASK:
         {
 #if HTTPS_REQUEST_TIMER
-            https_request_init();
+            only_https_request_init();
 #endif
         }
+        case MCU_DEEP_SLEEP:
+        {
+#if ENABLE_D_SLEEP
+            ESP_LOGW(TAG, "mcu will deep sleep...");
+#if TEST
+            /* 尝试停止其他定时器导致深度休眠复苏 */
+            My_timer_stop(MAIN_TASK);
+            My_timer_stop(MY_HTTPS_REQUEST_TASK);
+#endif
+            esp_deep_sleep_start();
+#endif
+        }
+        break;
+        case CHANGE_LOG_PORT:
+        {
+
+#if UART_USB_SWITCH
+            output = !output; // 0: USB, 1: UART
+#endif
+        }
+        break;
 
         default:
         {
@@ -146,13 +185,18 @@ void app_main(void)
     ESP_LOGI(TAG, "heap: %d", heap_caps_get_largest_free_block(MALLOC_CAP_DEFAULT));
     ESP_LOGI(TAG, "Minimum free heap size: %" PRIu32 " bytes\n", esp_get_minimum_free_heap_size());
 
+    sleep_init();
     My_gpio_init();
-    My_timer_init();
     My_LED_init();
     wifi_init_sta();
     https_request_init();
+
 #if USER_USB_INIT
     My_usb_device_init();
 #endif
+    My_timer_init();
     My_task_init();
+#if ENABLE_D_SLEEP
+
+#endif
 }

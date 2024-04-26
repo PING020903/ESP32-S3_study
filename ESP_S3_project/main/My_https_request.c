@@ -8,6 +8,7 @@
 #include "freertos/event_groups.h"
 
 #include "esp_system.h"
+#include "esp_check.h"
 #include "esp_timer.h"
 #include "esp_log.h"
 #include "esp_tls.h" // https相关头文件
@@ -40,10 +41,17 @@ extern const uint8_t local_server_cert_pem_start[] asm("_binary_local_server_cer
 extern const uint8_t local_server_cert_pem_end[] asm("_binary_local_server_cert_pem_end");
 /**************************************************************/
 
+#if HTTP_TEST
 static const char HOWSMYSSL_REQUEST[] = "GET " WEB_URL " HTTP/1.1\r\n"
                                         "Host: " WEB_SERVER "\r\n"
                                         "User-Agent: esp-idf/1.0 esp32\r\n"
                                         "\r\n";
+#else
+static const char HOWSMYSSL_REQUEST[] = "GET " WEB_URL " HTTP/2.0\r\n"
+                                        "Host: " WEB_SERVER "\r\n"
+                                        "?spm_id_from=444.42.0.0"
+                                        "\r\n";
+#endif
 
 /* 打印SNTP服务器列表 */
 static void print_servers(void)
@@ -94,9 +102,8 @@ static esp_err_t obtain_time(void)
 {
     // wait for time to be set
     int retry = 0;
-    const int retry_count = 20;
+    const int retry_count = 10;
 
-    /* maybe waitting 14s */
     while (esp_netif_sntp_sync_wait(pdMS_TO_TICKS(1000)) != ESP_OK &&
            ++retry < retry_count)
     {
@@ -290,7 +297,7 @@ static void https_get_request(esp_tls_cfg_t cfg,
         }
     } while (written_bytes < strlen(REQUEST));
 
-    ESP_LOGI(TAG, "reading HTTP response..."); // 目前只成功读HTTP1.1
+    ESP_LOGI(TAG, "reading HTTP response..."); // 目前只成功读HTTP1.x
     do
     {
         len = sizeof(buf) - 1;
@@ -320,6 +327,8 @@ static void https_get_request(esp_tls_cfg_t cfg,
         for (size_t i = 0; i < len; i++)
         {
             putchar(buf[i]);
+            if (buf[i] == ',')
+                putchar('\n');
         }
         putchar('\n'); // JSON output doesn't have a newline at end
     } while (1);
@@ -643,15 +652,44 @@ client (application data)                   <--------> server
 }
 #endif
 
-/* https请求任务初始化 */
+/* https请求任务初始化(进行SNTP时间更新) */
 void https_request_init(void)
 {
-    if (esp_reset_reason() == ESP_RST_POWERON)
+    esp_err_t ret;
+    unsigned char retry_conut = 0,
+                  retry_conut_max = 3;
+err_sntp:
+    if (esp_reset_reason() == ESP_RST_POWERON && retry_conut < retry_conut_max)
     {
+        retry_conut++;
         ESP_LOGI(TAG, "updating time from NVS");
-        ESP_ERROR_CHECK(update_time_from_nvs());
+        ret = update_time_from_nvs();
+        ESP_GOTO_ON_ERROR(ret, err_sntp, TAG, "update_time_from_nvs failed");
         // update_time_from_nvs();
     }
+#if HTTPS_REQUEST_TASK
+    xTaskCreatePinnedToCore(https_request_task,
+                            "https_request_task",
+                            8192,
+                            NULL,
+                            5,
+                            NULL,
+                            1);
+#endif
+#if HTTPS_SSL_TLS_TASK
+    xTaskCreatePinnedToCore(https_get_task_2,
+                            "https_get_task_2",
+                            8192,
+                            NULL,
+                            5,
+                            NULL,
+                            1);
+#endif
+}
+
+// https请求任务初始化(不进行SNTP时间更新)
+void only_https_request_init(void)
+{
 #if HTTPS_REQUEST_TASK
     xTaskCreatePinnedToCore(https_request_task,
                             "https_request_task",

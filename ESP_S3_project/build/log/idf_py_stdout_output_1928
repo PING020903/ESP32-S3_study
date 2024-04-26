@@ -1,0 +1,1825 @@
+ESP-ROM:esp32s3-20210327
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3818,len:0x1758
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xc00
+load:0x403cc700,len:0x2e04
+entry 0x403c9908
+[0;32mI (27) boot: ESP-IDF v5.1.2-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Apr 24 2024 23:21:13[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (39) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 8MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (54) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (65) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (72) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (80) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c0a0020 size=286d4h (165588) map[0m
+[0;32mI (129) esp_image: segment 1: paddr=000386fc vaddr=3fc98c00 size=046ech ( 18156) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=0003cdf0 vaddr=40374000 size=03228h ( 12840) load[0m
+[0;32mI (138) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=9ec3ch (650300) map[0m
+[0;32mI (263) esp_image: segment 4: paddr=000dec64 vaddr=40377228 size=118f4h ( 71924) load[0m
+[0;32mI (284) esp_image: segment 5: paddr=000f0560 vaddr=600fe000 size=00070h (   112) load[0m
+[0;32mI (293) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (293) boot: Disabling RNG early entropy source...[0m
+[0;32mI (304) cpu_start: Multicore app[0m
+[0;32mI (305) cpu_start: Pro cpu up.[0m
+[0;32mI (305) cpu_start: Starting app cpu, entry point is 0x403756bc[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (323) cpu_start: Pro cpu start user code[0m
+[0;32mI (323) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (323) cpu_start: Application information:[0m
+[0;32mI (326) cpu_start: Project name:     ESP_S3_project[0m
+[0;32mI (332) cpu_start: App version:      4d9ac2e-dirty[0m
+[0;32mI (337) cpu_start: Compile time:     Apr 25 2024 01:26:08[0m
+[0;32mI (343) cpu_start: ELF file SHA256:  e7f599614ac81530...[0m
+[0;32mI (349) cpu_start: ESP-IDF:          v5.1.2-dirty[0m
+[0;32mI (355) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (359) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (364) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (369) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (376) heap_init: At 3FCA1C98 len 00047A78 (286 KiB): DRAM[0m
+[0;32mI (382) heap_init: At 3FCE9710 len 00005724 (21 KiB): STACK/DRAM[0m
+[0;32mI (389) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (395) heap_init: At 600FE070 len 00001F78 (7 KiB): RTCRAM[0m
+[0;32mI (402) spi_flash: detected chip: gd[0m
+[0;32mI (406) spi_flash: flash io: dio[0m
+[0;32mI (410) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (416) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (424) app_start: Starting scheduler on CPU0[0m
+[0;32mI (428) app_start: Starting scheduler on CPU1[0m
+[0;32mI (428) main_task: Started on CPU0[0m
+[0;32mI (438) main_task: Calling app_main()[0m
+[0;32mI (438) USER_app: ESP-IDF version: v5.1.2-dirty[0m
+[0;32mI (448) USER_app: heap: 270336[0m
+[0;32mI (448) USER_app: Minimum free heap size: 334400 bytes
+[0m
+[0;32mI (458) gpio: GPIO[5]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:2 [0m
+[0;32mI (468) USER_LED: Start LED rainbow chase[0m
+[0;32mI (468) USER_LED: Create RMT TX channel[0m
+[0;32mI (478) gpio: GPIO[48]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (488) USER_LED: Install led strip encoder[0m
+[0;32mI (488) USER_LED: Enable RMT TX channel[0m
+[0;32mI (498) USER_LED: Start LED rainbow chase[0m
+[0;32mI (498) pp: pp rom version: e7ae62f[0m
+[0;32mI (498) net80211: net80211 rom version: e7ae62f[0m
+I (518) wifi:wifi driver task: 3fcadf20, prio:23, stack:6656, core=0
+I (528) wifi:wifi firmware version: 91b9630
+I (528) wifi:wifi certification version: v7.0
+I (528) wifi:config NVS flash: enabled
+I (528) wifi:config nano formating: disabled
+I (528) wifi:Init data frame dynamic rx buffer num: 32
+I (538) wifi:Init static rx mgmt buffer num: 5
+I (538) wifi:Init management short buffer num: 32
+I (548) wifi:Init dynamic tx buffer num: 32
+I (548) wifi:Init static tx FG buffer num: 2
+I (548) wifi:Init static rx buffer size: 1600
+I (558) wifi:Init static rx buffer num: 10
+I (558) wifi:Init dynamic rx buffer num: 32
+[0;32mI (568) wifi_init: rx ba win: 6[0m
+[0;32mI (568) wifi_init: tcpip mbox: 32[0m
+[0;32mI (568) wifi_init: udp mbox: 6[0m
+[0;32mI (578) wifi_init: tcp mbox: 6[0m
+[0;32mI (578) wifi_init: tcp tx win: 5744[0m
+[0;32mI (588) wifi_init: tcp rx win: 5744[0m
+[0;32mI (588) wifi_init: tcp mss: 1440[0m
+[0;32mI (588) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (598) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (608) phy_init: phy_version 620,ec7ec30,Sep  5 2023,13:49:13[0m
+I (648) wifi:mode : sta (dc:da:0c:4b:32:28)
+I (648) wifi:enable tsf
+[0;32mI (648) My_wifi_STA: WIFI_EVENT_STA_START[0m
+[0;32mI (3158) My_wifi_STA: wifi scan done[0m
+I (3158) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1
+I (3168) wifi:state: init -> auth (b0)
+I (3188) wifi:state: auth -> assoc (0)
+I (3198) wifi:state: assoc -> run (10)
+I (3198) wifi:connected with Ping, aid = 3, channel 11, BW20, bssid = d4:da:21:b7:91:24
+I (3198) wifi:security: Open Auth, phy: bgn, rssi: -47
+I (3208) wifi:pm start, type: 1
+
+I (3208) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000
+[0;32mI (3218) My_wifi_STA: WIFI_EVENT_STA_CONNECTED ! ! ![0m
+I (3218) wifi:<ba-add>idx:0 (ifx:0, d4:da:21:b7:91:24), tid:6, ssn:0, winSize:64
+I (3288) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (4218) esp_netif_handlers: sta ip: 192.168.31.196, mask: 255.255.255.0, gw: 192.168.31.1[0m
+[0;32mI (4218) My_wifi_STA: got ip:192.168.31.196[0m
+[0;32mI (4218) My_wifi_STA: connected to ap SSID:Ping password:, bitmap:7[0m
+[0;32mI (4228) My_https_client: updating time from NVS[0m
+[0;32mI (4228) My_https_client: initializing SNTP[0m
+[0;32mI (4238) My_https_client: List of configured NTP servers:[0m
+[0;32mI (4238) My_https_client: server 0: ntp1.aliyun.com[0m
+[0;32mI (4248) My_https_client: server 1: ntp.ntsc.ac.cn[0m
+[0;32mI (4248) My_https_client: server 2: cn.ntp.org.cn[0m
+[0;32mI (4258) My_https_client: server 3: pool.ntp.org[0m
+[0;32mI (5258) My_https_client: waitting for system time to be set...(1/10)[0m
+I (5448) wifi:<ba-add>idx:1 (ifx:0, d4:da:21:b7:91:24), tid:0, ssn:0, winSize:64
+[0;32mI (6258) My_https_client: waitting for system time to be set...(2/10)[0m
+[0;32mI (7258) My_https_client: waitting for system time to be set...(3/10)[0m
+[0;32mI (8258) My_https_client: waitting for system time to be set...(4/10)[0m
+[0;32mI (9258) My_https_client: waitting for system time to be set...(5/10)[0m
+[0;32mI (10258) My_https_client: waitting for system time to be set...(6/10)[0m
+[0;32mI (11258) My_https_client: waitting for system time to be set...(7/10)[0m
+[0;32mI (12258) My_https_client: waitting for system time to be set...(8/10)[0m
+[0;32mI (13258) My_https_client: waitting for system time to be set...(9/10)[0m
+[0;31mE (14258) My_https_client: error updating time in NVS[0m
+[0;31mE (14258) My_https_client: error syncing time from SNTP server[0m
+[0;31mE (14258) My_https_client: https_request_init(667): update_time_from_nvs failed[0m
+[0;32mI (14258) My_https_client: updating time from NVS[0m
+[0;32mI (14268) My_https_client: initializing SNTP[0m
+[0;32mI (14278) My_https_client: List of configured NTP servers:[0m
+[0;32mI (14278) My_https_client: server 0: ntp1.aliyun.com[0m
+[0;32mI (14288) My_https_client: server 1: ntp.ntsc.ac.cn[0m
+[0;32mI (14288) My_https_client: server 2: cn.ntp.org.cn[0m
+[0;32mI (14298) My_https_client: server 3: pool.ntp.org[0m
+[0;32mI (15298) My_https_client: waitting for system time to be set...(1/10)[0m
+[0;32mI (16298) My_https_client: waitting for system time to be set...(2/10)[0m
+[0;32mI (17298) My_https_client: waitting for system time to be set...(3/10)[0m
+[0;32mI (18118) My_https_client: Notification of a time synchronization event[0m
+[0;32mI (18118) My_https_client: SNTP sync OK[0m
+[0;32mI (18128) My_https_client: time updated in NVS[0m
+[0;32mI (18128) My_https_client: time: 1714126867[0m
+[0;32mI (18128) My_usb_device: USB initialization[0m
+[0;32mI (18128) My_https_client: start https_request example[0m
+[0;33mW (18138) tusb_desc: No Device descriptor provided, using default.[0m
+[0;32mI (18138) My_https_client: Minimum free heap size: 267696 bytes[0m
+[0;33mW (18148) tusb_desc: No FullSpeed configuration descriptor provided, using default.[0m
+[0;32mI (18158) My_https_client: https_request using cacert_buf[0m
+[0;33mW (18168) tusb_desc: No String descriptors provided, using default.[0m
+[0;32mI (18178) tusb_desc: 
+┌─────────────────────────────────┐
+│  USB Device Descriptor Summary  │
+├───────────────────┬─────────────┤
+│bDeviceClass       │ 239         │
+├───────────────────┼─────────────┤
+│bDeviceSubClass    │ 2           │
+├───────────────────┼─────────────┤
+│bDeviceProtocol    │ 1           │
+├───────────────────┼─────────────┤
+│bMaxPacketSize0    │ 64          │
+├───────────────────┼─────────────┤
+│idVendor           │ 0x303a      │
+├───────────────────┼─────────────┤
+│idProduct          │ 0x4001      │
+├───────────────────┼─────────────┤
+│bcdDevice          │ 0x100       │
+├───────────────────┼─────────────┤
+│iManufacturer      │ 0x1         │
+├───────────────────┼─────────────┤
+│iProduct           │ 0x2         │
+├───────────────────┼─────────────┤
+│iSerialNumber      │ 0x3         │
+├───────────────────┼─────────────┤
+│bNumConfigurations │ 0x1         │
+└───────────────────┴─────────────┘[0m
+[0;32mI (18348) TinyUSB: TinyUSB Driver installed[0m
+[0;32mI (18348) My_usb_device: USB initialization DONE[0m
+Guru Meditation Error: Core  1 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  1 register dump:
+PC      : 0x42089134  PS      : 0x00060130  A0      : 0x8208935a  A1      : 0x3fcb9c30  
+A2      : 0x3fcb9ee0  A3      : 0x3c0a85ec  A4      : 0x3c0af84c  A5      : 0x3c0c3914  
+A6      : 0x00000000  A7      : 0x00000001  A8      : 0x82089134  A9      : 0x3fcb9c10  
+A10     : 0x00000000  A11     : 0x3fcb9c30  A12     : 0x00060120  A13     : 0x3fca66d0  
+A14     : 0x00060023  A15     : 0x00000003  SAR     : 0x0000001b  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00000064  LBEG    : 0x40056f5c  LEND    : 0x40056f72  LCOUNT  : 0xffffffff  
+
+
+Backtrace: 0x42089131:0x3fcb9c30 0x42089357:0x3fcb9c70 0x4200c787:0x3fcb9c90 0x4200c8a2:0x3fcb9cb0 0x4200b275:0x3fcb9ce0 0x40380811:0x3fcb9d10
+
+
+
+
+ELF file SHA256: e7f599614ac81530
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x3 (RTC_SW_SYS_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40380f2f
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3818,len:0x1758
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xc00
+load:0x403cc700,len:0x2e04
+entry 0x403c9908
+[0;32mI (31) boot: ESP-IDF v5.1.2-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Apr 24 2024 23:21:13[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v0.2[0m
+[0;32mI (39) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (43) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32s3: SPI Flash Size : 8MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3c0a0020 size=286d4h (165588) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=000386fc vaddr=3fc98c00 size=046ech ( 18156) load[0m
+[0;32mI (138) esp_image: segment 2: paddr=0003cdf0 vaddr=40374000 size=03228h ( 12840) load[0m
+[0;32mI (143) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=9ec3ch (650300) map[0m
+[0;32mI (265) esp_image: segment 4: paddr=000dec64 vaddr=40377228 size=118f4h ( 71924) load[0m
+[0;32mI (281) esp_image: segment 5: paddr=000f0560 vaddr=600fe000 size=00070h (   112) load[0m
+[0;32mI (290) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (290) boot: Disabling RNG early entropy source...[0m
+[0;32mI (302) cpu_start: Multicore app[0m
+[0;32mI (302) cpu_start: Pro cpu up.[0m
+[0;32mI (302) cpu_start: Starting app cpu, entry point is 0x403756bc[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (320) cpu_start: Pro cpu start user code[0m
+[0;32mI (320) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (320) cpu_start: Application information:[0m
+[0;32mI (323) cpu_start: Project name:     ESP_S3_project[0m
+[0;32mI (329) cpu_start: App version:      4d9ac2e-dirty[0m
+[0;32mI (334) cpu_start: Compile time:     Apr 25 2024 01:26:08[0m
+[0;32mI (340) cpu_start: ELF file SHA256:  e7f599614ac81530...[0m
+[0;32mI (346) cpu_start: ESP-IDF:          v5.1.2-dirty[0m
+[0;32mI (352) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (356) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (361) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (366) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (373) heap_init: At 3FCA1C98 len 00047A78 (286 KiB): DRAM[0m
+[0;32mI (379) heap_init: At 3FCE9710 len 00005724 (21 KiB): STACK/DRAM[0m
+[0;32mI (386) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (392) heap_init: At 600FE070 len 00001F78 (7 KiB): RTCRAM[0m
+[0;32mI (399) spi_flash: detected chip: gd[0m
+[0;32mI (403) spi_flash: flash io: dio[0m
+[0;32mI (407) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (414) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (421) app_start: Starting scheduler on CPU0[0m
+[0;32mI (426) app_start: Starting scheduler on CPU1[0m
+[0;32mI (426) main_task: Started on CPU0[0m
+[0;32mI (436) main_task: Calling app_main()[0m
+[0;32mI (436) USER_app: ESP-IDF version: v5.1.2-dirty[0m
+[0;32mI (446) USER_app: heap: 270336[0m
+[0;32mI (446) USER_app: Minimum free heap size: 334400 bytes
+[0m
+[0;32mI (456) gpio: GPIO[5]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:2 [0m
+[0;32mI (466) USER_LED: Start LED rainbow chase[0m
+[0;32mI (466) USER_LED: Create RMT TX channel[0m
+[0;32mI (476) gpio: GPIO[48]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (486) USER_LED: Install led strip encoder[0m
+[0;32mI (486) USER_LED: Enable RMT TX channel[0m
+[0;32mI (496) USER_LED: Start LED rainbow chase[0m
+[0;32mI (496) pp: pp rom version: e7ae62f[0m
+[0;32mI (496) net80211: net80211 rom version: e7ae62f[0m
+I (516) wifi:wifi driver task: 3fcadf20, prio:23, stack:6656, core=0
+I (526) wifi:wifi firmware version: 91b9630
+I (526) wifi:wifi certification version: v7.0
+I (526) wifi:config NVS flash: enabled
+I (526) wifi:config nano formating: disabled
+I (526) wifi:Init data frame dynamic rx buffer num: 32
+I (536) wifi:Init static rx mgmt buffer num: 5
+I (536) wifi:Init management short buffer num: 32
+I (546) wifi:Init dynamic tx buffer num: 32
+I (546) wifi:Init static tx FG buffer num: 2
+I (546) wifi:Init static rx buffer size: 1600
+I (556) wifi:Init static rx buffer num: 10
+I (556) wifi:Init dynamic rx buffer num: 32
+[0;32mI (566) wifi_init: rx ba win: 6[0m
+[0;32mI (566) wifi_init: tcpip mbox: 32[0m
+[0;32mI (566) wifi_init: udp mbox: 6[0m
+[0;32mI (576) wifi_init: tcp mbox: 6[0m
+[0;32mI (576) wifi_init: tcp tx win: 5744[0m
+[0;32mI (586) wifi_init: tcp rx win: 5744[0m
+[0;32mI (586) wifi_init: tcp mss: 1440[0m
+[0;32mI (586) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (596) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (606) phy_init: phy_version 620,ec7ec30,Sep  5 2023,13:49:13[0m
+I (676) wifi:mode : sta (dc:da:0c:4b:32:28)
+I (676) wifi:enable tsf
+[0;32mI (676) My_wifi_STA: WIFI_EVENT_STA_START[0m
+[0;32mI (3176) My_wifi_STA: wifi scan done[0m
+I (3176) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1
+I (3176) wifi:state: init -> auth (b0)
+I (3186) wifi:state: auth -> assoc (0)
+I (3196) wifi:state: assoc -> run (10)
+I (3206) wifi:connected with Ping, aid = 3, channel 11, BW20, bssid = d4:da:21:b7:91:24
+I (3206) wifi:security: Open Auth, phy: bgn, rssi: -44
+I (3206) wifi:pm start, type: 1
+
+I (3206) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000
+[0;32mI (3216) My_wifi_STA: WIFI_EVENT_STA_CONNECTED ! ! ![0m
+I (3226) wifi:<ba-add>idx:0 (ifx:0, d4:da:21:b7:91:24), tid:6, ssn:0, winSize:64
+I (3246) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (4716) esp_netif_handlers: sta ip: 192.168.31.196, mask: 255.255.255.0, gw: 192.168.31.1[0m
+[0;32mI (4716) My_wifi_STA: got ip:192.168.31.196[0m
+[0;32mI (4716) My_wifi_STA: connected to ap SSID:Ping password:, bitmap:7[0m
+[0;32mI (4726) My_usb_device: USB initialization[0m
+[0;32mI (4726) My_https_client: start https_request example[0m
+[0;33mW (4726) tusb_desc: No Device descriptor provided, using default.[0m
+[0;32mI (4736) My_https_client: Minimum free heap size: 267912 bytes[0m
+[0;33mW (4736) tusb_desc: No FullSpeed configuration descriptor provided, using default.[0m
+[0;32mI (4746) My_https_client: https_request using cacert_buf[0m
+[0;33mW (4756) tusb_desc: No String descriptors provided, using default.[0m
+I (4766) wifi:<ba-add>idx:1 (ifx:0, d4:da:21:b7:91:24), tid:0, ssn:0, winSize:64
+[0;32mI (4776) tusb_desc: 
+┌─────────────────────────────────┐
+│  USB Device Descriptor Summary  │
+├───────────────────┬─────────────┤
+│bDeviceClass       │ 239         │
+├───────────────────┼─────────────┤
+│bDeviceSubClass    │ 2           │
+├───────────────────┼─────────────┤
+│bDeviceProtocol    │ 1           │
+├───────────────────┼─────────────┤
+│bMaxPacketSize0    │ 64          │
+├───────────────────┼─────────────┤
+│idVendor           │ 0x303a      │
+├───────────────────┼─────────────┤
+│idProduct          │ 0x4001      │
+├───────────────────┼─────────────┤
+│bcdDevice          │ 0x100       │
+├───────────────────┼─────────────┤
+│iManufacturer      │ 0x1         │
+├───────────────────┼─────────────┤
+│iProduct           │ 0x2         │
+├───────────────────┼─────────────┤
+│iSerialNumber      │ 0x3         │
+├───────────────────┼─────────────┤
+│bNumConfigurations │ 0x1         │
+└───────────────────┴─────────────┘[0m
+[0;32mI (4946) TinyUSB: TinyUSB Driver installed[0m
+[0;32mI (4946) My_usb_device: USB initialization DONE[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x20 (DOWNLOAD(USB/UART0))
+waiting for download
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x20 (DOWNLOAD(USB/UART0))
+Saved PC:0x40041a76
+waiting for download
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x20 (DOWNLOAD(USB/UART0))
+Saved PC:0x40048e22
+waiting for download
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x20 (DOWNLOAD(USB/UART0))
+Saved PC:0x40048d00
+waiting for download
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x20 (DOWNLOAD(USB/UART0))
+Saved PC:0x400490d5
+waiting for download
+�OHAI��
+    �  ��
+    p  ��	       ��	       ��	       ��	       ��	       ��
+       ��
+ �@   ��	       ��	       ��
+    �  ��
+    p  ��	       ��	       ��	       ��	       ��	       ��	       ��	       ��
+       ��
+ �     ��	       ��	       ��       ��
+       ��
+  � p  ��
+     ��
+  � p  ��
+  � p  ��
+     ��
+  � p  ��
+     ��
+  � p  ��
+  � p  ��
+     ��
+       ��       ��       ��
+ 	     ��     �C"�F0���?��73  ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��
+ 	     ��     �߯Rn�]�f\>���  ��       ��       ��
+ 	     ��     ]aі���ݠ(�d���  ��       ��       �ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x20 (DOWNLOAD(USB/UART0))
+Saved PC:0x40378c7b
+waiting for download
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3818,len:0x1758
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xc00
+load:0x403cc700,len:0x2e04
+entry 0x403c9908
+[0;32mI (27) boot: ESP-IDF v5.1.2-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Apr 24 2024 23:21:13[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (39) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 8MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (54) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (65) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (72) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (80) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c0a0020 size=2850ch (165132) map[0m
+[0;32mI (129) esp_image: segment 1: paddr=00038534 vaddr=3fc98c00 size=046ech ( 18156) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=0003cc28 vaddr=40374000 size=033f0h ( 13296) load[0m
+[0;32mI (142) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=9ea08h (649736) map[0m
+[0;32mI (260) esp_image: segment 4: paddr=000dea30 vaddr=403773f0 size=1172ch ( 71468) load[0m
+[0;32mI (281) esp_image: segment 5: paddr=000f0164 vaddr=600fe000 size=00070h (   112) load[0m
+[0;32mI (290) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (291) boot: Disabling RNG early entropy source...[0m
+[0;32mI (302) cpu_start: Multicore app[0m
+[0;32mI (302) cpu_start: Pro cpu up.[0m
+[0;32mI (302) cpu_start: Starting app cpu, entry point is 0x403756bc[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (320) cpu_start: Pro cpu start user code[0m
+[0;32mI (321) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (321) cpu_start: Application information:[0m
+[0;32mI (324) cpu_start: Project name:     ESP_S3_project[0m
+[0;32mI (329) cpu_start: App version:      4d9ac2e-dirty[0m
+[0;32mI (335) cpu_start: Compile time:     Apr 25 2024 01:26:08[0m
+[0;32mI (341) cpu_start: ELF file SHA256:  d04bae39687bf18c...[0m
+[0;32mI (347) cpu_start: ESP-IDF:          v5.1.2-dirty[0m
+[0;32mI (352) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (357) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (362) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (366) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (374) heap_init: At 3FCA1C90 len 00047A80 (286 KiB): DRAM[0m
+[0;32mI (380) heap_init: At 3FCE9710 len 00005724 (21 KiB): STACK/DRAM[0m
+[0;32mI (386) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (393) heap_init: At 600FE070 len 00001F78 (7 KiB): RTCRAM[0m
+[0;32mI (400) spi_flash: detected chip: gd[0m
+[0;32mI (403) spi_flash: flash io: dio[0m
+[0;32mI (407) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (414) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (421) app_start: Starting scheduler on CPU0[0m
+[0;32mI (426) app_start: Starting scheduler on CPU1[0m
+[0;32mI (426) main_task: Started on CPU0[0m
+[0;32mI (436) main_task: Calling app_main()[0m
+[0;32mI (436) USER_app: ESP-IDF version: v5.1.2-dirty[0m
+[0;32mI (446) USER_app: heap: 270336[0m
+[0;32mI (446) USER_app: Minimum free heap size: 334408 bytes
+[0m
+[0;32mI (456) gpio: GPIO[5]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:2 [0m
+[0;32mI (466) USER_LED: Start LED rainbow chase[0m
+[0;32mI (466) USER_LED: Create RMT TX channel[0m
+[0;32mI (476) gpio: GPIO[48]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (486) USER_LED: Install led strip encoder[0m
+[0;32mI (486) USER_LED: Enable RMT TX channel[0m
+[0;32mI (496) USER_LED: Start LED rainbow chase[0m
+[0;32mI (496) pp: pp rom version: e7ae62f[0m
+[0;32mI (496) net80211: net80211 rom version: e7ae62f[0m
+I (516) wifi:wifi driver task: 3fcadf18, prio:23, stack:6656, core=0
+I (526) wifi:wifi firmware version: 91b9630
+I (526) wifi:wifi certification version: v7.0
+I (526) wifi:config NVS flash: enabled
+I (526) wifi:config nano formating: disabled
+I (526) wifi:Init data frame dynamic rx buffer num: 32
+I (536) wifi:Init static rx mgmt buffer num: 5
+I (536) wifi:Init management short buffer num: 32
+I (546) wifi:Init dynamic tx buffer num: 32
+I (546) wifi:Init static tx FG buffer num: 2
+I (546) wifi:Init static rx buffer size: 1600
+I (556) wifi:Init static rx buffer num: 10
+I (556) wifi:Init dynamic rx buffer num: 32
+[0;32mI (566) wifi_init: rx ba win: 6[0m
+[0;32mI (566) wifi_init: tcpip mbox: 32[0m
+[0;32mI (566) wifi_init: udp mbox: 6[0m
+[0;32mI (576) wifi_init: tcp mbox: 6[0m
+[0;32mI (576) wifi_init: tcp tx win: 5744[0m
+[0;32mI (586) wifi_init: tcp rx win: 5744[0m
+[0;32mI (586) wifi_init: tcp mss: 1440[0m
+[0;32mI (586) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (596) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (606) phy_init: phy_version 620,ec7ec30,Sep  5 2023,13:49:13[0m
+I (646) wifi:mode : sta (dc:da:0c:4b:32:28)
+I (646) wifi:enable tsf
+[0;32mI (646) My_wifi_STA: WIFI_EVENT_STA_START[0m
+[0;32mI (3146) My_wifi_STA: wifi scan done[0m
+I (3146) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1
+I (3146) wifi:state: init -> auth (b0)
+I (3156) wifi:state: auth -> assoc (0)
+I (3176) wifi:state: assoc -> run (10)
+I (3176) wifi:connected with Ping, aid = 3, channel 11, BW20, bssid = d4:da:21:b7:91:24
+I (3176) wifi:security: Open Auth, phy: bgn, rssi: -46
+I (3186) wifi:pm start, type: 1
+
+I (3186) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000
+[0;32mI (3196) My_wifi_STA: WIFI_EVENT_STA_CONNECTED ! ! ![0m
+I (3196) wifi:<ba-add>idx:0 (ifx:0, d4:da:21:b7:91:24), tid:6, ssn:0, winSize:64
+I (3216) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (4696) esp_netif_handlers: sta ip: 192.168.31.196, mask: 255.255.255.0, gw: 192.168.31.1[0m
+[0;32mI (4696) My_wifi_STA: got ip:192.168.31.196[0m
+[0;32mI (4696) My_wifi_STA: connected to ap SSID:Ping password:, bitmap:7[0m
+[0;32mI (4706) My_https_client: updating time from NVS[0m
+[0;32mI (4706) My_https_client: initializing SNTP[0m
+[0;32mI (4716) My_https_client: List of configured NTP servers:[0m
+[0;32mI (4716) My_https_client: server 0: ntp1.aliyun.com[0m
+[0;32mI (4726) My_https_client: server 1: ntp.ntsc.ac.cn[0m
+[0;32mI (4726) My_https_client: server 2: cn.ntp.org.cn[0m
+[0;32mI (4736) My_https_client: server 3: pool.ntp.org[0m
+[0;32mI (5736) My_https_client: waitting for system time to be set...(1/10)[0m
+I (5786) wifi:<ba-add>idx:1 (ifx:0, d4:da:21:b7:91:24), tid:0, ssn:0, winSize:64
+[0;32mI (5836) My_https_client: Notification of a time synchronization event[0m
+[0;32mI (5836) My_https_client: SNTP sync OK[0m
+[0;32mI (5856) My_https_client: time updated in NVS[0m
+[0;32mI (5856) My_https_client: time: 1714127863[0m
+[0;32mI (5856) My_usb_device: USB initialization[0m
+[0;32mI (5856) My_https_client: start https_request example[0m
+[0;33mW (5856) tusb_desc: No Device descriptor provided, using default.[0m
+[0;32mI (5866) My_https_client: Minimum free heap size: 267700 bytes[0m
+[0;33mW (5866) tusb_desc: No FullSpeed configuration descriptor provided, using default.[0m
+[0;32mI (5876) My_https_client: https_request using cacert_buf[0m
+[0;33mW (5886) tusb_desc: No String descriptors provided, using default.[0m
+[0;32mI (5896) tusb_desc: 
+┌─────────────────────────────────┐
+│  USB Device Descriptor Summary  │
+├───────────────────┬─────────────┤
+│bDeviceClass       │ 239         │
+├───────────────────┼─────────────┤
+│bDeviceSubClass    │ 2           │
+├───────────────────┼─────────────┤
+│bDeviceProtocol    │ 1           │
+├───────────────────┼─────────────┤
+│bMaxPacketSize0    │ 64          │
+├───────────────────┼─────────────┤
+│idVendor           │ 0x303a      │
+├───────────────────┼─────────────┤
+│idProduct          │ 0x4001      │
+├───────────────────┼─────────────┤
+│bcdDevice          │ 0x100       │
+├───────────────────┼─────────────┤
+│iManufacturer      │ 0x1         │
+├───────────────────┼─────────────┤
+│iProduct           │ 0x2         │
+├───────────────────┼─────────────┤
+│iSerialNumber      │ 0x3         │
+├───────────────────┼─────────────┤
+│bNumConfigurations │ 0x1         │
+└───────────────────┴─────────────┘[0m
+[0;32mI (6066) TinyUSB: TinyUSB Driver installed[0m
+[0;32mI (6066) My_usb_device: USB initialization DONE[0m
+Guru Meditation Error: Core  1 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  1 register dump:
+PC      : 0x42088f00  PS      : 0x00060730  A0      : 0x82089126  A1      : 0x3fcb99d0  
+A2      : 0x3fcb9c78  A3      : 0x3c0a8420  A4      : 0x3c0af680  A5      : 0x3c0c374c  
+A6      : 0x00000000  A7      : 0xb33fffff  A8      : 0x82088f00  A9      : 0x3fcb99b0  
+A10     : 0x00000000  A11     : 0x3fcb99d0  A12     : 0x00060720  A13     : 0x3fca66d0  
+A14     : 0x00060023  A15     : 0x00000003  SAR     : 0x0000001b  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00000064  LBEG    : 0x40056f5c  LEND    : 0x40056f72  LCOUNT  : 0xffffffff  
+
+
+Backtrace: 0x42088efd:0x3fcb99d0 0x42089123:0x3fcb9a10 0x4200c5df:0x3fcb9a30 0x4200c6fa:0x3fcb9a50 0x4200b11c:0x3fcb9a80 0x40380811:0x3fcb9ab0
+
+
+
+
+ELF file SHA256: d04bae39687bf18c
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x3 (RTC_SW_SYS_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40380f32
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3818,len:0x1758
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xc00
+load:0x403cc700,len:0x2e04
+entry 0x403c9908
+[0;32mI (31) boot: ESP-IDF v5.1.2-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Apr 24 2024 23:21:13[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v0.2[0m
+[0;32mI (39) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (43) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32s3: SPI Flash Size : 8MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3c0a0020 size=2850ch (165132) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00038534 vaddr=3fc98c00 size=046ech ( 18156) load[0m
+[0;32mI (138) esp_image: segment 2: paddr=0003cc28 vaddr=40374000 size=033f0h ( 13296) load[0m
+[0;32mI (143) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=9ea08h (649736) map[0m
+[0;32mI (265) esp_image: segment 4: paddr=000dea30 vaddr=403773f0 size=1172ch ( 71468) load[0m
+[0;32mI (281) esp_image: segment 5: paddr=000f0164 vaddr=600fe000 size=00070h (   112) load[0m
+[0;32mI (290) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (290) boot: Disabling RNG early entropy source...[0m
+[0;32mI (301) cpu_start: Multicore app[0m
+[0;32mI (302) cpu_start: Pro cpu up.[0m
+[0;32mI (302) cpu_start: Starting app cpu, entry point is 0x403756bc[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (320) cpu_start: Pro cpu start user code[0m
+[0;32mI (320) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (320) cpu_start: Application information:[0m
+[0;32mI (323) cpu_start: Project name:     ESP_S3_project[0m
+[0;32mI (328) cpu_start: App version:      4d9ac2e-dirty[0m
+[0;32mI (334) cpu_start: Compile time:     Apr 25 2024 01:26:08[0m
+[0;32mI (340) cpu_start: ELF file SHA256:  d04bae39687bf18c...[0m
+[0;32mI (346) cpu_start: ESP-IDF:          v5.1.2-dirty[0m
+[0;32mI (351) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (356) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (361) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (366) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (373) heap_init: At 3FCA1C90 len 00047A80 (286 KiB): DRAM[0m
+[0;32mI (379) heap_init: At 3FCE9710 len 00005724 (21 KiB): STACK/DRAM[0m
+[0;32mI (386) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (392) heap_init: At 600FE070 len 00001F78 (7 KiB): RTCRAM[0m
+[0;32mI (399) spi_flash: detected chip: gd[0m
+[0;32mI (402) spi_flash: flash io: dio[0m
+[0;32mI (407) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (413) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (421) app_start: Starting scheduler on CPU0[0m
+[0;32mI (425) app_start: Starting scheduler on CPU1[0m
+[0;32mI (425) main_task: Started on CPU0[0m
+[0;32mI (435) main_task: Calling app_main()[0m
+[0;32mI (435) USER_app: ESP-IDF version: v5.1.2-dirty[0m
+[0;32mI (445) USER_app: heap: 270336[0m
+[0;32mI (445) USER_app: Minimum free heap size: 334408 bytes
+[0m
+[0;32mI (455) gpio: GPIO[5]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:2 [0m
+[0;32mI (465) USER_LED: Start LED rainbow chase[0m
+[0;32mI (465) USER_LED: Create RMT TX channel[0m
+[0;32mI (475) gpio: GPIO[48]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (485) USER_LED: Install led strip encoder[0m
+[0;32mI (485) USER_LED: Enable RMT TX channel[0m
+[0;32mI (495) USER_LED: Start LED rainbow chase[0m
+[0;32mI (495) pp: pp rom version: e7ae62f[0m
+[0;32mI (495) net80211: net80211 rom version: e7ae62f[0m
+I (515) wifi:wifi driver task: 3fcadf18, prio:23, stack:6656, core=0
+I (525) wifi:wifi firmware version: 91b9630
+I (525) wifi:wifi certification version: v7.0
+I (525) wifi:config NVS flash: enabled
+I (525) wifi:config nano formating: disabled
+I (525) wifi:Init data frame dynamic rx buffer num: 32
+I (535) wifi:Init static rx mgmt buffer num: 5
+I (535) wifi:Init management short buffer num: 32
+I (545) wifi:Init dynamic tx buffer num: 32
+I (545) wifi:Init static tx FG buffer num: 2
+I (545) wifi:Init static rx buffer size: 1600
+I (555) wifi:Init static rx buffer num: 10
+I (555) wifi:Init dynamic rx buffer num: 32
+[0;32mI (565) wifi_init: rx ba win: 6[0m
+[0;32mI (565) wifi_init: tcpip mbox: 32[0m
+[0;32mI (565) wifi_init: udp mbox: 6[0m
+[0;32mI (575) wifi_init: tcp mbox: 6[0m
+[0;32mI (575) wifi_init: tcp tx win: 5744[0m
+[0;32mI (585) wifi_init: tcp rx win: 5744[0m
+[0;32mI (585) wifi_init: tcp mss: 1440[0m
+[0;32mI (585) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (595) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (605) phy_init: phy_version 620,ec7ec30,Sep  5 2023,13:49:13[0m
+I (645) wifi:mode : sta (dc:da:0c:4b:32:28)
+I (645) wifi:enable tsf
+[0;32mI (655) My_wifi_STA: WIFI_EVENT_STA_START[0m
+[0;32mI (3155) My_wifi_STA: wifi scan done[0m
+I (3155) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1
+I (3155) wifi:state: init -> auth (b0)
+I (3175) wifi:state: auth -> assoc (0)
+I (3185) wifi:state: assoc -> run (10)
+I (3195) wifi:connected with Ping, aid = 3, channel 11, BW20, bssid = d4:da:21:b7:91:24
+I (3195) wifi:security: Open Auth, phy: bgn, rssi: -45
+I (3195) wifi:pm start, type: 1
+
+I (3195) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000
+[0;32mI (3205) My_wifi_STA: WIFI_EVENT_STA_CONNECTED ! ! ![0m
+I (3215) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+I (3225) wifi:<ba-add>idx:0 (ifx:0, d4:da:21:b7:91:24), tid:6, ssn:0, winSize:64
+[0;32mI (4705) esp_netif_handlers: sta ip: 192.168.31.196, mask: 255.255.255.0, gw: 192.168.31.1[0m
+[0;32mI (4705) My_wifi_STA: got ip:192.168.31.196[0m
+[0;32mI (4705) My_wifi_STA: connected to ap SSID:Ping password:, bitmap:7[0m
+[0;32mI (4715) My_usb_device: USB initialization[0m
+[0;32mI (4715) My_https_client: start https_request example[0m
+[0;33mW (4715) tusb_desc: No Device descriptor provided, using default.[0m
+[0;32mI (4725) My_https_client: Minimum free heap size: 267920 bytes[0m
+[0;33mW (4725) tusb_desc: No FullSpeed configuration descriptor provided, using default.[0m
+[0;32mI (4735) My_https_client: https_request using cacert_buf[0m
+[0;33mW (4745) tusb_desc: No String descriptors provided, using default.[0m
+[0;32mI (4755) tusb_desc: 
+┌─────────────────────────────────┐
+│  USB Device Descriptor Summary  │
+├───────────────────┬─────────────┤
+│bDeviceClass       │ 239         │
+├───────────────────┼─────────────┤
+│bDeviceSubClass    │ 2           │
+├───────────────────┼─────────────┤
+│bDeviceProtocol    │ 1           │
+├───────────────────┼─────────────┤
+│bMaxPacketSize0    │ 64          │
+├───────────────────┼─────────────┤
+│idVendor           │ 0x303a      │
+├───────────────────┼─────────────┤
+│idProduct          │ 0x4001      │
+├───────────────────┼─────────────┤
+│bcdDevice          │ 0x100       │
+├───────────────────┼─────────────┤
+│iManufacturer      │ 0x1         │
+├───────────────────┼─────────────┤
+│iProduct           │ 0x2         │
+├───────────────────┼─────────────┤
+│iSerialNumber      │ 0x3         │
+├───────────────────┼─────────────┤
+│bNumConfigurations │ 0x1         │
+└───────────────────┴─────────────┘[0m
+I (4755) wifi:<ba-add>idx:1 (ifx:0, d4:da:21:b7:91:24), tid:0, ssn:0, winSize:64
+[0;32mI (4935) TinyUSB: TinyUSB Driver installed[0m
+[0;32mI (4935) My_usb_device: USB initialization DONE[0m
+Guru Meditation Error: Core  1 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  1 register dump:
+PC      : 0x42088f00  PS      : 0x00060130  A0      : 0x82089126  A1      : 0x3fcb9ea0  
+A2      : 0x3fcb7c78  A3      : 0x3c0a8420  A4      : 0x3c0af680  A5      : 0x3c0c374c  
+A6      : 0x00000000  A7      : 0xb33fffff  A8      : 0x82088f00  A9      : 0x3fcb9e80  
+A10     : 0x00000000  A11     : 0x3fcb9ea0  A12     : 0x00060120  A13     : 0x3fca66d0  
+A14     : 0x00060023  A15     : 0x00000003  SAR     : 0x0000001b  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00000064  LBEG    : 0x40056f5c  LEND    : 0x40056f72  LCOUNT  : 0xffffffff  
+
+
+Backtrace: 0x42088efd:0x3fcb9ea0 0x42089123:0x3fcb9ee0 0x4200c5df:0x3fcb9f00 0x4200c6fa:0x3fcb9f20 0x4200b11c:0x3fcb9f50 0x40380811:0x3fcb9f80
+
+
+
+
+ELF file SHA256: d04bae39687bf18c
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x3 (RTC_SW_SYS_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40380f2f
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3818,len:0x1758
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xc00
+load:0x403cc700,len:0x2e04
+entry 0x403c9908
+[0;32mI (31) boot: ESP-IDF v5.1.2-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Apr 24 2024 23:21:13[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v0.2[0m
+[0;32mI (39) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (43) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32s3: SPI Flash Size : 8MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3c0a0020 size=2850ch (165132) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00038534 vaddr=3fc98c00 size=046ech ( 18156) load[0m
+[0;32mI (138) esp_image: segment 2: paddr=0003cc28 vaddr=40374000 size=033f0h ( 13296) load[0m
+[0;32mI (143) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=9ea08h (649736) map[0m
+[0;32mI (265) esp_image: segment 4: paddr=000dea30 vaddr=403773f0 size=1172ch ( 71468) load[0m
+[0;32mI (281) esp_image: segment 5: paddr=000f0164 vaddr=600fe000 size=00070h (   112) load[0m
+[0;32mI (290) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (290) boot: Disabling RNG early entropy source...[0m
+[0;32mI (301) cpu_start: Multicore app[0m
+[0;32mI (302) cpu_start: Pro cpu up.[0m
+[0;32mI (302) cpu_start: Starting app cpu, entry point is 0x403756bc[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (320) cpu_start: Pro cpu start user code[0m
+[0;32mI (320) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (320) cpu_start: Application information:[0m
+[0;32mI (323) cpu_start: Project name:     ESP_S3_project[0m
+[0;32mI (328) cpu_start: App version:      4d9ac2e-dirty[0m
+[0;32mI (334) cpu_start: Compile time:     Apr 25 2024 01:26:08[0m
+[0;32mI (340) cpu_start: ELF file SHA256:  d04bae39687bf18c...[0m
+[0;32mI (346) cpu_start: ESP-IDF:          v5.1.2-dirty[0m
+[0;32mI (351) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (356) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (361) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (366) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (373) heap_init: At 3FCA1C90 len 00047A80 (286 KiB): DRAM[0m
+[0;32mI (379) heap_init: At 3FCE9710 len 00005724 (21 KiB): STACK/DRAM[0m
+[0;32mI (386) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (392) heap_init: At 600FE070 len 00001F78 (7 KiB): RTCRAM[0m
+[0;32mI (399) spi_flash: detected chip: gd[0m
+[0;32mI (402) spi_flash: flash io: dio[0m
+[0;32mI (407) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (413) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (421) app_start: Starting scheduler on CPU0[0m
+[0;32mI (425) app_start: Starting scheduler on CPU1[0m
+[0;32mI (425) main_task: Started on CPU0[0m
+[0;32mI (435) main_task: Calling app_main()[0m
+[0;32mI (435) USER_app: ESP-IDF version: v5.1.2-dirty[0m
+[0;32mI (445) USER_app: heap: 270336[0m
+[0;32mI (445) USER_app: Minimum free heap size: 334408 bytes
+[0m
+[0;32mI (455) gpio: GPIO[5]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:2 [0m
+[0;32mI (465) USER_LED: Start LED rainbow chase[0m
+[0;32mI (465) USER_LED: Create RMT TX channel[0m
+[0;32mI (475) gpio: GPIO[48]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (485) USER_LED: Install led strip encoder[0m
+[0;32mI (485) USER_LED: Enable RMT TX channel[0m
+[0;32mI (495) USER_LED: Start LED rainbow chase[0m
+[0;32mI (495) pp: pp rom version: e7ae62f[0m
+[0;32mI (495) net80211: net80211 rom version: e7ae62f[0m
+I (515) wifi:wifi driver task: 3fcadf18, prio:23, stack:6656, core=0
+I (525) wifi:wifi firmware version: 91b9630
+I (525) wifi:wifi certification version: v7.0
+I (525) wifi:config NVS flash: enabled
+I (525) wifi:config nano formating: disabled
+I (525) wifi:Init data frame dynamic rx buffer num: 32
+I (535) wifi:Init static rx mgmt buffer num: 5
+I (535) wifi:Init management short buffer num: 32
+I (545) wifi:Init dynamic tx buffer num: 32
+I (545) wifi:Init static tx FG buffer num: 2
+I (545) wifi:Init static rx buffer size: 1600
+I (555) wifi:Init static rx buffer num: 10
+I (555) wifi:Init dynamic rx buffer num: 32
+[0;32mI (565) wifi_init: rx ba win: 6[0m
+[0;32mI (565) wifi_init: tcpip mbox: 32[0m
+[0;32mI (565) wifi_init: udp mbox: 6[0m
+[0;32mI (575) wifi_init: tcp mbox: 6[0m
+[0;32mI (575) wifi_init: tcp tx win: 5744[0m
+[0;32mI (585) wifi_init: tcp rx win: 5744[0m
+[0;32mI (585) wifi_init: tcp mss: 1440[0m
+[0;32mI (585) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (595) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (605) phy_init: phy_version 620,ec7ec30,Sep  5 2023,13:49:13[0m
+I (645) wifi:mode : sta (dc:da:0c:4b:32:28)
+I (645) wifi:enable tsf
+[0;32mI (645) My_wifi_STA: WIFI_EVENT_STA_START[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x0 (DOWNLOAD(USB/UART0))
+waiting for download
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x0 (DOWNLOAD(USB/UART0))
+Saved PC:0x40041a79
+waiting for download
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x0 (DOWNLOAD(USB/UART0))
+Saved PC:0x40048de8
+waiting for download
+�OHAI��
+    �  ��
+    p  ��	       ��	       ��	       ��	       ��	       ��
+       ��
+ �@   ��	       ��	       ��
+    �  ��
+    p  ��	       ��	       ��	       ��	       ��	       ��	       ��	       ��
+       ��
+ �     ��	       ��	       ��       ��
+       ��
+  � p  ��
+     ��
+  � p  ��
+  � p  ��
+     ��
+  � p  ��
+     ��
+  � p  ��
+  � p  ��
+     ��
+       ��       ��       ��
+ 	     ��     �C"�F0���?��73  ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��
+ 	     ��     �6�N�k\h�ù�nm�  ��       ��       ��
+ 	     ��     ]aі���ݠ(�d���  ��       ��       �ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x0 (DOWNLOAD(USB/UART0))
+Saved PC:0x40378cdb
+waiting for download
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3818,len:0x1758
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xc00
+load:0x403cc700,len:0x2e04
+entry 0x403c9908
+[0;32mI (27) boot: ESP-IDF v5.1.2-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Apr 24 2024 23:21:13[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (39) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 8MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (54) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (65) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (72) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (80) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c0a0020 size=28694h (165524) map[0m
+[0;32mI (129) esp_image: segment 1: paddr=000386bc vaddr=3fc98c00 size=046ech ( 18156) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=0003cdb0 vaddr=40374000 size=03268h ( 12904) load[0m
+[0;32mI (138) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=9ec28h (650280) map[0m
+[0;32mI (263) esp_image: segment 4: paddr=000dec50 vaddr=40377268 size=118b4h ( 71860) load[0m
+[0;32mI (284) esp_image: segment 5: paddr=000f050c vaddr=600fe000 size=00070h (   112) load[0m
+[0;32mI (293) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (293) boot: Disabling RNG early entropy source...[0m
+[0;32mI (304) cpu_start: Multicore app[0m
+[0;32mI (305) cpu_start: Pro cpu up.[0m
+[0;32mI (305) cpu_start: Starting app cpu, entry point is 0x403756bc[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (323) cpu_start: Pro cpu start user code[0m
+[0;32mI (323) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (323) cpu_start: Application information:[0m
+[0;32mI (326) cpu_start: Project name:     ESP_S3_project[0m
+[0;32mI (332) cpu_start: App version:      4d9ac2e-dirty[0m
+[0;32mI (337) cpu_start: Compile time:     Apr 25 2024 01:26:08[0m
+[0;32mI (343) cpu_start: ELF file SHA256:  0e809f70ddf58c9f...[0m
+[0;32mI (349) cpu_start: ESP-IDF:          v5.1.2-dirty[0m
+[0;32mI (355) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (359) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (364) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (369) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (376) heap_init: At 3FCA1C90 len 00047A80 (286 KiB): DRAM[0m
+[0;32mI (382) heap_init: At 3FCE9710 len 00005724 (21 KiB): STACK/DRAM[0m
+[0;32mI (389) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (395) heap_init: At 600FE070 len 00001F78 (7 KiB): RTCRAM[0m
+[0;32mI (402) spi_flash: detected chip: gd[0m
+[0;32mI (406) spi_flash: flash io: dio[0m
+[0;32mI (410) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (416) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (424) app_start: Starting scheduler on CPU0[0m
+[0;32mI (428) app_start: Starting scheduler on CPU1[0m
+[0;32mI (428) main_task: Started on CPU0[0m
+[0;32mI (438) main_task: Calling app_main()[0m
+[0;32mI (438) USER_app: ESP-IDF version: v5.1.2-dirty[0m
+[0;32mI (448) USER_app: heap: 270336[0m
+[0;32mI (448) USER_app: Minimum free heap size: 334408 bytes
+[0m
+[0;32mI (458) gpio: GPIO[5]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:2 [0m
+[0;32mI (468) USER_LED: Start LED rainbow chase[0m
+[0;32mI (468) USER_LED: Create RMT TX channel[0m
+[0;32mI (478) gpio: GPIO[48]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (488) USER_LED: Install led strip encoder[0m
+[0;32mI (488) USER_LED: Enable RMT TX channel[0m
+[0;32mI (498) USER_LED: Start LED rainbow chase[0m
+[0;32mI (498) pp: pp rom version: e7ae62f[0m
+[0;32mI (498) net80211: net80211 rom version: e7ae62f[0m
+I (518) wifi:wifi driver task: 3fcadf18, prio:23, stack:6656, core=0
+I (528) wifi:wifi firmware version: 91b9630
+I (528) wifi:wifi certification version: v7.0
+I (528) wifi:config NVS flash: enabled
+I (528) wifi:config nano formating: disabled
+I (528) wifi:Init data frame dynamic rx buffer num: 32
+I (538) wifi:Init static rx mgmt buffer num: 5
+I (538) wifi:Init management short buffer num: 32
+I (548) wifi:Init dynamic tx buffer num: 32
+I (548) wifi:Init static tx FG buffer num: 2
+I (548) wifi:Init static rx buffer size: 1600
+I (558) wifi:Init static rx buffer num: 10
+I (558) wifi:Init dynamic rx buffer num: 32
+[0;32mI (568) wifi_init: rx ba win: 6[0m
+[0;32mI (568) wifi_init: tcpip mbox: 32[0m
+[0;32mI (568) wifi_init: udp mbox: 6[0m
+[0;32mI (578) wifi_init: tcp mbox: 6[0m
+[0;32mI (578) wifi_init: tcp tx win: 5744[0m
+[0;32mI (588) wifi_init: tcp rx win: 5744[0m
+[0;32mI (588) wifi_init: tcp mss: 1440[0m
+[0;32mI (588) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (598) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (608) phy_init: phy_version 620,ec7ec30,Sep  5 2023,13:49:13[0m
+I (648) wifi:mode : sta (dc:da:0c:4b:32:28)
+I (648) wifi:enable tsf
+[0;32mI (648) My_wifi_STA: WIFI_EVENT_STA_START[0m
+[0;32mI (3158) My_wifi_STA: wifi scan done[0m
+I (3168) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1
+I (3168) wifi:state: init -> auth (b0)
+I (3178) wifi:state: auth -> assoc (0)
+I (3198) wifi:state: assoc -> run (10)
+I (3198) wifi:connected with Ping, aid = 3, channel 11, BW20, bssid = d4:da:21:b7:91:24
+I (3198) wifi:security: Open Auth, phy: bgn, rssi: -44
+I (3208) wifi:pm start, type: 1
+
+I (3208) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000
+[0;32mI (3218) My_wifi_STA: WIFI_EVENT_STA_CONNECTED ! ! ![0m
+I (3228) wifi:<ba-add>idx:0 (ifx:0, d4:da:21:b7:91:24), tid:6, ssn:0, winSize:64
+I (3348) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (4718) esp_netif_handlers: sta ip: 192.168.31.196, mask: 255.255.255.0, gw: 192.168.31.1[0m
+[0;32mI (4718) My_wifi_STA: got ip:192.168.31.196[0m
+[0;32mI (4718) My_wifi_STA: connected to ap SSID:Ping password:, bitmap:7[0m
+[0;32mI (4728) My_https_client: updating time from NVS[0m
+[0;32mI (4728) My_https_client: initializing SNTP[0m
+[0;32mI (4738) My_https_client: List of configured NTP servers:[0m
+[0;32mI (4738) My_https_client: server 0: ntp1.aliyun.com[0m
+[0;32mI (4748) My_https_client: server 1: ntp.ntsc.ac.cn[0m
+[0;32mI (4748) My_https_client: server 2: cn.ntp.org.cn[0m
+[0;32mI (4758) My_https_client: server 3: pool.ntp.org[0m
+[0;32mI (5758) My_https_client: waitting for system time to be set...(1/10)[0m
+[0;32mI (6758) My_https_client: waitting for system time to be set...(2/10)[0m
+[0;32mI (7758) My_https_client: waitting for system time to be set...(3/10)[0m
+I (7818) wifi:<ba-add>idx:1 (ifx:0, d4:da:21:b7:91:24), tid:0, ssn:0, winSize:64
+[0;32mI (7858) My_https_client: Notification of a time synchronization event[0m
+[0;32mI (7858) My_https_client: SNTP sync OK[0m
+[0;32mI (7868) My_https_client: time updated in NVS[0m
+[0;32mI (7868) My_https_client: time: 1714128183[0m
+[0;32mI (7868) My_usb_device: USB initialization[0m
+[0;32mI (7868) My_https_client: start https_request example[0m
+[0;33mW (7878) tusb_desc: No Device descriptor provided, using default.[0m
+[0;32mI (7878) My_https_client: Minimum free heap size: 267700 bytes[0m
+[0;33mW (7888) tusb_desc: No FullSpeed configuration descriptor provided, using default.[0m
+[0;32mI (7898) My_https_client: https_request using cacert_buf[0m
+[0;33mW (7898) tusb_desc: No String descriptors provided, using default.[0m
+[0;32mI (7918) tusb_desc: 
+┌─────────────────────────────────┐
+│  USB Device Descriptor Summary  │
+├───────────────────┬─────────────┤
+│bDeviceClass       │ 239         │
+├───────────────────┼─────────────┤
+│bDeviceSubClass    │ 2           │
+├───────────────────┼─────────────┤
+│bDeviceProtocol    │ 1           │
+├───────────────────┼─────────────┤
+│bMaxPacketSize0    │ 64          │
+├───────────────────┼─────────────┤
+│idVendor           │ 0x303a      │
+├───────────────────┼─────────────┤
+│idProduct          │ 0x4001      │
+├───────────────────┼─────────────┤
+│bcdDevice          │ 0x100       │
+├───────────────────┼─────────────┤
+│iManufacturer      │ 0x1         │
+├───────────────────┼─────────────┤
+│iProduct           │ 0x2         │
+├───────────────────┼─────────────┤
+│iSerialNumber      │ 0x3         │
+├───────────────────┼─────────────┤
+│bNumConfigurations │ 0x1         │
+└───────────────────┴─────────────┘[0m
+[0;32mI (8078) TinyUSB: TinyUSB Driver installed[0m
+[0;32mI (8088) My_usb_device: USB initialization DONE[0m
+[0;32mI (12098) USER_app: GPIO 5 is low[0m
+[0;32mI (12098) USER_app: Minimum free heap size: 219100 bytes[0m
+[0;32mI (12098) USER_app: Largest free block size: 159744[0m
+[0;32mI (12098) USER_app: Wakeup reason: 0[0m
+[0;32mI (12108) USER_app: log -> uart[0m
+[0;33mW (12108) USER_app: log -> uart[0m
+[0;31mE (12108) USER_app: log -> uart
+[0m
+[0;32mI (12988) My_https_client: 0...[0m
+[0;32mI (13988) My_https_client: finish https_request example[0m
+[0;32mI (13988) My_https_client: NVS re_err:0, NVS status:0[0m
+[0;32mI (14098) USER_app: GPIO 5 is low[0m
+[0;32mI (14098) USER_app: Minimum free heap size: 219100 bytes[0m
+[0;32mI (14098) USER_app: Largest free block size: 159744[0m
+[0;32mI (14098) USER_app: Wakeup reason: 0[0m
+[0;32mI (14108) USER_app: log -> uart[0m
+[0;33mW (14108) USER_app: log -> uart[0m
+[0;31mE (14108) USER_app: log -> uart
+[0m
+[0;32mI (16098) USER_app: GPIO 5 is low[0m
+[0;32mI (16098) USER_app: Minimum free heap size: 219100 bytes[0m
+[0;32mI (16098) USER_app: Largest free block size: 159744[0m
+[0;32mI (16098) USER_app: Wakeup reason: 0[0m
+[0;32mI (16108) USER_app: log -> uart[0m
+[0;33mW (16108) USER_app: log -> uart[0m
+[0;31mE (16108) USER_app: log -> uart
+[0m
+[0;32mI (18098) USER_app: GPIO 5 is low[0m
+[0;32mI (18098) USER_app: Minimum free heap size: 219100 bytes[0m
+[0;32mI (18098) USER_app: Largest free block size: 159744[0m
+[0;32mI (18098) USER_app: Wakeup reason: 0[0m
+[0;32mI (18108) USER_app: log -> uart[0m
+[0;33mW (18108) USER_app: log -> uart[0m
+[0;31mE (18108) USER_app: log -> uart
+[0m
+[0;32mI (20098) USER_app: GPIO 5 is low[0m
+[0;32mI (20098) USER_app: Minimum free heap size: 219100 bytes[0m
+[0;32mI (20098) USER_app: Largest free block size: 159744[0m
+[0;32mI (20098) USER_app: Wakeup reason: 0[0m
+[0;32mI (20108) USER_app: log -> uart[0m
+[0;33mW (20108) USER_app: log -> uart[0m
+[0;31mE (20108) USER_app: log -> uart
+[0m
+[0;32mI (22098) USER_app: GPIO 5 is low[0m
+[0;32mI (22098) USER_app: Minimum free heap size: 219100 bytes[0m
+[0;32mI (22098) USER_app: Largest free block size: 159744[0m
+[0;32mI (22098) USER_app: Wakeup reason: 0[0m
+[0;32mI (22108) USER_app: log -> uart[0m
+[0;33mW (22108) USER_app: log -> uart[0m
+[0;31mE (22108) USER_app: log -> uart
+[0m
+[0;32mI (24098) USER_app: GPIO 5 is low[0m
+[0;32mI (24098) USER_app: Minimum free heap size: 219100 bytes[0m
+[0;32mI (24098) USER_app: Largest free block size: 159744[0m
+[0;32mI (24098) USER_app: Wakeup reason: 0[0m
+[0;32mI (24108) USER_app: log -> uart[0m
+[0;33mW (24108) USER_app: log -> uart[0m
+[0;31mE (24108) USER_app: log -> uart
+[0m
+[0;32mI (26098) USER_app: GPIO 5 is low[0m
+[0;32mI (26098) USER_app: Minimum free heap size: 219100 bytes[0m
+[0;32mI (26098) USER_app: Largest free block size: 159744[0m
+[0;32mI (26098) USER_app: Wakeup reason: 0[0m
+[0;32mI (26108) USER_app: log -> uart[0m
+[0;33mW (26108) USER_app: log -> uart[0m
+[0;31mE (26108) USER_app: log -> uart
+[0m
+[0;32mI (28098) USER_app: GPIO 5 is low[0m
+[0;32mI (28098) USER_app: Minimum free heap size: 219100 bytes[0m
+[0;32mI (28098) USER_app: Largest free block size: 159744[0m
+[0;32mI (28098) USER_app: Wakeup reason: 0[0m
+[0;32mI (28108) USER_app: log -> uart[0m
+[0;33mW (28108) USER_app: log -> uart[0m
+[0;31mE (28108) USER_app: log -> uart
+[0m
+[0;32mI (30098) USER_app: GPIO 5 is low[0m
+[0;32mI (30098) USER_app: Minimum free heap size: 219100 bytes[0m
+[0;32mI (30098) USER_app: Largest free block size: 159744[0m
+[0;32mI (30098) USER_app: Wakeup reason: 0[0m
+[0;32mI (30108) USER_app: log -> uart[0m
+[0;33mW (30108) USER_app: log -> uart[0m
+[0;31mE (30108) USER_app: log -> uart
+[0m
+[0;32mI (32098) USER_app: GPIO 5 is low[0m
+[0;32mI (32098) USER_app: Minimum free heap size: 219100 bytes[0m
+[0;32mI (32098) USER_app: Largest free block size: 159744[0m
+[0;32mI (32098) USER_app: Wakeup reason: 0[0m
+[0;32mI (32108) USER_app: log -> uart[0m
+[0;33mW (32108) USER_app: log -> uart[0m
+[0;31mE (32108) USER_app: log -> uart
+[0m
+[0;32mI (34098) USER_app: GPIO 5 is low[0m
+[0;32mI (34098) USER_app: Minimum free heap size: 219100 bytes[0m
+[0;32mI (34098) USER_app: Largest free block size: 159744[0m
+[0;32mI (34098) USER_app: Wakeup reason: 0[0m
+[0;32mI (34108) USER_app: log -> uart[0m
+[0;33mW (34108) USER_app: log -> uart[0m
+[0;31mE (34108) USER_app: log -> uart
+[0m
+[0;32mI (36098) USER_app: GPIO 5 is low[0m
+[0;32mI (36098) USER_app: Minimum free heap size: 219100 bytes[0m
+[0;32mI (36098) USER_app: Largest free block size: 159744[0m
+[0;32mI (36098) USER_app: Wakeup reason: 0[0m
+[0;32mI (36108) USER_app: log -> uart[0m
+[0;33mW (36108) USER_app: log -> uart[0m
+[0;31mE (36108) USER_app: log -> uart
+[0m
+[0;32mI (38098) USER_app: GPIO 5 is low[0m
+[0;32mI (38098) USER_app: Minimum free heap size: 219100 bytes[0m
+[0;32mI (38098) USER_app: Largest free block size: 159744[0m
+[0;32mI (38098) USER_app: Wakeup reason: 0[0m
+[0;32mI (38108) USER_app: log -> uart[0m
+[0;33mW (38108) USER_app: log -> uart[0m
+[0;31mE (38108) USER_app: log -> uart
+[0m
+[0;33mW (38118) USER_app: mcu will deep sleep...[0m
+[0;32mI (38118) USER_timer: MAIN_TASK Timer stop ...[0m
+[0;32mI (38128) USER_timer: MY_HTTPS_REQUEST_TASK Timer stop ...[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x5 (DSLEEP),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3818,len:0x1758
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xc00
+load:0x403cc700,len:0x2e04
+entry 0x403c9908
+[0;32mI (26) boot: ESP-IDF v5.1.2-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Apr 24 2024 23:21:13[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (39) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 8MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (54) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (65) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (72) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (80) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c0a0020 size=28694h (165524) map[0m
+[0;32mI (129) esp_image: segment 1: paddr=000386bc vaddr=3fc98c00 size=046ech ( 18156) load[0m
+[0;32mI (133) esp_image: segment 2: paddr=0003cdb0 vaddr=40374000 size=03268h ( 12904) load[0m
+[0;32mI (138) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=9ec28h (650280) map[0m
+[0;32mI (260) esp_image: segment 4: paddr=000dec50 vaddr=40377268 size=118b4h ( 71860) load[0m
+[0;32mI (277) esp_image: segment 5: paddr=000f050c vaddr=600fe000 size=00070h (   112) [0m
+[0;32mI (285) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (286) boot: Disabling RNG early entropy source...[0m
+[0;32mI (297) cpu_start: Multicore app[0m
+[0;32mI (297) cpu_start: Pro cpu up.[0m
+[0;32mI (298) cpu_start: Starting app cpu, entry point is 0x403756bc[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (316) cpu_start: Pro cpu start user code[0m
+[0;32mI (316) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (316) cpu_start: Application information:[0m
+[0;32mI (319) cpu_start: Project name:     ESP_S3_project[0m
+[0;32mI (324) cpu_start: App version:      4d9ac2e-dirty[0m
+[0;32mI (330) cpu_start: Compile time:     Apr 25 2024 01:26:08[0m
+[0;32mI (336) cpu_start: ELF file SHA256:  0e809f70ddf58c9f...[0m
+[0;32mI (342) cpu_start: ESP-IDF:          v5.1.2-dirty[0m
+[0;32mI (347) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (352) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (357) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (361) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (369) heap_init: At 3FCA1C90 len 00047A80 (286 KiB): DRAM[0m
+[0;32mI (375) heap_init: At 3FCE9710 len 00005724 (21 KiB): STACK/DRAM[0m
+[0;32mI (382) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (388) heap_init: At 600FE070 len 00001F78 (7 KiB): RTCRAM[0m
+[0;32mI (395) spi_flash: detected chip: gd[0m
+[0;32mI (398) spi_flash: flash io: dio[0m
+[0;32mI (402) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (409) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (416) app_start: Starting scheduler on CPU0[0m
+[0;32mI (421) app_start: Starting scheduler on CPU1[0m
+[0;32mI (421) main_task: Started on CPU0[0m
+[0;32mI (431) main_task: Calling app_main()[0m
+[0;32mI (431) USER_app: ESP-IDF version: v5.1.2-dirty[0m
+[0;32mI (441) USER_app: heap: 270336[0m
+[0;32mI (441) USER_app: Minimum free heap size: 334408 bytes
+[0m
+[0;32mI (451) gpio: GPIO[5]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:2 [0m
+[0;32mI (461) USER_LED: Start LED rainbow chase[0m
+[0;32mI (461) USER_LED: Create RMT TX channel[0m
+[0;32mI (471) gpio: GPIO[48]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (481) USER_LED: Install led strip encoder[0m
+[0;32mI (481) USER_LED: Enable RMT TX channel[0m
+[0;32mI (491) USER_LED: Start LED rainbow chase[0m
+[0;32mI (491) pp: pp rom version: e7ae62f[0m
+[0;32mI (491) net80211: net80211 rom version: e7ae62f[0m
+I (511) wifi:wifi driver task: 3fcadf18, prio:23, stack:6656, core=0
+I (521) wifi:wifi firmware version: 91b9630
+I (521) wifi:wifi certification version: v7.0
+I (521) wifi:config NVS flash: enabled
+I (521) wifi:config nano formating: disabled
+I (521) wifi:Init data frame dynamic rx buffer num: 32
+I (531) wifi:Init static rx mgmt buffer num: 5
+I (531) wifi:Init management short buffer num: 32
+I (541) wifi:Init dynamic tx buffer num: 32
+I (541) wifi:Init static tx FG buffer num: 2
+I (541) wifi:Init static rx buffer size: 1600
+I (551) wifi:Init static rx buffer num: 10
+I (551) wifi:Init dynamic rx buffer num: 32
+[0;32mI (561) wifi_init: rx ba win: 6[0m
+[0;32mI (561) wifi_init: tcpip mbox: 32[0m
+[0;32mI (561) wifi_init: udp mbox: 6[0m
+[0;32mI (571) wifi_init: tcp mbox: 6[0m
+[0;32mI (571) wifi_init: tcp tx win: 5744[0m
+[0;32mI (581) wifi_init: tcp rx win: 5744[0m
+[0;32mI (581) wifi_init: tcp mss: 1440[0m
+[0;32mI (581) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (591) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (601) phy_init: phy_version 620,ec7ec30,Sep  5 2023,13:49:13[0m
+I (621) wifi:mode : sta (dc:da:0c:4b:32:28)
+I (621) wifi:enable tsf
+[0;32mI (631) My_wifi_STA: WIFI_EVENT_STA_START[0m
+[0;32mI (3131) My_wifi_STA: wifi scan done[0m
+I (3131) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1
+I (3141) wifi:state: init -> auth (b0)
+I (3151) wifi:state: auth -> assoc (0)
+I (3161) wifi:state: assoc -> run (10)
+I (3161) wifi:connected with Ping, aid = 3, channel 11, BW20, bssid = d4:da:21:b7:91:24
+I (3161) wifi:security: Open Auth, phy: bgn, rssi: -43
+I (3171) wifi:pm start, type: 1
+
+I (3171) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000
+[0;32mI (3181) My_wifi_STA: WIFI_EVENT_STA_CONNECTED ! ! ![0m
+I (3191) wifi:<ba-add>idx:0 (ifx:0, d4:da:21:b7:91:24), tid:6, ssn:0, winSize:64
+I (3301) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x0 (DOWNLOAD(USB/UART0))
+waiting for download
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x0 (DOWNLOAD(USB/UART0))
+Saved PC:0x40041a79
+waiting for download
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x0 (DOWNLOAD(USB/UART0))
+Saved PC:0x40048df3
+waiting for download
+�OHAI��
+    �  ��
+    p  ��	       ��	       ��	       ��	       ��	       ��
+       ��
+ �@   ��	       ��	       ��
+    �  ��
+    p  ��	       ��	       ��	       ��	       ��	       ��	       ��	       ��
+       ��
+ �     ��	       ��	       ��       ��
+       ��
+  � p  ��
+     ��
+  � p  ��
+  � p  ��
+     ��
+  � p  ��
+     ��
+  � p  ��
+  � p  ��
+     ��
+       ��       ��       ��
+ 	     ��     �C"�F0���?��73  ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��       ��
+ 	     ��     r���y�s�>�'��D6�  ��       ��       ��
+ 	     ��     ]aі���ݠ(�d���  ��       ��       �ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x0 (DOWNLOAD(USB/UART0))
+Saved PC:0x40378cd9
+waiting for download
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3818,len:0x1758
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xc00
+load:0x403cc700,len:0x2e04
+entry 0x403c9908
+[0;32mI (27) boot: ESP-IDF v5.1.2-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Apr 24 2024 23:21:13[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (39) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 8MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (54) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (65) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (72) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (80) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c0a0020 size=28694h (165524) map[0m
+[0;32mI (129) esp_image: segment 1: paddr=000386bc vaddr=3fc98c00 size=046ech ( 18156) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=0003cdb0 vaddr=40374000 size=03268h ( 12904) load[0m
+[0;32mI (142) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=9ec28h (650280) map[0m
+[0;32mI (260) esp_image: segment 4: paddr=000dec50 vaddr=40377268 size=118b4h ( 71860) load[0m
+[0;32mI (282) esp_image: segment 5: paddr=000f050c vaddr=600fe000 size=00070h (   112) load[0m
+[0;32mI (291) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (291) boot: Disabling RNG early entropy source...[0m
+[0;32mI (302) cpu_start: Multicore app[0m
+[0;32mI (303) cpu_start: Pro cpu up.[0m
+[0;32mI (303) cpu_start: Starting app cpu, entry point is 0x403756bc[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (321) cpu_start: Pro cpu start user code[0m
+[0;32mI (321) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (321) cpu_start: Application information:[0m
+[0;32mI (324) cpu_start: Project name:     ESP_S3_project[0m
+[0;32mI (329) cpu_start: App version:      4d9ac2e-dirty[0m
+[0;32mI (335) cpu_start: Compile time:     Apr 25 2024 01:26:08[0m
+[0;32mI (341) cpu_start: ELF file SHA256:  5d592694953d2720...[0m
+[0;32mI (347) cpu_start: ESP-IDF:          v5.1.2-dirty[0m
+[0;32mI (352) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (357) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (362) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (367) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (374) heap_init: At 3FCA1C90 len 00047A80 (286 KiB): DRAM[0m
+[0;32mI (380) heap_init: At 3FCE9710 len 00005724 (21 KiB): STACK/DRAM[0m
+[0;32mI (387) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (393) heap_init: At 600FE070 len 00001F78 (7 KiB): RTCRAM[0m
+[0;32mI (400) spi_flash: detected chip: gd[0m
+[0;32mI (403) spi_flash: flash io: dio[0m
+[0;32mI (408) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (414) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (421) app_start: Starting scheduler on CPU0[0m
+[0;32mI (426) app_start: Starting scheduler on CPU1[0m
+[0;32mI (426) main_task: Started on CPU0[0m
+[0;32mI (436) main_task: Calling app_main()[0m
+[0;32mI (436) USER_app: ESP-IDF version: v5.1.2-dirty[0m
+[0;32mI (446) USER_app: heap: 270336[0m
+[0;32mI (446) USER_app: Minimum free heap size: 334408 bytes
+[0m
+[0;32mI (456) gpio: GPIO[5]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:2 [0m
+[0;32mI (466) USER_LED: Start LED rainbow chase[0m
+[0;32mI (466) USER_LED: Create RMT TX channel[0m
+[0;32mI (476) gpio: GPIO[48]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (486) USER_LED: Install led strip encoder[0m
+[0;32mI (486) USER_LED: Enable RMT TX channel[0m
+[0;32mI (496) USER_LED: Start LED rainbow chase[0m
+[0;32mI (496) pp: pp rom version: e7ae62f[0m
+[0;32mI (496) net80211: net80211 rom version: e7ae62f[0m
+I (516) wifi:wifi driver task: 3fcadf18, prio:23, stack:6656, core=0
+I (526) wifi:wifi firmware version: 91b9630
+I (526) wifi:wifi certification version: v7.0
+I (526) wifi:config NVS flash: enabled
+I (526) wifi:config nano formating: disabled
+I (526) wifi:Init data frame dynamic rx buffer num: 32
+I (536) wifi:Init static rx mgmt buffer num: 5
+I (536) wifi:Init management short buffer num: 32
+I (546) wifi:Init dynamic tx buffer num: 32
+I (546) wifi:Init static tx FG buffer num: 2
+I (546) wifi:Init static rx buffer size: 1600
+I (556) wifi:Init static rx buffer num: 10
+I (556) wifi:Init dynamic rx buffer num: 32
+[0;32mI (566) wifi_init: rx ba win: 6[0m
+[0;32mI (566) wifi_init: tcpip mbox: 32[0m
+[0;32mI (566) wifi_init: udp mbox: 6[0m
+[0;32mI (576) wifi_init: tcp mbox: 6[0m
+[0;32mI (576) wifi_init: tcp tx win: 5744[0m
+[0;32mI (586) wifi_init: tcp rx win: 5744[0m
+[0;32mI (586) wifi_init: tcp mss: 1440[0m
+[0;32mI (586) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (596) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (606) phy_init: phy_version 620,ec7ec30,Sep  5 2023,13:49:13[0m
+I (646) wifi:mode : sta (dc:da:0c:4b:32:28)
+I (646) wifi:enable tsf
+[0;32mI (656) My_wifi_STA: WIFI_EVENT_STA_START[0m
+[0;32mI (3156) My_wifi_STA: wifi scan done[0m
+I (3166) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1
+I (3166) wifi:state: init -> auth (b0)
+I (3186) wifi:state: auth -> assoc (0)
+I (3196) wifi:state: assoc -> run (10)
+I (3196) wifi:connected with Ping, aid = 3, channel 11, BW20, bssid = d4:da:21:b7:91:24
+I (3196) wifi:security: Open Auth, phy: bgn, rssi: -42
+I (3206) wifi:pm start, type: 1
+
+I (3206) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000
+[0;32mI (3216) My_wifi_STA: WIFI_EVENT_STA_CONNECTED ! ! ![0m
+I (3226) wifi:<ba-add>idx:0 (ifx:0, d4:da:21:b7:91:24), tid:6, ssn:0, winSize:64
+I (3246) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (4716) esp_netif_handlers: sta ip: 192.168.31.196, mask: 255.255.255.0, gw: 192.168.31.1[0m
+[0;32mI (4716) My_wifi_STA: got ip:192.168.31.196[0m
+[0;32mI (4716) My_wifi_STA: connected to ap SSID:Ping password:, bitmap:7[0m
+[0;32mI (4726) My_https_client: updating time from NVS[0m
+[0;32mI (4726) My_https_client: initializing SNTP[0m
+[0;32mI (4736) My_https_client: List of configured NTP servers:[0m
+[0;32mI (4736) My_https_client: server 0: ntp1.aliyun.com[0m
+[0;32mI (4746) My_https_client: server 1: ntp.ntsc.ac.cn[0m
+[0;32mI (4746) My_https_client: server 2: cn.ntp.org.cn[0m
+[0;32mI (4756) My_https_client: server 3: pool.ntp.org[0m
+I (4856) wifi:<ba-add>idx:1 (ifx:0, d4:da:21:b7:91:24), tid:0, ssn:0, winSize:64
+[0;32mI (5756) My_https_client: waitting for system time to be set...(1/10)[0m
+[0;32mI (6756) My_https_client: waitting for system time to be set...(2/10)[0m
+[0;32mI (7756) My_https_client: waitting for system time to be set...(3/10)[0m
+[0;32mI (8756) My_https_client: waitting for system time to be set...(4/10)[0m
+[0;32mI (9756) My_https_client: waitting for system time to be set...(5/10)[0m
+[0;32mI (10756) My_https_client: waitting for system time to be set...(6/10)[0m
+[0;32mI (11756) My_https_client: waitting for system time to be set...(7/10)[0m
+[0;32mI (12756) My_https_client: waitting for system time to be set...(8/10)[0m
+[0;32mI (13756) My_https_client: waitting for system time to be set...(9/10)[0m
+[0;31mE (14756) My_https_client: error updating time in NVS[0m
+[0;31mE (14756) My_https_client: error syncing time from SNTP server[0m
+[0;31mE (14756) My_https_client: https_request_init(667): update_time_from_nvs failed[0m
+[0;32mI (14756) My_https_client: updating time from NVS[0m
+[0;32mI (14766) My_https_client: initializing SNTP[0m
+[0;32mI (14776) My_https_client: List of configured NTP servers:[0m
+[0;32mI (14776) My_https_client: server 0: ntp1.aliyun.com[0m
+[0;32mI (14786) My_https_client: server 1: ntp.ntsc.ac.cn[0m
+[0;32mI (14786) My_https_client: server 2: cn.ntp.org.cn[0m
+[0;32mI (14796) My_https_client: server 3: pool.ntp.org[0m
+[0;32mI (15796) My_https_client: waitting for system time to be set...(1/10)[0m
+[0;32mI (16796) My_https_client: waitting for system time to be set...(2/10)[0m
+[0;32mI (17796) My_https_client: waitting for system time to be set...(3/10)[0m
+[0;32mI (18796) My_https_client: waitting for system time to be set...(4/10)[0m
+[0;32mI (19796) My_https_client: waitting for system time to be set...(5/10)[0m
+[0;32mI (20796) My_https_client: waitting for system time to be set...(6/10)[0m
+[0;32mI (21796) My_https_client: waitting for system time to be set...(7/10)[0m
+[0;32mI (22796) My_https_client: waitting for system time to be set...(8/10)[0m
+[0;32mI (23796) My_https_client: waitting for system time to be set...(9/10)[0m
+[0;31mE (24796) My_https_client: error updating time in NVS[0m
+[0;31mE (24796) My_https_client: error syncing time from SNTP server[0m
+[0;31mE (24796) My_https_client: https_request_init(667): update_time_from_nvs failed[0m
+[0;32mI (24796) My_https_client: updating time from NVS[0m
+[0;32mI (24806) My_https_client: initializing SNTP[0m
+[0;32mI (24816) My_https_client: List of configured NTP servers:[0m
+[0;32mI (24816) My_https_client: server 0: ntp1.aliyun.com[0m
+[0;32mI (24826) My_https_client: server 1: ntp.ntsc.ac.cn[0m
+[0;32mI (24826) My_https_client: server 2: cn.ntp.org.cn[0m
+[0;32mI (24836) My_https_client: server 3: pool.ntp.org[0m
+[0;32mI (25836) My_https_client: waitting for system time to be set...(1/10)[0m
+[0;32mI (26836) My_https_client: waitting for system time to be set...(2/10)[0m
+[0;32mI (27836) My_https_client: waitting for system time to be set...(3/10)[0m
+[0;32mI (28836) My_https_client: waitting for system time to be set...(4/10)[0m
+[0;32mI (29716) My_https_client: Notification of a time synchronization event[0m
+[0;32mI (29716) My_https_client: SNTP sync OK[0m
+[0;32mI (29726) My_https_client: time updated in NVS[0m
+[0;32mI (29726) My_https_client: time: 1714128430[0m
+[0;32mI (29726) My_usb_device: USB initialization[0m
+[0;32mI (29726) My_https_client: start https_request example[0m
+[0;33mW (29736) tusb_desc: No Device descriptor provided, using default.[0m
+[0;32mI (29736) My_https_client: Minimum free heap size: 266136 bytes[0m
+[0;33mW (29746) tusb_desc: No FullSpeed configuration descriptor provided, using default.[0m
+[0;32mI (29756) My_https_client: https_request using cacert_buf[0m
+[0;33mW (29756) tusb_desc: No String descriptors provided, using default.[0m
+[0;32mI (29776) tusb_desc: 
+┌─────────────────────────────────┐
+│  USB Device Descriptor Summary  │
+├───────────────────┬─────────────┤
+│bDeviceClass       │ 239         │
+├───────────────────┼─────────────┤
+│bDeviceSubClass    │ 2           │
+├───────────────────┼─────────────┤
+│bDeviceProtocol    │ 1           │
+├───────────────────┼─────────────┤
+│bMaxPacketSize0    │ 64          │
+├───────────────────┼─────────────┤
+│idVendor           │ 0x303a      │
+├───────────────────┼─────────────┤
+│idProduct          │ 0x4001      │
+├───────────────────┼─────────────┤
+│bcdDevice          │ 0x100       │
+├───────────────────┼─────────────┤
+│iManufacturer      │ 0x1         │
+├───────────────────┼─────────────┤
+│iProduct           │ 0x2         │
+├───────────────────┼─────────────┤
+│iSerialNumber      │ 0x3         │
+├───────────────────┼─────────────┤
+│bNumConfigurations │ 0x1         │
+└───────────────────┴─────────────┘[0m
+[0;32mI (29946) TinyUSB: TinyUSB Driver installed[0m
+[0;32mI (29946) My_usb_device: USB initialization DONE[0m
+[0;32mI (33956) USER_app: GPIO 5 is low[0m
+[0;32mI (33956) USER_app: Minimum free heap size: 219116 bytes[0m
+[0;32mI (33956) USER_app: Largest free block size: 167936[0m
+[0;32mI (33956) USER_app: Wakeup reason: 0[0m
+[0;32mI (33966) USER_app: log -> uart[0m
+[0;33mW (33966) USER_app: log -> uart[0m
+[0;31mE (33966) USER_app: log -> uart
+[0m
+[0;32mI (34896) My_https_client: 0...[0m
+[0;32mI (35896) My_https_client: finish https_request example[0m
+[0;32mI (35896) My_https_client: NVS re_err:ffffffff, NVS status:4[0m
+[0;32mI (35956) USER_app: GPIO 5 is low[0m
+[0;32mI (35956) USER_app: Minimum free heap size: 219116 bytes[0m
+[0;32mI (35956) USER_app: Largest free block size: 167936[0m
+[0;32mI (35956) USER_app: Wakeup reason: 0[0m
+[0;32mI (35966) USER_app: log -> uart[0m
+[0;33mW (35966) USER_app: log -> uart[0m
+[0;31mE (35966) USER_app: log -> uart
+[0m
+[0;32mI (37956) USER_app: GPIO 5 is low[0m
+[0;32mI (37956) USER_app: Minimum free heap size: 219116 bytes[0m
+[0;32mI (37956) USER_app: Largest free block size: 167936[0m
+[0;32mI (37956) USER_app: Wakeup reason: 0[0m
+[0;32mI (37966) USER_app: log -> uart[0m
+[0;33mW (37966) USER_app: log -> uart[0m
+[0;31mE (37966) USER_app: log -> uart
+[0m
+[0;32mI (39956) USER_app: GPIO 5 is low[0m
+[0;32mI (39956) USER_app: Minimum free heap size: 219116 bytes[0m
+[0;32mI (39956) USER_app: Largest free block size: 167936[0m
+[0;32mI (39956) USER_app: Wakeup reason: 0[0m
+[0;32mI (39966) USER_app: log -> uart[0m
+[0;33mW (39966) USER_app: log -> uart[0m
+[0;31mE (39966) USER_app: log -> uart
+[0m
+[0;32mI (41956) USER_app: GPIO 5 is low[0m
+[0;32mI (41956) USER_app: Minimum free heap size: 219116 bytes[0m
+[0;32mI (41956) USER_app: Largest free block size: 167936[0m
+[0;32mI (41956) USER_app: Wakeup reason: 0[0m
+[0;32mI (41966) USER_app: log -> uart[0m
+[0;33mW (41966) USER_app: log -> uart[0m
+[0;31mE (41966) USER_app: log -> uart
+[0m
+[0;32mI (43956) USER_app: GPIO 5 is low[0m
+[0;32mI (43956) USER_app: Minimum free heap size: 219116 bytes[0m
+[0;32mI (43956) USER_app: Largest free block size: 167936[0m
+[0;32mI (43956) USER_app: Wakeup reason: 0[0m
+[0;32mI (43966) USER_app: log -> uart[0m
+[0;33mW (43966) USER_app: log -> uart[0m
+[0;31mE (43966) USER_app: log -> uart
+[0m
+[0;32mI (45956) USER_app: GPIO 5 is low[0m
+[0;32mI (45956) USER_app: Minimum free heap size: 219116 bytes[0m
+[0;32mI (45956) USER_app: Largest free block size: 167936[0m
+[0;32mI (45956) USER_app: Wakeup reason: 0[0m
+[0;32mI (45966) USER_app: log -> uart[0m
+[0;33mW (45966) USER_app: log -> uart[0m
+[0;31mE (45966) USER_app: log -> uart
+[0m
+[0;32mI (47956) USER_app: GPIO 5 is low[0m
+[0;32mI (47956) USER_app: Minimum free heap size: 219116 bytes[0m
+[0;32mI (47956) USER_app: Largest free block size: 167936[0m
+[0;32mI (47956) USER_app: Wakeup reason: 0[0m
+[0;32mI (47966) USER_app: log -> uart[0m
+[0;33mW (47966) USER_app: log -> uart[0m
+[0;31mE (47966) USER_app: log -> uart
+[0m
+[0;32mI (49956) USER_app: GPIO 5 is low[0m
+[0;32mI (49956) USER_app: Minimum free heap size: 219116 bytes[0m
+[0;32mI (49956) USER_app: Largest free block size: 167936[0m
+[0;32mI (49956) USER_app: Wakeup reason: 0[0m
+[0;32mI (49966) USER_app: log -> uart[0m
+[0;33mW (49966) USER_app: log -> uart[0m
+[0;31mE (49966) USER_app: log -> uart
+[0m
+[0;32mI (51956) USER_app: GPIO 5 is low[0m
+[0;32mI (51956) USER_app: Minimum free heap size: 219116 bytes[0m
+[0;32mI (51956) USER_app: Largest free block size: 167936[0m
+[0;32mI (51956) USER_app: Wakeup reason: 0[0m
+[0;32mI (51966) USER_app: log -> uart[0m
+[0;33mW (51966) USER_app: log -> uart[0m
+[0;31mE (51966) USER_app: log -> uart
+[0m
+[0;32mI (53956) USER_app: GPIO 5 is low[0m
+[0;32mI (53956) USER_app: Minimum free heap size: 219116 bytes[0m
+[0;32mI (53956) USER_app: Largest free block size: 167936[0m
+[0;32mI (53956) USER_app: Wakeup reason: 0[0m
+[0;32mI (53966) USER_app: log -> uart[0m
+[0;33mW (53966) USER_app: log -> uart[0m
+[0;31mE (53966) USER_app: log -> uart
+[0m
+[0;32mI (55956) USER_app: GPIO 5 is low[0m
+[0;32mI (55956) USER_app: Minimum free heap size: 219116 bytes[0m
+[0;32mI (55956) USER_app: Largest free block size: 167936[0m
+[0;32mI (55956) USER_app: Wakeup reason: 0[0m
+[0;32mI (55966) USER_app: log -> uart[0m
+[0;33mW (55966) USER_app: log -> uart[0m
+[0;31mE (55966) USER_app: log -> uart
+[0m
+[0;32mI (57956) USER_app: GPIO 5 is low[0m
+[0;32mI (57956) USER_app: Minimum free heap size: 219116 bytes[0m
+[0;32mI (57956) USER_app: Largest free block size: 167936[0m
+[0;32mI (57956) USER_app: Wakeup reason: 0[0m
+[0;32mI (57966) USER_app: log -> uart[0m
+[0;33mW (57966) USER_app: log -> uart[0m
+[0;31mE (57966) USER_app: log -> uart
+[0m
+[0;32mI (59956) USER_app: GPIO 5 is low[0m
+[0;32mI (59956) USER_app: Minimum free heap size: 219116 bytes[0m
+[0;32mI (59956) USER_app: Largest free block size: 167936[0m
+[0;32mI (59956) USER_app: Wakeup reason: 0[0m
+[0;32mI (59966) USER_app: log -> uart[0m
+[0;33mW (59966) USER_app: log -> uart[0m
+[0;31mE (59966) USER_app: log -> uart
+[0m
+[0;33mW (59976) USER_app: mcu will deep sleep...[0m
+[0;32mI (59976) USER_timer: MAIN_TASK Timer stop ...[0m
+[0;32mI (59986) USER_timer: MY_HTTPS_REQUEST_TASK Timer stop ...[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x5 (DSLEEP),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3818,len:0x1758
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xc00
+load:0x403cc700,len:0x2e04
+entry 0x403c9908
+[0;32mI (26) boot: ESP-IDF v5.1.2-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Apr 24 2024 23:21:13[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (39) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 8MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (54) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (65) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (72) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (80) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c0a0020 size=28694h (165524) map[0m
+[0;32mI (129) esp_image: segment 1: paddr=000386bc vaddr=3fc98c00 size=046ech ( 18156) load[0m
+[0;32mI (133) esp_image: segment 2: paddr=0003cdb0 vaddr=40374000 size=03268h ( 12904) load[0m
+[0;32mI (138) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=9ec28h (650280) map[0m
+[0;32mI (260) esp_image: segment 4: paddr=000dec50 vaddr=40377268 size=118b4h ( 71860) load[0m
+[0;32mI (277) esp_image: segment 5: paddr=000f050c vaddr=600fe000 size=00070h (   112) [0m
+[0;32mI (285) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (286) boot: Disabling RNG early entropy source...[0m
+[0;32mI (297) cpu_start: Multicore app[0m
+[0;32mI (297) cpu_start: Pro cpu up.[0m
+[0;32mI (298) cpu_start: Starting app cpu, entry point is 0x403756bc[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (316) cpu_start: Pro cpu start user code[0m
+[0;32mI (316) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (316) cpu_start: Application information:[0m
+[0;32mI (319) cpu_start: Project name:     ESP_S3_project[0m
+[0;32mI (324) cpu_start: App version:      4d9ac2e-dirty[0m
+[0;32mI (330) cpu_start: Compile time:     Apr 25 2024 01:26:08[0m
+[0;32mI (336) cpu_start: ELF file SHA256:  5d592694953d2720...[0m
+[0;32mI (342) cpu_start: ESP-IDF:          v5.1.2-dirty[0m
+[0;32mI (347) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (352) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (357) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (361) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (369) heap_init: At 3FCA1C90 len 00047A80 (286 KiB): DRAM[0m
+[0;32mI (375) heap_init: At 3FCE9710 len 00005724 (21 KiB): STACK/DRAM[0m
+[0;32mI (382) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (388) heap_init: At 600FE070 len 00001F78 (7 KiB): RTCRAM[0m
+[0;32mI (395) spi_flash: detected chip: gd[0m
+[0;32mI (398) spi_flash: flash io: dio[0m
+[0;32mI (402) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (409) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (416) app_start: Starting scheduler on CPU0[0m
+[0;32mI (421) app_start: Starting scheduler on CPU1[0m
+[0;32mI (421) main_task: Started on CPU0[0m
+[0;32mI (431) main_task: Calling app_main()[0m
+[0;32mI (431) USER_app: ESP-IDF version: v5.1.2-dirty[0m
+[0;32mI (441) USER_app: heap: 270336[0m
+[0;32mI (441) USER_app: Minimum free heap size: 334408 bytes
+[0m
+[0;32mI (451) gpio: GPIO[5]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:2 [0m
+[0;32mI (461) USER_LED: Start LED rainbow chase[0m
+[0;32mI (461) USER_LED: Create RMT TX channel[0m
+[0;32mI (471) gpio: GPIO[48]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (481) USER_LED: Install led strip encoder[0m
+[0;32mI (481) USER_LED: Enable RMT TX channel[0m
+[0;32mI (491) USER_LED: Start LED rainbow chase[0m
+[0;32mI (491) pp: pp rom version: e7ae62f[0m
+[0;32mI (491) net80211: net80211 rom version: e7ae62f[0m
+I (511) wifi:wifi driver task: 3fcadf18, prio:23, stack:6656, core=0
+I (521) wifi:wifi firmware version: 91b9630
+I (521) wifi:wifi certification version: v7.0
+I (521) wifi:config NVS flash: enabled
+I (521) wifi:config nano formating: disabled
+I (521) wifi:Init data frame dynamic rx buffer num: 32
+I (531) wifi:Init static rx mgmt buffer num: 5
+I (531) wifi:Init management short buffer num: 32
+I (541) wifi:Init dynamic tx buffer num: 32
+I (541) wifi:Init static tx FG buffer num: 2
+I (541) wifi:Init static rx buffer size: 1600
+I (551) wifi:Init static rx buffer num: 10
+I (551) wifi:Init dynamic rx buffer num: 32
+[0;32mI (561) wifi_init: rx ba win: 6[0m
+[0;32mI (561) wifi_init: tcpip mbox: 32[0m
+[0;32mI (561) wifi_init: udp mbox: 6[0m
+[0;32mI (571) wifi_init: tcp mbox: 6[0m
+[0;32mI (571) wifi_init: tcp tx win: 5744[0m
+[0;32mI (581) wifi_init: tcp rx win: 5744[0m
+[0;32mI (581) wifi_init: tcp mss: 1440[0m
+[0;32mI (581) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (591) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (601) phy_init: phy_version 620,ec7ec30,Sep  5 2023,13:49:13[0m
+I (631) wifi:mode : sta (dc:da:0c:4b:32:28)
+I (631) wifi:enable tsf
+[0;32mI (631) My_wifi_STA: WIFI_EVENT_STA_START[0m
+[0;32mI (3131) My_wifi_STA: wifi scan done[0m
+I (3131) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1
+I (3131) wifi:state: init -> auth (b0)
+I (3141) wifi:state: auth -> assoc (0)
+I (3151) wifi:state: assoc -> run (10)
+I (3151) wifi:connected with Ping, aid = 3, channel 11, BW20, bssid = d4:da:21:b7:91:24
+I (3161) wifi:security: Open Auth, phy: bgn, rssi: -41
+I (3161) wifi:pm start, type: 1
+
+I (3161) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000
+[0;32mI (3171) My_wifi_STA: WIFI_EVENT_STA_CONNECTED ! ! ![0m
+I (3181) wifi:<ba-add>idx:0 (ifx:0, d4:da:21:b7:91:24), tid:6, ssn:0, winSize:64
+I (3251) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (4671) esp_netif_handlers: sta ip: 192.168.31.196, mask: 255.255.255.0, gw: 192.168.31.1[0m
+[0;32mI (4671) My_wifi_STA: got ip:192.168.31.196[0m
+[0;32mI (4671) My_wifi_STA: connected to ap SSID:Ping password:, bitmap:7[0m
+[0;32mI (4681) My_usb_device: USB initialization[0m
+[0;32mI (4681) My_https_client: start https_request example[0m
+[0;33mW (4681) tusb_desc: No Device descriptor provided, using default.[0m
+[0;32mI (4691) My_https_client: Minimum free heap size: 267932 bytes[0m
+[0;33mW (4691) tusb_desc: No FullSpeed configuration descriptor provided, using default.[0m
+[0;32mI (4701) My_https_client: https_request using cacert_buf[0m
+[0;33mW (4711) tusb_desc: No String descriptors provided, using default.[0m
+I (4721) wifi:<ba-add>idx:1 (ifx:0, d4:da:21:b7:91:24), tid:0, ssn:0, winSize:64
+[0;32mI (4731) tusb_desc: 
+┌─────────────────────────────────┐
+│  USB Device Descriptor Summary  │
+├───────────────────┬─────────────┤
+│bDeviceClass       │ 239         │
+├───────────────────┼─────────────┤
+│bDeviceSubClass    │ 2           │
+├───────────────────┼─────────────┤
+│bDeviceProtocol    │ 1           │
+├───────────────────┼─────────────┤
+│bMaxPacketSize0    │ 64          │
+├───────────────────┼─────────────┤
+│idVendor           │ 0x303a      │
+├───────────────────┼─────────────┤
+│idProduct          │ 0x4001      │
+├───────────────────┼─────────────┤
+│bcdDevice          │ 0x100       │
+├───────────────────┼─────────────┤
+│iManufacturer      │ 0x1         │
+├───────────────────┼─────────────┤
+│iProduct           │ 0x2         │
+├───────────────────┼─────────────┤
+│iSerialNumber      │ 0x3         │
+├───────────────────┼─────────────┤
+│bNumConfigurations │ 0x1         │
+└───────────────────┴─────────────┘[0m
+[0;32mI (4901) TinyUSB: TinyUSB Driver installed[0m
+[0;32mI (4901) My_usb_device: USB initialization DONE[0m
+[0;32mI (8911) USER_app: GPIO 5 is low[0m
+[0;32mI (8911) USER_app: Minimum free heap size: 219116 bytes[0m
+[0;32mI (8911) USER_app: Largest free block size: 159744[0m
+[0;32mI (8911) USER_app: Wakeup reason: 3[0m
+[0;32mI (8921) USER_app: log -> uart[0m
+[0;33mW (8921) USER_app: log -> uart[0m
+[0;31mE (8921) USER_app: log -> uart
+[0m
+[0;32mI (9821) My_https_client: 0...[0m
+[0;32mI (10821) My_https_client: finish https_request example[0m
+[0;32mI (10821) My_https_client: NVS re_err:0, NVS status:0[0m
+[0;32mI 

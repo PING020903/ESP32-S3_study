@@ -41,7 +41,29 @@
         "esp_timer.h": "c",
         "stdlib.h": "c",
         "string.h": "c",
-        "my_timer_init.h": "c"
+        "my_timer_init.h": "c",
+        "soc_caps.h": "c",
+        "task.h": "c",
+        "stdio.h": "c",
+        "gpio.h": "c",
+        "my_gpio_init.h": "c",
+        "gpio_types.h": "c",
+        "esp_bit_defs.h": "c",
+        "my_mcu_sleep_init.h": "c",
+        "esp_sleep.h": "c",
+        "rtc_io.h": "c",
+        "functional": "c",
+        "bit": "c",
+        "compare": "c",
+        "cstddef": "c",
+        "string": "c",
+        "limits": "c",
+        "memory": "c",
+        "new": "c"
     },
-    "cmake.configureOnOpen": true
+    "cmake.configureOnOpen": true,
+    "workbench.editor.autoLockGroups": {
+        "terminalEditor": false,
+        "mainThreadWebview-markdown.preview": true
+    }
 }

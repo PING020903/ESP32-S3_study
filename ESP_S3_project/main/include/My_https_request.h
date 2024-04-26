@@ -1,6 +1,8 @@
 #ifndef _MY_HTTPS_REQUEST_H_
 #define _MY_HTTPS_REQUEST_H_
 
+
+#define HTTP_TEST 1
 #define GET_TIME_FROM_NVS 0
 #define GET_TIME_FROM_SNTP 1
 
@@ -9,14 +11,12 @@
 /* Constants that aren't configurable in menuconfig */
 
 #define WEB_PORT "443"
-#if 1
+#if HTTP_TEST
 #define WEB_SERVER "www.howsmyssl.com"
 #define WEB_URL "https://www.howsmyssl.com/a/check"
-#endif
-
-#if 0
-#define WEB_SERVER "www.bing.com"
-#define WEB_URL "https://www.bing.com/?FORM=Z9FD1&mkt=zh-CN"
+#else
+#define WEB_SERVER "www.bilibili.com"
+#define WEB_URL "https://www.bilibili.com/"
 #endif
 /****************************************************/
 #define SERVER_URL_MAX_SZ 256
@@ -29,5 +29,6 @@ esp_err_t fetch_and_store_time_in_nvs(void *args);
 esp_err_t update_time_from_nvs(void);
 void https_request_task(void *pvparameters);
 void https_request_init(void);
+void only_https_request_init(void);
 
 #endif

@@ -1,0 +1,316 @@
+ESP-ROM:esp32s3-20210327
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3818,len:0x1758
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xc00
+load:0x403cc700,len:0x2e04
+entry 0x403c9908
+[0;32mI (27) boot: ESP-IDF v5.1.2-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Apr 24 2024 23:21:13[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (39) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 8MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (54) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (65) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (72) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (80) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c0a0020 size=28574h (165236) map[0m
+[0;32mI (129) esp_image: segment 1: paddr=0003859c vaddr=3fc98c00 size=046ech ( 18156) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=0003cc90 vaddr=40374000 size=03388h ( 13192) load[0m
+[0;32mI (138) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=9e9e0h (649696) map[0m
+[0;32mI (262) esp_image: segment 4: paddr=000dea08 vaddr=40377388 size=11794h ( 71572) load[0m
+[0;32mI (284) esp_image: segment 5: paddr=000f01a4 vaddr=600fe000 size=00070h (   112) load[0m
+[0;32mI (293) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (293) boot: Disabling RNG early entropy source...[0m
+[0;32mI (304) cpu_start: Multicore app[0m
+[0;32mI (305) cpu_start: Pro cpu up.[0m
+[0;32mI (305) cpu_start: Starting app cpu, entry point is 0x403756bc[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (323) cpu_start: Pro cpu start user code[0m
+[0;32mI (323) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (323) cpu_start: Application information:[0m
+[0;32mI (326) cpu_start: Project name:     ESP_S3_project[0m
+[0;32mI (331) cpu_start: App version:      4d9ac2e-dirty[0m
+[0;32mI (337) cpu_start: Compile time:     Apr 25 2024 01:26:08[0m
+[0;32mI (343) cpu_start: ELF file SHA256:  f8c83b5b00ae6bc6...[0m
+[0;32mI (349) cpu_start: ESP-IDF:          v5.1.2-dirty[0m
+[0;32mI (354) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (359) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (364) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (369) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (376) heap_init: At 3FCA1C90 len 00047A80 (286 KiB): DRAM[0m
+[0;32mI (382) heap_init: At 3FCE9710 len 00005724 (21 KiB): STACK/DRAM[0m
+[0;32mI (389) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (395) heap_init: At 600FE070 len 00001F78 (7 KiB): RTCRAM[0m
+[0;32mI (402) spi_flash: detected chip: gd[0m
+[0;32mI (405) spi_flash: flash io: dio[0m
+[0;32mI (410) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (416) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (424) app_start: Starting scheduler on CPU0[0m
+[0;32mI (428) app_start: Starting scheduler on CPU1[0m
+[0;32mI (428) main_task: Started on CPU0[0m
+[0;32mI (438) main_task: Calling app_main()[0m
+[0;32mI (438) USER_app: ESP-IDF version: v5.1.2-dirty[0m
+[0;32mI (448) USER_app: heap: 270336[0m
+[0;32mI (448) USER_app: Minimum free heap size: 334408 bytes
+[0m
+[0;32mI (458) gpio: GPIO[5]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:2 [0m
+[0;32mI (468) USER_timer: Timer structture init ...[0m
+[0;32mI (468) USER_timer: Timer create ...[0m
+[0;32mI (478) USER_timer: Timer start ...[0m
+[0;32mI (478) USER_LED: Start LED rainbow chase[0m
+[0;32mI (488) USER_LED: Create RMT TX channel[0m
+[0;32mI (488) gpio: GPIO[48]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (498) USER_LED: Install led strip encoder[0m
+[0;32mI (508) USER_LED: Enable RMT TX channel[0m
+[0;32mI (508) USER_LED: Start LED rainbow chase[0m
+[0;32mI (508) pp: pp rom version: e7ae62f[0m
+[0;32mI (518) net80211: net80211 rom version: e7ae62f[0m
+I (528) wifi:wifi driver task: 3fcae028, prio:23, stack:6656, core=0
+I (538) wifi:wifi firmware version: 91b9630
+I (538) wifi:wifi certification version: v7.0
+I (538) wifi:config NVS flash: enabled
+I (538) wifi:config nano formating: disabled
+I (548) wifi:Init data frame dynamic rx buffer num: 32
+I (548) wifi:Init static rx mgmt buffer num: 5
+I (558) wifi:Init management short buffer num: 32
+I (558) wifi:Init dynamic tx buffer num: 32
+I (558) wifi:Init static tx FG buffer num: 2
+I (568) wifi:Init static rx buffer size: 1600
+I (568) wifi:Init static rx buffer num: 10
+I (578) wifi:Init dynamic rx buffer num: 32
+[0;32mI (578) wifi_init: rx ba win: 6[0m
+[0;32mI (578) wifi_init: tcpip mbox: 32[0m
+[0;32mI (588) wifi_init: udp mbox: 6[0m
+[0;32mI (588) wifi_init: tcp mbox: 6[0m
+[0;32mI (598) wifi_init: tcp tx win: 5744[0m
+[0;32mI (598) wifi_init: tcp rx win: 5744[0m
+[0;32mI (598) wifi_init: tcp mss: 1440[0m
+[0;32mI (608) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (608) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (618) phy_init: phy_version 620,ec7ec30,Sep  5 2023,13:49:13[0m
+I (688) wifi:mode : sta (dc:da:0c:4b:32:28)
+I (688) wifi:enable tsf
+[0;32mI (688) My_wifi_STA: WIFI_EVENT_STA_START[0m
+[0;32mI (3188) My_wifi_STA: wifi scan done[0m
+I (3188) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1
+I (3198) wifi:state: init -> auth (b0)
+I (3198) wifi:state: auth -> assoc (0)
+I (3208) wifi:state: assoc -> run (10)
+I (3208) wifi:connected with Ping, aid = 3, channel 11, BW20, bssid = d4:da:21:b7:91:24
+I (3208) wifi:security: Open Auth, phy: bgn, rssi: -38
+I (3218) wifi:pm start, type: 1
+
+I (3218) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000
+[0;32mI (3228) My_wifi_STA: WIFI_EVENT_STA_CONNECTED ! ! ![0m
+I (3248) wifi:<ba-add>idx:0 (ifx:0, d4:da:21:b7:91:24), tid:6, ssn:0, winSize:64
+I (3248) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (4728) esp_netif_handlers: sta ip: 192.168.31.196, mask: 255.255.255.0, gw: 192.168.31.1[0m
+[0;32mI (4728) My_wifi_STA: got ip:192.168.31.196[0m
+[0;32mI (4728) My_wifi_STA: connected to ap SSID:Ping password:, bitmap:7[0m
+[0;32mI (4738) My_https_client: updating time from NVS[0m
+[0;32mI (4738) My_https_client: initializing SNTP[0m
+[0;32mI (4748) My_https_client: List of configured NTP servers:[0m
+[0;32mI (4748) My_https_client: server 0: ntp1.aliyun.com[0m
+[0;32mI (4758) My_https_client: server 1: ntp.ntsc.ac.cn[0m
+[0;32mI (4758) My_https_client: server 2: cn.ntp.org.cn[0m
+[0;32mI (4768) My_https_client: server 3: pool.ntp.org[0m
+[0;32mI (5768) My_https_client: waitting for system time to be set...(1/10)[0m
+[0;32mI (6768) My_https_client: waitting for system time to be set...(2/10)[0m
+I (7658) wifi:<ba-add>idx:1 (ifx:0, d4:da:21:b7:91:24), tid:0, ssn:0, winSize:64
+[0;32mI (7718) My_https_client: SNTP sync OK[0m
+[0;32mI (7718) My_https_client: Notification of a time synchronization event[0m
+[0;32mI (7738) My_https_client: time updated in NVS[0m
+[0;32mI (7738) My_https_client: time: 1714098082[0m
+[0;32mI (7738) My_usb_device: USB initialization[0m
+[0;32mI (7738) My_https_client: start https_request example[0m
+[0;33mW (7738) tusb_desc: No Device descriptor provided, using default.[0m
+[0;32mI (7748) My_https_client: Minimum free heap size: 267428 bytes[0m
+[0;33mW (7748) tusb_desc: No FullSpeed configuration descriptor provided, using default.[0m
+[0;32mI (7758) My_https_client: https_request using cacert_buf[0m
+[0;33mW (7768) tusb_desc: No String descriptors provided, using default.[0m
+[0;32mI (7778) tusb_desc: 
+┌─────────────────────────────────┐
+│  USB Device Descriptor Summary  │
+├───────────────────┬─────────────┤
+│bDeviceClass       │ 239         │
+├───────────────────┼─────────────┤
+│bDeviceSubClass    │ 2           │
+├───────────────────┼─────────────┤
+│bDeviceProtocol    │ 1           │
+├───────────────────┼─────────────┤
+│bMaxPacketSize0    │ 64          │
+├───────────────────┼─────────────┤
+│idVendor           │ 0x303a      │
+├───────────────────┼─────────────┤
+│idProduct          │ 0x4001      │
+├───────────────────┼─────────────┤
+│bcdDevice          │ 0x100       │
+├───────────────────┼─────────────┤
+│iManufacturer      │ 0x1         │
+├───────────────────┼─────────────┤
+│iProduct           │ 0x2         │
+├───────────────────┼─────────────┤
+│iSerialNumber      │ 0x3         │
+├───────────────────┼─────────────┤
+│bNumConfigurations │ 0x1         │
+└───────────────────┴─────────────┘[0m
+[0;32mI (7948) TinyUSB: TinyUSB Driver installed[0m
+[0;32mI (7948) My_usb_device: USB initialization DONE[0m
+[0;32mI (9398) My_https_client: ---- connection established... ----[0m
+[0;32mI (9398) My_https_client: 106 bytes written[0m
+[0;32mI (9408) My_https_client: reading HTTP response...[0m
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Connection: close
+Content-Length: 2545
+Content-Type: application/json
+Strict-Transport-Security: max-age=631138519; includeSubdomains; preload
+Vary: Accept-Encoding
+Date: Fri,
+ 26 Apr 2024 02:21:24 GMT
+
+{"given_cipher_suites":["TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+"TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+"TLS_ECDHE_ECDSA_WITH_AES_256_CCM",
+"TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
+"TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384",
+"TLS_ECDHE_ECDSA_WITH_AES_256_
+CBC_SHA",
+"TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+"TLS_ECDHE_ECDSA_WITH_AES_256_CCM_8",
+"TLS_ECDHE_ECDSA_WITH_ARIA_256_GCM_SHA384",
+"TLS_ECDHE_RSA_WITH_ARIA_256_GCM_SHA384",
+"TLS_ECDHE_ECDSA_WITH_ARIA_256_CBC_SHA384",
+"TLS_ECDHE_RSA_WITH_ARIA_256_CBC_SHA384",
+"TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+"TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+"TLS_ECDHE_ECDSA_WITH_AES_128_CCM",
+"TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
+"TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256",
+"TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
+"TLS_ECDHE_RSA_WITH_AE
+S_128_CBC_SHA",
+"TLS_ECDHE_ECDSA_WITH_AES_128_CCM_8",
+"TLS_ECDHE_ECDSA_WITH_ARIA_128_GCM_SHA256",
+"TLS_ECDHE_RSA_WITH_ARIA_128_GCM_SHA256",
+"TLS_ECDHE_ECDSA_WITH
+_ARIA_128_CBC_SHA256",
+"TLS_ECDHE_RSA_WITH_ARIA_128_CBC_SHA256",
+"TLS_RSA_WITH_AES_256_GCM_SHA384",
+"TLS_RSA_WITH_AES_256_CCM",
+"TLS_RSA_WITH_AES_256_CBC_SHA256",
+"TLS_RSA_WITH_AES_256_CBC_SHA",
+"TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384",
+"TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384",
+"TLS_ECDH_RSA_WITH_AES_256_CBC_SHA",
+"TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384",
+"TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA384",
+"TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA",
+"TLS_RSA_WITH_AES_256_CCM_8",
+"TLS_ECDH_ECDSA_WITH_ARIA_256_GCM_SHA384",
+"TLS_ECDH_RSA_WIT
+H_ARIA_256_GCM_SHA384",
+"TLS_RSA_WITH_ARIA_256_GCM_SHA384",
+"TLS_ECDH_ECDSA_WITH_ARIA_256_CBC_SHA384",
+"TLS_ECDH_RSA_WITH_ARIA_256_CBC_SHA384",
+"TLS_RSA_WITH_ARIA_256_CBC_SHA384",
+"TLS_RSA_WITH_AES_128_GCM_SHA256",
+"TLS_RSA_WITH_AES_128_CCM",
+"TLS_RSA_WITH_AES_128_CBC_SHA256",
+"TLS_RSA_WITH_AES_128_CBC_SHA",
+"TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256",
+"TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256",
+"TLS_ECDH_RSA_WITH_AES_128_CBC_SHA",
+"TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256",
+"TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256",
+"TLS_ECDH_ECDS
+A_WITH_AES_128_CBC_SHA",
+"TLS_RSA_WITH_AES_128_CCM_8",
+"TLS_ECDH_ECDSA_WITH_ARIA_128_GCM_SHA256",
+"TLS_ECDH_RSA_WITH_ARIA_128_GCM_SHA256",
+"TLS_RSA_WITH_ARIA_128_GCM_SHA256",
+"TLS_ECDH_ECDSA_WITH_ARIA_128_CBC_SHA256",
+"TLS_ECDH_RSA_WITH_ARIA_128_CBC_SHA256",
+"TLS_RSA_WITH_ARIA_128_CBC_SHA256",
+"TLS_EMPTY_RENEGOTIATION_INFO_SCSV"],
+"ephemeral_keys_supported":true,
+"session_ticket_supported":true,
+"tls_compression_supported":false,
+"unknown_cipher_suite_supported":false,
+"beast_vuln":false,
+"able_to_detect_n_minus_one_spl
+itting":false,
+"insecure_cipher_suites":{},
+"tls_version":"TLS 1.2",
+"rating":"Probably Okay"}
+[0;32mI (9958) My_https_client: connection closed[0m
+[0;32mI (9968) My_https_client: 3...[0m
+[0;32mI (10878) USER_app: GPIO 5 is low[0m
+[0;32mI (10878) USER_app: Minimum free heap size: 219244 bytes[0m
+[0;32mI (10878) USER_app: Largest free block size: 167936[0m
+[0;32mI (10878) USER_app: log -> uart[0m
+[0;33mW (10888) USER_app: log -> uart[0m
+[0;31mE (10888) USER_app: log -> uart
+[0m
+[0;32mI (10968) My_https_client: 2...[0m
+[0;32mI (13968) My_https_client: finish https_request example[0m
+[0;32mI (13968) My_https_client: NVS re_err:0, NVS status:0[0m
+[0;32mI (14878) USER_app: GPIO 5 is low[0m
+[0;32mI (14878) USER_app: Minimum free heap size: 219244 bytes[0m
+[0;32mI (14878) USER_app: Largest free block size: 167936[0m
+[0;32mI (14878) USER_app: log -> uart[0m
+[0;33mW (14888) USER_app: log -> uart[0m
+[0;31mE (14888) USER_app: log -> uart
+[0m
+[0;32mI (18878) USER_app: GPIO 5 is low[0m
+[0;32mI (18878) USER_app: Minimum free heap size: 219244 bytes[0m
+[0;32mI (18878) USER_app: Largest free block size: 167936[0m
+[0;32mI (18878) USER_app: log -> uart[0m
+[0;33mW (18888) USER_app: log -> uart[0m
+[0;31mE (18888) USER_app: log -> uart
+[0m
+[0;32mI (22878) USER_app: GPIO 5 is low[0m
+[0;32mI (22878) USER_app: Minimum free heap size: 219244 bytes[0m
+[0;32mI (22878) USER_app: Largest free block size: 167936[0m
+[0;32mI (22878) USER_app: log -> uart[0m
+[0;33mW (22888) USER_app: log -> uart[0m
+[0;31mE (22888) USER_app: log -> uart
+[0m
+[0;32mI (26878) USER_app: GPIO 5 is low[0m
+[0;32mI (26878) USER_app: Minimum free heap size: 219244 bytes[0m
+[0;32mI (26878) USER_app: Largest free block size: 167936[0m
+[0;32mI (26878) USER_app: log -> uart[0m
+[0;33mW (26888) USER_app: log -> uart[0m
+[0;31mE (26888) USER_app: log -> uart
+[0m
+[0;33mW (30488) USER_app: mcu will deep sleep...[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x5 (DSLEEP),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3818,len:0x1758
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xc00
+load:0x403cc700,len:0x2e04
+entry 0x403c9908
+[0;32mI (26) boot: ESP-IDF v5.1.2-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Apr 24 2024 23:21:13[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (39) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 8MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (54) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST O

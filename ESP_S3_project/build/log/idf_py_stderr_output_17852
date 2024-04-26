@@ -1,0 +1,201 @@
+[0;33m--- WARNING: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM9 instead...[0m
+[0;33m--- esp-idf-monitor 1.4.0 on \\.\COM9 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x40375368: xt_utils_set_vecbase at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/xtensa/include/xt_utils.h:94
+ (inlined by) esp_cpu_intr_set_ivt_addr at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_hw_support/include/esp_cpu.h:230
+ (inlined by) call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:158
+[0m
+[0;33mWarning: checksum mismatch between flashed and built applications. Checksum of built application is b37e36f9115f968b6460b9833ca95cd5c22ba77d3537bc692f8c92cb62e4ed81[0m
+[0;33m0x40041a76: ets_delay_us in ROM
+[0m
+[0;33m0x400490d5: usb_uart_device_rx_one_char in ROM
+[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33m0x40378cd3: esp_flash_init_main at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/spi_flash/esp_flash_api.c:394
+[0m
+[0;33m0x40375360: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x40041a7c: ets_delay_us in ROM
+[0m
+[0;33m0x40048d14: uart_rx_one_char in ROM
+[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33m0x40378cdb: esp_flash_init_main at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/spi_flash/esp_flash_api.c:394
+[0m
+[0;33m0x40375360: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x40041a76: ets_delay_us in ROM
+[0m
+[0;33m0x40048d1c: uart_rx_one_char in ROM
+[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33m0x40378cdb: esp_flash_init_main at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/spi_flash/esp_flash_api.c:394
+[0m
+[0;33m0x40375360: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x40041a79: ets_delay_us in ROM
+[0m
+[0;33m0x40048dfc: uart_rx_readbuff in ROM
+[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33m0x40378cd9: esp_flash_is_quad_mode at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/spi_flash/include/esp_flash.h:376
+ (inlined by) esp_flash_init_main at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/spi_flash/esp_flash_api.c:394
+[0m
+[0;33m0x40041a76: ets_delay_us in ROM
+[0m
+[0;33m0x400490e9: usb_uart_device_rx_one_char in ROM
+[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33m0x40378cd9: esp_flash_is_quad_mode at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/spi_flash/include/esp_flash.h:376
+ (inlined by) esp_flash_init_main at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/spi_flash/esp_flash_api.c:394
+[0m
+[0;33m0x40375360: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x40041a76: ets_delay_us in ROM
+[0m
+[0;33m0x40048ede: recv_packet in ROM
+[0m
+[0;33m0x40048d0b: uart_rx_one_char in ROM
+[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33m0x40378cd3: spi_flash_check_and_flush_cache at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/spi_flash/flash_mmap.c:359
+[0m
+[0;33m0x4037550c: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x40041a76: ets_delay_us in ROM
+[0m
+[0;33m0x40048deb: uart_rx_readbuff in ROM
+[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33m0x40378c78: spi_flash_cache_enabled at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/spi_flash/cache_utils.c:376
+[0m
+[0;33m0x4037550c: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200b64f: restore_std_streams at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_usb_device.c:81
+0x4200b762: My_tusb_streams_change at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_usb_device.c:117
+0x4200b851: My_usb_device_init at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_usb_device.c:169 (discriminator 2)
+0x4200ab6b: app_main at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:144
+0x4037f649: vPortTaskWrapper at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x403758d8: esp_restart_noos_dig at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x4037550c: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200b64f: restore_std_streams at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_usb_device.c:81
+0x4200b762: My_tusb_streams_change at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_usb_device.c:117
+0x4200b851: My_usb_device_init at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_usb_device.c:169 (discriminator 2)
+0x4200ab6b: app_main at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:144
+0x4037f649: vPortTaskWrapper at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x403758d8: esp_restart_noos_dig at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x4037550c: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200b64f: restore_std_streams at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_usb_device.c:81
+0x4200b762: My_tusb_streams_change at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_usb_device.c:117
+0x4200b851: My_usb_device_init at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_usb_device.c:169 (discriminator 2)
+0x4200ab6b: app_main at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:144
+0x4037f649: vPortTaskWrapper at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x403758d8: esp_restart_noos_dig at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x4037550c: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200b64f: restore_std_streams at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_usb_device.c:81
+0x4200b762: My_tusb_streams_change at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_usb_device.c:117
+0x4200b851: My_usb_device_init at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_usb_device.c:169 (discriminator 2)
+0x4200ab6b: app_main at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:144
+0x4037f649: vPortTaskWrapper at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x403758d8: esp_restart_noos_dig at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x4037550c: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200b64f: restore_std_streams at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_usb_device.c:81
+0x4200b762: My_tusb_streams_change at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_usb_device.c:117
+0x4200b851: My_usb_device_init at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_usb_device.c:169 (discriminator 2)
+0x4200ab6b: app_main at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:144
+0x4037f649: vPortTaskWrapper at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x403758d8: esp_restart_noos_dig at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x4037550c: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x4200b64f: restore_std_streams at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_usb_device.c:81
+0x4200b762: My_tusb_streams_change at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_usb_device.c:117
+0x4200b851: My_usb_device_init at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_usb_device.c:169 (discriminator 2)
+0x4200ab6b: app_main at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:144
+0x4037f649: vPortTaskWrapper at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x403758d8: esp_restart_noos_dig at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x4037550c: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x40041a7c: ets_delay_us in ROM
+[0m
+[0;33m0x40048ede: recv_packet in ROM
+[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33m0x40378c75: spi_flash_cache_enabled at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/spi_flash/cache_utils.c:375
+[

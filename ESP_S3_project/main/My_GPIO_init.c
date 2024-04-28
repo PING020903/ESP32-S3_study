@@ -11,16 +11,10 @@
 #include "sdkconfig.h"
 #include "MY_GPIO_init.h"
 
-
-
 // 中断触发次数
 static volatile unsigned char handler_count = 0;
 // 中断队列(指针)
 static QueueSetHandle_t gpioISR_evt_queue = NULL;
-// GPIO结构体
-static gpio_config_t My_GPIO_structture = {};
-// GPIO毛刺过滤器结构体
-static gpio_pin_glitch_filter_config_t My_GPIO_filter_structture = {};
 // GPIO毛刺过滤器句柄
 static gpio_glitch_filter_handle_t My_GPIO_filter_handler;
 
@@ -77,8 +71,11 @@ void My_gpio_init()
     gpioISR_evt_queue = xQueueCreate(10, sizeof(uint32_t));
 
     // 配置GPIO毛刺过滤器结构体
-    My_GPIO_filter_structture.clk_src = 0;
-    My_GPIO_filter_structture.gpio_num = GPIO_NUM_5;
+    // GPIO毛刺过滤器结构体
+    gpio_pin_glitch_filter_config_t My_GPIO_filter_structture = {
+        .clk_src = 0,
+        .gpio_num = GPIO_NUM_5,
+    };
 
     /*
     TaskHandle_t xTaskCreateStatic(
@@ -106,11 +103,14 @@ void My_gpio_init()
     // hook isr handler for specific gpio pin, 添加gpio中断处理函数
     ESP_ERROR_CHECK(gpio_isr_handler_add(GPIO_NUM_5, gpio_isr_handler, (void *)GPIO_NUM_5));
 
-    My_GPIO_structture.pin_bit_mask = (1ULL << 5);       // GPIO5, 1左移5bit
-    My_GPIO_structture.mode = GPIO_MODE_INPUT;           // 输入模式
-    My_GPIO_structture.pull_up_en = GPIO_PULLUP_DISABLE; // 上拉电阻, pull up; 下拉电阻, pull down
-    My_GPIO_structture.pull_down_en = GPIO_PULLDOWN_ENABLE;
-    My_GPIO_structture.intr_type = GPIO_INTR_NEGEDGE; // 下降中断, falling edge(GPIO_INTR_NEGEDGE); 上升中断, rising edge(GPIO_INTR_POSEDGE)
+    // GPIO结构体
+    gpio_config_t My_GPIO_structture = {
+        .pin_bit_mask = (1ULL << 5),       // GPIO5, 1左移5bit
+        .mode = GPIO_MODE_INPUT,           // 输入模式
+        .pull_up_en = GPIO_PULLUP_DISABLE, // 上拉电阻, pull up; 下拉电阻, pull down
+        .pull_down_en = GPIO_PULLDOWN_ENABLE,
+        .intr_type = GPIO_INTR_NEGEDGE, // 下降中断, falling edge(GPIO_INTR_NEGEDGE); 上升中断, rising edge(GPIO_INTR_POSEDGE)
+    };
     // gpio_config(&My_GPIO_structture);//配置 GPIO5
     ESP_ERROR_CHECK(gpio_config(&My_GPIO_structture)); // 配置 GPIO5且使用ESP_ERROR检查
 

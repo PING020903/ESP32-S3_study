@@ -573,7 +573,7 @@ event_loop_check:
     return;
 }
 
-/* wifi 停止函数, 停止后会释放wifi资源, 需重新初始化 */
+/* wifi 停止函数, 停止后会释放wifi资源, 需重新初始化(已在WiFi事件中做处理) */
 void My_wifi_stop(void)
 {
     esp_err_t err = esp_wifi_stop();

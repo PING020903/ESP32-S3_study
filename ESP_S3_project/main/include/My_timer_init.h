@@ -10,6 +10,7 @@ enum
     SNTP_SYNC,
     MCU_DEEP_SLEEP,
     CHANGE_LOG_PORT,
+    NOTHING_TASK,
 };
 
 /**

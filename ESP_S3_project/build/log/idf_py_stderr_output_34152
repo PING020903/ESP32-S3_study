@@ -1,0 +1,170 @@
+[0;33m--- WARNING: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM9 instead...[0m
+[0;33m--- esp-idf-monitor 1.4.0 on \\.\COM9 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x40041a76: ets_delay_us in ROM
+[0m
+[0;33m0x400490d5: usb_uart_device_rx_one_char in ROM
+[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33m0x40378c78: bootloader_flash_execute_command_common at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/bootloader_support/bootloader_flash/src/bootloader_flash.c:533
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x40041a79: ets_delay_us in ROM
+[0m
+[0;33m0x40048de8: uart_rx_readbuff in ROM
+[0m
+[0;33m0x400490d9: usb_uart_device_rx_one_char in ROM
+[0m
+[0;33m0x40048d06: uart_rx_one_char in ROM
+[0m
+[0;33m0x40048d00: uart_rx_one_char in ROM
+[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33m0x40378c7b: bootloader_flash_execute_command_common at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/bootloader_support/bootloader_flash/src/bootloader_flash.c:533
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x40041a76: ets_delay_us in ROM
+[0m
+[0;33m0x40048ee5: recv_packet in ROM
+[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33m0x40378c7b: bootloader_flash_execute_command_common at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/bootloader_support/bootloader_flash/src/bootloader_flash.c:533
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x40375c06: panic_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+0x4037ddf9: esp_system_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+0x40384ca1: __assert_func at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/assert.c:81
+0x420182a7: esp_sleep_pd_config at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_hw_support/sleep_modes.c:1677 (discriminator 1)
+0x4200b40d: sleep_init at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_mcu_sleep_init.c:16
+0x4200b3e9: app_main at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:192
+0x4209e8ff: main_task at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+0x40380811: vPortTaskWrapper at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375a88: esp_restart_noos_dig at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x40375c06: panic_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+0x4037ddf9: esp_system_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+0x40384ca1: __assert_func at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/assert.c:81
+0x420182a7: esp_sleep_pd_config at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_hw_support/sleep_modes.c:1677 (discriminator 1)
+0x4200b40d: sleep_init at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_mcu_sleep_init.c:16
+0x4200b3e9: app_main at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:192
+0x4209e8ff: main_task at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+0x40380811: vPortTaskWrapper at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375a88: esp_restart_noos_dig at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x40375c06: panic_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+0x4037ddf9: esp_system_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+0x40384ca1: __assert_func at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/assert.c:81
+0x420182a7: esp_sleep_pd_config at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_hw_support/sleep_modes.c:1677 (discriminator 1)
+0x4200b40d: sleep_init at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_mcu_sleep_init.c:16
+0x4200b3e9: app_main at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:192
+0x4209e8ff: main_task at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+0x40380811: vPortTaskWrapper at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375a88: esp_restart_noos_dig at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x40375c06: panic_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+0x4037ddf9: esp_system_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+0x40384ca1: __assert_func at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/assert.c:81
+0x420182a7: esp_sleep_pd_config at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_hw_support/sleep_modes.c:1677 (discriminator 1)
+0x4200b40d: sleep_init at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_mcu_sleep_init.c:16
+0x4200b3e9: app_main at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:192
+0x4209e8ff: main_task at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+0x40380811: vPortTaskWrapper at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375a88: esp_restart_noos_dig at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x40375c06: panic_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+0x4037ddf9: esp_system_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+0x40384ca1: __assert_func at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/assert.c:81
+0x420182a7: esp_sleep_pd_config at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_hw_support/sleep_modes.c:1677 (discriminator 1)
+0x4200b40d: sleep_init at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_mcu_sleep_init.c:16
+0x4200b3e9: app_main at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:192
+0x4209e8ff: main_task at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+0x40380811: vPortTaskWrapper at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375a88: esp_restart_noos_dig at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x40375c06: panic_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+0x4037ddf9: esp_system_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+0x40384ca1: __assert_func at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/assert.c:81
+0x420182a7: esp_sleep_pd_config at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_hw_support/sleep_modes.c:1677 (discriminator 1)
+0x4200b40d: sleep_init at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_mcu_sleep_init.c:16
+0x4200b3e9: app_main at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:192
+0x4209e8ff: main_task at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+0x40380811: vPortTaskWrapper at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375a88: esp_restart_noos_dig at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x40375c06: panic_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+0x4037ddf9: esp_system_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+0x40384ca1: __assert_func at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/assert.c:81
+0x420182a7: esp_sleep_pd_config at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_hw_support/sleep_modes.c:1677 (discriminator 1)
+0x4200b40d: sleep_init at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_mcu_sleep_init.c:16
+0x4200b3e9: app_main at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:192
+0x4209e8ff: main_task at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+0x40380811: vPortTaskWrapper at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375a88: esp_restart_noos_dig at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x40375c06: panic_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+0x4037ddf9: esp_system_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+0x40384ca1: __assert_func at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/assert.c:81
+0x420182a7: esp_sleep_pd_config at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_hw_support/sleep_modes.c:1677 (discriminator 1)
+0x4200b40d: sleep_init at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_mcu_sleep_init.c:16
+0x4200b3e9: app_main at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:192
+0x4209e8ff: main_task at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+0x40380811: vPortTaskWrapper at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375a88: esp_restart_noos_dig at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x40041a7c: ets_delay_us in ROM
+[0m
+[0;33m0x40048ede: recv_packet in ROM
+[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultip

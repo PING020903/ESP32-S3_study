@@ -1,0 +1,100 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D C:\Users\12566\Desktop\get-started\espS3_project\ESP_S3_project\build\bootloader\esp-idf\esptool_py && D:\ESP_MCU_tool\ESP_IDF_TOOLS\Espressif\python_env\idf5.1_py3.11_env\Scripts\python.exe D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/bootloader/bootloader.bin"
+Bootloader binary size 0x51c0 bytes. 0x2e40 bytes (36%) free.
+[2/8] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/app_main.c.obj
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c: In function 'My_main_task':
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:63:20: warning: unused variable 'ret' [-Wunused-variable]
+   63 |         BaseType_t ret = xQueueReceive(task_evt_queue, &task_mark, portMAX_DELAY);
+      |                    ^~~
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:56:13: warning: variable 'start_time' set but not used [-Wunused-but-set-variable]
+   56 |     int64_t start_time;
+      |             ^~~~~~~~~~
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:54:16: warning: variable 'count' set but not used [-Wunused-but-set-variable]
+   54 |     TickType_t count;
+      |                ^~~~~
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:52:15: warning: unused variable 'tusb_ret' [-Wunused-variable]
+   52 |     esp_err_t tusb_ret;
+      |               ^~~~~~~~
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:130:13: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  130 |             only_https_request_init();
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:133:9: note: here
+  133 |         case MCU_DEEP_SLEEP:
+      |         ^~~~
+[3/8] Linking C static library esp-idf\main\libmain.a
+[4/8] Generating ld/sections.ld
+[5/8] Linking CXX executable ESP_S3_project.elf
+[6/8] Generating binary image from built executable
+esptool.py v4.7.0
+Creating esp32s3 image...
+Merged 3 ELF sections
+Successfully created esp32s3 image.
+Generated C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/ESP_S3_project.bin
+[7/8] cmd.exe /C "cd /D C:\Users\12566\Desktop\get-started\espS3_project\ESP_S3_project\build\esp-idf\esptool_py && D:\ESP_MCU_tool\ESP_IDF_TOOLS\Espressif\python_env\idf5.1_py3.11_env\Scripts\python.exe D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/partition_table/partition-table.bin C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/ESP_S3_project.bin"
+ESP_S3_project.bin binary size 0xe0e40 bytes. Smallest app partition is 0x100000 bytes. 0x1f1c0 bytes (12%) free.
+[7/8] cmd.exe /C "cd /D D:\ESP_MCU_tool\ESP_IDF_TOOLS\Espressif\frameworks\esp-idf-v5.1.2\components\esptool_py && D:\ESP_MCU_tool\ESP_IDF_TOOLS\Espressif\tools\cmake\3.24.0\bin\cmake.exe -D IDF_PATH=D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2 -D SERIAL_TOOL=D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/python_env/idf5.1_py3.11_env/Scripts/python.exe;;D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esptool_py/esptool/esptool.py;--chip;esp32s3 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build -P D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esptool_py/run_serial_tool.cmake"
+esptool.py --chip esp32s3 -p COM5 -b 115200 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 8MB 0x0 bootloader/bootloader.bin 0x10000 ESP_S3_project.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.7.0
+Serial port COM5
+Connecting...
+Chip is ESP32-S3 (QFN56) (revision v0.2)
+Features: WiFi, BLE, Embedded PSRAM 8MB (AP_3v3)
+Crystal is 40MHz
+MAC: dc:da:0c:4b:32:28
+Uploading stub...
+Running stub...
+Stub running...
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x000f0fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 20928 bytes to 13294...
+Writing at 0x00000000... (100 %)
+Wrote 20928 bytes (13294 compressed) at 0x00000000 in 0.4 seconds (effective 392.5 kbit/s)...
+Hash of data verified.
+Compressed 921152 bytes to 583715...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001bfd5... (5 %)
+Writing at 0x000278dd... (8 %)
+Writing at 0x0002c70c... (11 %)
+Writing at 0x000342b4... (13 %)
+Writing at 0x0003f0c4... (16 %)
+Writing at 0x0004501c... (19 %)
+Writing at 0x0004b411... (22 %)
+Writing at 0x0005119e... (25 %)
+Writing at 0x0005778a... (27 %)
+Writing at 0x0005d5f0... (30 %)
+Writing at 0x00062be4... (33 %)
+Writing at 0x000684db... (36 %)
+Writing at 0x0006dd52... (38 %)
+Writing at 0x00073653... (41 %)
+Writing at 0x00078fe8... (44 %)
+Writing at 0x0007e8d9... (47 %)
+Writing at 0x00084ec5... (50 %)
+Writing at 0x0008a857... (52 %)
+Writing at 0x0009033b... (55 %)
+Writing at 0x00095548... (58 %)
+Writing at 0x0009a4f3... (61 %)
+Writing at 0x0009f60b... (63 %)
+Writing at 0x000a4660... (66 %)
+Writing at 0x000a9b2f... (69 %)
+Writing at 0x000aee31... (72 %)
+Writing at 0x000b4ab3... (75 %)
+Writing at 0x000ba163... (77 %)
+Writing at 0x000bfc7e... (80 %)
+Writing at 0x000c55fd... (83 %)
+Writing at 0x000cabdc... (86 %)
+Writing at 0x000d38dc... (88 %)
+Writing at 0x000dbe73... (91 %)
+Writing at 0x000e180f... (94 %)
+Writing at 0x000e78d2... (97 %)
+Writing at 0x000ed29f... (100 %)
+Wrote 921152 bytes (583715 compressed) at 0x00010000 in 6.5 seconds (effective 1141.0 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 301.5 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

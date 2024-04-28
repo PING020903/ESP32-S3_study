@@ -1,0 +1,346 @@
+[0;33m--- WARNING: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM9 instead...[0m
+[0;33m--- esp-idf-monitor 1.4.0 on \\.\COM9 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x42089134: _freopen_r at /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32s3-elf/src/newlib/newlib/libc/stdio/freopen.c:96 (discriminator 14)
+[0m
+[0;33m0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m0x42089131: _freopen_r at /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32s3-elf/src/newlib/newlib/libc/stdio/freopen.c:93 (discriminator 14)
+0x42089357: freopen at /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32s3-elf/src/newlib/newlib/libc/stdio/freopen.c:249
+0x4200c787: restore_std_streams at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_usb_device.c:81
+0x4200c8a2: My_tusb_streams_change at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_usb_device.c:117
+0x4200b275: My_main_task at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:134
+0x40380811: vPortTaskWrapper at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40380f2f: _xt_context_save at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/xtensa_context.S:193
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x40041a76: ets_delay_us in ROM
+[0m
+[0;33m0x40048e22: uart_rx_readbuff in ROM
+[0m
+[0;33m0x40048d00: uart_rx_one_char in ROM
+[0m
+[0;33m0x400490d5: usb_uart_device_rx_one_char in ROM
+[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33m0x40378c7b: bootloader_flash_execute_command_common at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/bootloader_support/bootloader_flash/src/bootloader_flash.c:533
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x42088f00: _freopen_r at /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32s3-elf/src/newlib/newlib/libc/stdio/freopen.c:96 (discriminator 14)
+[0m
+[0;33m0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m0x42088efd: _freopen_r at /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32s3-elf/src/newlib/newlib/libc/stdio/freopen.c:93 (discriminator 14)
+0x42089123: freopen at /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32s3-elf/src/newlib/newlib/libc/stdio/freopen.c:249
+0x4200c5df: restore_std_streams at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_usb_device.c:81
+0x4200c6fa: My_tusb_streams_change at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_usb_device.c:117
+0x4200b11c: My_main_task at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:83 (discriminator 2)
+0x40380811: vPortTaskWrapper at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40380f32: _xt_context_save at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/xtensa_context.S:194
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x42088f00: _freopen_r at /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32s3-elf/src/newlib/newlib/libc/stdio/freopen.c:96 (discriminator 14)
+[0m
+[0;33m0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m0x42088efd: _freopen_r at /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32s3-elf/src/newlib/newlib/libc/stdio/freopen.c:93 (discriminator 14)
+0x42089123: freopen at /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32s3-elf/src/newlib/newlib/libc/stdio/freopen.c:249
+0x4200c5df: restore_std_streams at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_usb_device.c:81
+0x4200c6fa: My_tusb_streams_change at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_usb_device.c:117
+0x4200b11c: My_main_task at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:83 (discriminator 2)
+0x40380811: vPortTaskWrapper at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40380f2f: _xt_context_save at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/xtensa_context.S:193
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x40041a79: ets_delay_us in ROM
+[0m
+[0;33m0x40048de8: uart_rx_readbuff in ROM
+[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33m0x40378cdb: bootloader_flash_execute_command_common at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/bootloader_support/bootloader_flash/src/bootloader_flash.c:542 (discriminator 1)
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x40041a79: ets_delay_us in ROM
+[0m
+[0;33m0x40048df3: uart_rx_readbuff in ROM
+[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33m0x40378cd9: bootloader_flash_execute_command_common at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/bootloader_support/bootloader_flash/src/bootloader_flash.c:542 (discriminator 1)
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33mWriting to serial is timing out. Please make sure that your application supports an interactive console and that you have picked the correct console for serial communication.[0m
+[1;31mNone[0m
+[0;33mWaiting for the device to reconnect[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33mWarning: checksum mismatch between flashed and built applications. Checksum of built application is 79b356431dcf6ea3f03e08bc0096aea690e28862f2b8f5fb72cc92043e0d4995[0m
+[0;33m0x4200b4c4: WIFI_STA_event_handler at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c:106 (discriminator 1)
+[0m
+[0;33m0x4037ddef: _esp_error_check_failed at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/esp_err.c:50
+[0m
+[0;33m0x40375c06: panic_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+0x4037ddf9: esp_system_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+0x40384b62: abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+0x4037ddef: _esp_error_check_failed at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/esp_err.c:50
+0x4200b4c4: WIFI_STA_event_handler at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c:106 (discriminator 1)
+0x4209d425: handler_execute at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_event/esp_event.c:137
+0x4209cf5e: esp_event_loop_run at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_event/esp_event.c:593 (discriminator 3)
+0x4209d035: esp_event_loop_run_task at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_event/esp_event.c:107 (discriminator 15)
+0x40380811: vPortTaskWrapper at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33mWarning: checksum mismatch between flashed and built applications. Checksum of built application is 79b356431dcf6ea3f03e08bc0096aea690e28862f2b8f5fb72cc92043e0d4995[0m
+[0;33m0x40375a88: esp_restart_noos_dig at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33mWarning: checksum mismatch between flashed and built applications. Checksum of built application is 79b356431dcf6ea3f03e08bc0096aea690e28862f2b8f5fb72cc92043e0d4995[0m
+[0;33m0x4200b4c4: WIFI_STA_event_handler at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c:106 (discriminator 1)
+[0m
+[0;33m0x4037ddef: _esp_error_check_failed at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/esp_err.c:50
+[0m
+[0;33m0x40375c06: panic_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+0x4037ddf9: esp_system_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+0x40384b62: abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+0x4037ddef: _esp_error_check_failed at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/esp_err.c:50
+0x4200b4c4: WIFI_STA_event_handler at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c:106 (discriminator 1)
+0x4209d425: handler_execute at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_event/esp_event.c:137
+0x4209cf5e: esp_event_loop_run at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_event/esp_event.c:593 (discriminator 3)
+0x4209d035: esp_event_loop_run_task at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_event/esp_event.c:107 (discriminator 15)
+0x40380811: vPortTaskWrapper at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33mWarning: checksum mismatch between flashed and built applications. Checksum of built application is 79b356431dcf6ea3f03e08bc0096aea690e28862f2b8f5fb72cc92043e0d4995[0m
+[0;33m0x40375a88: esp_restart_noos_dig at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33mWarning: checksum mismatch between flashed and built applications. Checksum of built application is 79b356431dcf6ea3f03e08bc0096aea690e28862f2b8f5fb72cc92043e0d4995[0m
+[0;33m0x40041a79: ets_delay_us in ROM
+[0m
+[0;33m0x40048d03: uart_rx_one_char in ROM
+[0m
+[0;33m0x40048ede: recv_packet in ROM
+[0m
+[0;33m0x400490d5: usb_uart_device_rx_one_char in ROM
+[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33m0x40378c75: bootloader_flash_execute_command_common at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/bootloader_support/bootloader_flash/src/bootloader_flash.c:532
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x40041a76: ets_delay_us in ROM
+[0m
+[0;33m0x40048d0b: uart_rx_one_char in ROM
+[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33m0x40378cd3: bootloader_flash_execute_command_common at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/bootloader_support/bootloader_flash/src/bootloader_flash.c:542
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x4200b585: WIFI_STA_event_handler at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c:119 (discriminator 1)
+[0m
+[0;33m0x4037ddef: _esp_error_check_failed at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/esp_err.c:50
+[0m
+[0;33m0x40375c06: panic_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+0x4037ddf9: esp_system_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+0x40384b62: abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+0x4037ddef: _esp_error_check_failed at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/esp_err.c:50
+0x4200b585: WIFI_STA_event_handler at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c:119 (discriminator 1)
+0x4209d509: handler_execute at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_event/esp_event.c:137
+0x4209d042: esp_event_loop_run at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_event/esp_event.c:593 (discriminator 3)
+0x4209d119: esp_event_loop_run_task at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_event/esp_event.c:107 (discriminator 15)
+0x40380811: vPortTaskWrapper at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375a88: esp_restart_noos_dig at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x40041a76: ets_delay_us in ROM
+[0m
+[0;33m0x400490cf: usb_uart_device_rx_one_char in ROM
+[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33m0x40378c75: bootloader_flash_execute_command_common at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/bootloader_support/bootloader_flash/src/bootloader_flash.c:532
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x4200b47f: wifi_init_sta at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c:458 (discriminator 1)
+[0m
+[0;33m0x4037ddef: _esp_error_check_failed at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/esp_err.c:50
+[0m
+[0;33m0x40375c06: panic_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+0x4037ddf9: esp_system_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+0x40384b62: abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+0x4037ddef: _esp_error_check_failed at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/esp_err.c:50
+0x4200b47f: wifi_init_sta at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c:458 (discriminator 1)
+0x4200b83b: WIFI_STA_event_handler at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c:119 (discriminator 6)
+0x4209d4f1: handler_execute at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_event/esp_event.c:137
+0x4209d02a: esp_event_loop_run at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_event/esp_event.c:593 (discriminator 3)
+0x4209d101: esp_event_loop_run_task at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_event/esp_event.c:107 (discriminator 15)
+0x40380811: vPortTaskWrapper at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375a88: esp_restart_noos_dig at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x40041a76: ets_delay_us in ROM
+[0m
+[0;33m0x40048d00: uart_rx_one_char in ROM
+[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33m0x40378c7b: bootloader_flash_execute_command_common at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/bootloader_support/bootloader_flash/src/bootloader_flash.c:533
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x4200b5b6: wifi_init_sta at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c:486 (discriminator 1)
+[0m
+[0;33m0x4037ddef: _esp_error_check_failed at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/esp_err.c:50
+[0m
+[0;33m0x40375c06: panic_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+0x4037ddf9: esp_system_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+0x40384b62: abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+0x4037ddef: _esp_error_check_failed at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/esp_err.c:50
+0x4200b5b6: wifi_init_sta at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c:486 (discriminator 1)
+0x4200b3de: app_main at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:193
+0x4209e587: main_task at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+0x40380811: vPortTaskWrapper at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375a88: esp_restart_noos_dig at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x4200b5b6: wifi_init_sta at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c:486 (discriminator 1)
+[0m
+[0;33m0x4037ddef: _esp_error_check_failed at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/esp_err.c:50
+[0m
+[0;33m0x40375c06: panic_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+0x4037ddf9: esp_system_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+0x40384b62: abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+0x4037ddef: _esp_error_check_failed at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/esp_err.c:50
+0x4200b5b6: wifi_init_sta at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c:486 (discriminator 1)
+0x4200b3de: app_main at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:193
+0x4209e587: main_task at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+0x40380811: vPortTaskWrapper at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375a88: esp_restart_noos_dig at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x4200b5b6: wifi_init_sta at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c:486 (discriminator 1)
+[0m
+[0;33m0x4037ddef: _esp_error_check_failed at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/esp_err.c:50
+[0m
+[0;33m0x40375c06: panic_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+0x4037ddf9: esp_system_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+0x40384b62: abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+0x4037ddef: _esp_error_check_failed at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/esp_err.c:50
+0x4200b5b6: wifi_init_sta at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c:486 (discriminator 1)
+0x4200b3de: app_main at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:193
+0x4209e587: main_task at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+0x40380811: vPortTaskWrapper at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375a88: esp_restart_noos_dig at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x4200b5b6: wifi_init_sta at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c:486 (discriminator 1)
+[0m
+[0;33m0x4037ddef: _esp_error_check_failed at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/esp_err.c:50
+[0m
+[0;33m0x40375c06: panic_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+0x4037ddf9: esp_system_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+0x40384b62: abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+0x4037ddef: _esp_error_check_failed at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/esp_err.c:50
+0x4200b5b6: wifi_init_sta at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c:486 (discriminator 1)
+0x4200b3de: app_main at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:193
+0x4209e587: main_task at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+0x40380811: vPortTaskWrapper at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375a88: esp_restart_noos_dig at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x4200b5b6: wifi_init_sta at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c:486 (discriminator 1)
+[0m
+[0;33m0x4037ddef: _esp_error_check_failed at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/esp_err.c:50
+[0m
+[0;33m0x40375c06: panic_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+0x4037ddf9: esp_system_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+0x40384b62: abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+0x4037ddef: _esp_error_check_failed at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/esp_err.c:50
+0x4200b5b6: wifi_init_sta at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c:486 (discriminator 1)
+0x4200b3de: app_main at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:193
+0x4209e587: main_task at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+0x40380811: vPortTaskWrapper at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375a88: esp_restart_noos_dig at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x403756bc: call_start_cpu1 at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x4200b5b6: wifi_init_sta at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c:486 (discriminator 1)
+[0m
+[0;33m0x4037ddef: _esp_error_check_failed at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/esp_err.c:50
+[0m
+[0;33m0x40375c06: panic_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+0x4037ddf9: esp_system_abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+0x40384b62: abort at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+0x4037ddef: _esp_error_check_failed at D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/esp_err.c:50
+0x4200b5b6: wifi_init_sta at C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/My_WIFI_init.c:486 (discriminator 1)
+0x4200b3de: app_main at C:/

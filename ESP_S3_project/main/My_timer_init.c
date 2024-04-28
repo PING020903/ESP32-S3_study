@@ -209,7 +209,7 @@ void My_timer_init()
     ESP_LOGI(TAG, "Timer create ...");
 
     // 启动定时器(us)
-    ESP_ERROR_CHECK(esp_timer_start_periodic(My_timer_dispatch, 100000ULL)); // 100ms
+    ESP_ERROR_CHECK(esp_timer_start_periodic(My_timer_dispatch, 10000ULL)); // 10ms
 #if HTTPS_REQUEST_TIMER
     ESP_ERROR_CHECK(esp_timer_start_periodic(https_request_timer, 30000000ULL)); // 30s
 #endif

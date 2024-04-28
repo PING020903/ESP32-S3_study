@@ -105,7 +105,7 @@ static esp_err_t obtain_time(void)
     const int retry_count = 10;
 
     while (esp_netif_sntp_sync_wait(pdMS_TO_TICKS(1000)) != ESP_OK &&
-           ++retry < retry_count)
+           retry++ < retry_count)
     {
         ESP_LOGI(TAG, "waitting for system time to be set...(%d/%d)",
                  retry, retry_count);
@@ -412,7 +412,7 @@ void https_request_task(void *pvparameters)
     // https_get_request_using_global_ca_store();
     // https_get_request_using_specified_ciphersuites();
     ESP_LOGI(TAG, "finish https_request example");
-    ESP_LOGI(TAG, "NVS re_err:%x, NVS status:%d", err_temp[0], err_temp[1]);
+    ESP_LOGI(TAG, "NVS re_err:%d, NVS status:%d", err_temp[0], err_temp[1]);
     vTaskDelete(NULL); // 删除任务
 }
 

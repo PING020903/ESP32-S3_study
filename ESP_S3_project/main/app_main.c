@@ -32,7 +32,7 @@
 #include "sdkconfig.h"
 
 #define USER_USB_INIT 1
-#define ENABLE_D_SLEEP 1
+#define ENABLE_D_SLEEP 0
 #define TEST 1
 #define UART_USB_SWITCH 0
 #define ENABLE_USB_BUT_USE_UART_LOG 1
@@ -48,7 +48,7 @@ extern void wifi_init_sta(void);
 
 void My_main_task(void *arg)
 {
-    int gpio_level;
+    int gpio_level[2];
     esp_err_t tusb_ret;
     uint32_t task_mark;
     TickType_t count;
@@ -58,9 +58,18 @@ void My_main_task(void *arg)
 
     while (1)
     {
-        P_conut++;
-        /* 该函数是阻塞的 */
-        BaseType_t ret = xQueueReceive(task_evt_queue, &task_mark, portMAX_DELAY);
+        UBaseType_t msg_cnt = uxQueueMessagesWaiting(task_evt_queue); // 先查询队列
+        if (msg_cnt)
+        {
+            /* 该函数是阻塞的 */
+            BaseType_t ret = xQueueReceive(task_evt_queue, &task_mark, portMAX_DELAY);
+            P_conut++;
+        }
+        else
+        {
+            task_mark = NOTHING_TASK;
+        }
+
         // UBaseType_t ab = uxQueueMessagesWaiting(task_evt_queue);
         switch (task_mark)
         {
@@ -72,9 +81,10 @@ void My_main_task(void *arg)
             ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_48, led_level));
             led_level = !led_level;
             count = xTaskGetTickCount();
-            gpio_level = gpio_get_level(GPIO_NUM_5);
+            gpio_level[0] = gpio_get_level(GPIO_NUM_5);
+            gpio_level[1] = gpio_get_level(GPIO_NUM_1);
 
-            if (P_conut % 20 == 0) // 若1s打印一次, 定时器1ms发一次队列指令, 1000/1 = 1000
+            if (P_conut % 100 == 0) // 若1s打印一次, 定时器10ms发一次队列指令, 1000/10 = 100
             {
 #if ENABLE_USB_BUT_USE_UART_LOG
                 while (output < 2)
@@ -89,14 +99,13 @@ void My_main_task(void *arg)
                     output++;
 #endif
 
-                if (gpio_level)
-                    ESP_LOGI(TAG, "GPIO 5 is high");
-                else
-                    ESP_LOGI(TAG, "GPIO 5 is low");
+                ESP_LOGI(TAG, "GPIO1: %d, GPIO5: %d", gpio_level[1], gpio_level[0]);
                 ESP_LOGI(TAG, "Minimum free heap size: %" PRIu32 " bytes", esp_get_minimum_free_heap_size());
                 ESP_LOGI(TAG, "Largest free block size: %d", heap_caps_get_largest_free_block(MALLOC_CAP_DEFAULT));
                 esp_sleep_wakeup_cause_t info = esp_sleep_get_wakeup_cause();
-                ESP_LOGI(TAG, "Wakeup reason: %d", info);
+                ESP_LOGI(TAG, "Wakeup reason: %d, IO: 0x%llx",
+                         info, esp_sleep_get_ext1_wakeup_status());
+
 #if USER_USB_INIT
 
                 // tusb_ret =  esp_tusb_init_console(TINYUSB_CDC_ACM_0); // log to usb
@@ -132,6 +141,9 @@ void My_main_task(void *arg)
         }
         case MCU_DEEP_SLEEP:
         {
+#if ENABLE_D_SLEEP
+            sleep_init();
+#endif
 #if ENABLE_D_SLEEP
             ESP_LOGW(TAG, "mcu will deep sleep...");
 #if TEST
@@ -187,7 +199,6 @@ void app_main(void)
     ESP_LOGI(TAG, "heap: %d", heap_caps_get_largest_free_block(MALLOC_CAP_DEFAULT));
     ESP_LOGI(TAG, "Minimum free heap size: %" PRIu32 " bytes\n", esp_get_minimum_free_heap_size());
 
-    sleep_init();
     My_gpio_init();
     My_LED_init();
     wifi_init_sta();
@@ -198,7 +209,4 @@ void app_main(void)
 #endif
     My_timer_init();
     My_task_init();
-#if ENABLE_D_SLEEP
-
-#endif
 }

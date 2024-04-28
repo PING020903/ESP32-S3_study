@@ -1,0 +1,94 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D C:\Users\12566\Desktop\get-started\espS3_project\ESP_S3_project\build\bootloader\esp-idf\esptool_py && D:\ESP_MCU_tool\ESP_IDF_TOOLS\Espressif\python_env\idf5.1_py3.11_env\Scripts\python.exe D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/bootloader/bootloader.bin"
+Bootloader binary size 0x51c0 bytes. 0x2e40 bytes (36%) free.
+[2/8] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/app_main.c.obj
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c: In function 'My_main_task':
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:68:24: warning: unused variable 'ret' [-Wunused-variable]
+   68 |             BaseType_t ret = xQueueReceive(task_evt_queue, &task_mark, portMAX_DELAY);
+      |                        ^~~
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:56:13: warning: variable 'start_time' set but not used [-Wunused-but-set-variable]
+   56 |     int64_t start_time;
+      |             ^~~~~~~~~~
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:54:16: warning: variable 'count' set but not used [-Wunused-but-set-variable]
+   54 |     TickType_t count;
+      |                ^~~~~
+C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/main/app_main.c:52:15: warning: unused variable 'tusb_ret' [-Wunused-variable]
+   52 |     esp_err_t tusb_ret;
+      |               ^~~~~~~~
+[3/8] Linking C static library esp-idf\main\libmain.a
+[4/8] Generating ld/sections.ld
+[5/8] Linking CXX executable ESP_S3_project.elf
+[6/8] Generating binary image from built executable
+esptool.py v4.7.0
+Creating esp32s3 image...
+Merged 2 ELF sections
+Successfully created esp32s3 image.
+Generated C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/ESP_S3_project.bin
+[7/8] cmd.exe /C "cd /D C:\Users\12566\Desktop\get-started\espS3_project\ESP_S3_project\build\esp-idf\esptool_py && D:\ESP_MCU_tool\ESP_IDF_TOOLS\Espressif\python_env\idf5.1_py3.11_env\Scripts\python.exe D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/partition_table/partition-table.bin C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build/ESP_S3_project.bin"
+ESP_S3_project.bin binary size 0xde290 bytes. Smallest app partition is 0x100000 bytes. 0x21d70 bytes (13%) free.
+[7/8] cmd.exe /C "cd /D D:\ESP_MCU_tool\ESP_IDF_TOOLS\Espressif\frameworks\esp-idf-v5.1.2\components\esptool_py && D:\ESP_MCU_tool\ESP_IDF_TOOLS\Espressif\tools\cmake\3.24.0\bin\cmake.exe -D IDF_PATH=D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2 -D SERIAL_TOOL=D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/python_env/idf5.1_py3.11_env/Scripts/python.exe;;D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esptool_py/esptool/esptool.py;--chip;esp32s3 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=C:/Users/12566/Desktop/get-started/espS3_project/ESP_S3_project/build -P D:/ESP_MCU_tool/ESP_IDF_TOOLS/Espressif/frameworks/esp-idf-v5.1.2/components/esptool_py/run_serial_tool.cmake"
+esptool.py --chip esp32s3 -p COM5 -b 115200 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 8MB 0x0 bootloader/bootloader.bin 0x10000 ESP_S3_project.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.7.0
+Serial port COM5
+Connecting...
+Chip is ESP32-S3 (QFN56) (revision v0.2)
+Features: WiFi, BLE, Embedded PSRAM 8MB (AP_3v3)
+Crystal is 40MHz
+MAC: dc:da:0c:4b:32:28
+Uploading stub...
+Running stub...
+Stub running...
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x000eefff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 20928 bytes to 13294...
+Writing at 0x00000000... (100 %)
+Wrote 20928 bytes (13294 compressed) at 0x00000000 in 0.4 seconds (effective 382.4 kbit/s)...
+Hash of data verified.
+Compressed 909968 bytes to 577302...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001c0d7... (5 %)
+Writing at 0x00027624... (8 %)
+Writing at 0x0002c43a... (11 %)
+Writing at 0x00034358... (13 %)
+Writing at 0x0003edcf... (16 %)
+Writing at 0x00044dee... (19 %)
+Writing at 0x0004b144... (22 %)
+Writing at 0x00050eb1... (25 %)
+Writing at 0x000573bc... (27 %)
+Writing at 0x0005d104... (30 %)
+Writing at 0x0006273d... (33 %)
+Writing at 0x00067f92... (36 %)
+Writing at 0x0006d862... (38 %)
+Writing at 0x00073254... (41 %)
+Writing at 0x00078ad0... (44 %)
+Writing at 0x0007e48a... (47 %)
+Writing at 0x00084b9c... (50 %)
+Writing at 0x0008a427... (52 %)
+Writing at 0x0008fe2c... (55 %)
+Writing at 0x00094e72... (58 %)
+Writing at 0x00099e6a... (61 %)
+Writing at 0x0009efe1... (63 %)
+Writing at 0x000a4127... (66 %)
+Writing at 0x000a95f3... (69 %)
+Writing at 0x000ae968... (72 %)
+Writing at 0x000b44f4... (75 %)
+Writing at 0x000b9c25... (77 %)
+Writing at 0x000bf5df... (80 %)
+Writing at 0x000c4f7c... (83 %)
+Writing at 0x000ca6de... (86 %)
+Writing at 0x000d3cb6... (88 %)
+Writing at 0x000db6aa... (91 %)
+Writing at 0x000e1497... (94 %)
+Writing at 0x000e7104... (97 %)
+Writing at 0x000ec79b... (100 %)
+Wrote 909968 bytes (577302 compressed) at 0x00010000 in 6.5 seconds (effective 1112.5 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 317.0 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

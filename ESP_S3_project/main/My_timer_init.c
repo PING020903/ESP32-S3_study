@@ -15,6 +15,7 @@
 #define TIME_PERIOD (86400000000ULL)
 #define SNTP_REQUEST_TASK HTTPS_REQUEST_TASK
 #define MY_DEEP_SLEEP 1
+#define DS_ONCE 0
 #define LOG_PORT 0
 // 任务队列(指针)
 QueueSetHandle_t task_evt_queue = NULL;
@@ -217,7 +218,11 @@ void My_timer_init()
     ESP_ERROR_CHECK(esp_timer_start_periodic(nvs_update_timer, TIME_PERIOD)); // 24hours, update NVS time
 #endif
 #if MY_DEEP_SLEEP
+#if DS_ONCE
     ESP_ERROR_CHECK(esp_timer_start_once(deep_sleep_timer, 40000000ULL)); // 40s
+#else
+    ESP_ERROR_CHECK(esp_timer_start_periodic(deep_sleep_timer, 20000000ULL)); // 20s
+#endif
 #endif
 #if LOG_PORT
     ESP_ERROR_CHECK(esp_timer_start_once(log_port_timer, 5000000ULL)); // 5s

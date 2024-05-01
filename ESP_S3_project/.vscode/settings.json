@@ -60,7 +60,8 @@
         "limits": "c",
         "memory": "c",
         "new": "c",
-        "esp_wifi.h": "c"
+        "esp_wifi.h": "c",
+        "esp_wake_stub.h": "c"
     },
     "cmake.configureOnOpen": true,
     "workbench.editor.autoLockGroups": {

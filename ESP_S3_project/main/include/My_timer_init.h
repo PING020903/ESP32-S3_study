@@ -1,7 +1,7 @@
 #ifndef _MY_TIMER_INIT_H_
 #define _MY_TIMER_INIT_H_
 
-#define HTTPS_REQUEST_TIMER 1
+#define HTTPS_REQUEST_TIMER 0
 
 enum
 {

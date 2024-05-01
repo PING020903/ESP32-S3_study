@@ -32,7 +32,7 @@
 #include "sdkconfig.h"
 
 #define USER_USB_INIT 1
-#define ENABLE_D_SLEEP 0
+#define ENABLE_D_SLEEP 1
 #define TEST 1
 #define UART_USB_SWITCH 0
 #define ENABLE_USB_BUT_USE_UART_LOG 1
@@ -45,6 +45,7 @@ static const char *TAG = "USER_app";
 static volatile unsigned long long P_conut = 0;
 
 extern void wifi_init_sta(void);
+extern unsigned char sleep_flag;
 
 void My_main_task(void *arg)
 {
@@ -84,7 +85,7 @@ void My_main_task(void *arg)
             gpio_level[0] = gpio_get_level(GPIO_NUM_5);
             gpio_level[1] = gpio_get_level(GPIO_NUM_1);
 
-            if (P_conut % 100 == 0) // 若1s打印一次, 定时器10ms发一次队列指令, 1000/10 = 100
+            if (P_conut % 200 == 0) // 若1s打印一次, 定时器10ms发一次队列指令, 1000/10 = 100
             {
 #if ENABLE_USB_BUT_USE_UART_LOG
                 while (output < 2)
@@ -141,11 +142,13 @@ void My_main_task(void *arg)
         }
         case MCU_DEEP_SLEEP:
         {
+            if(sleep_flag == false)
+                break;
 #if ENABLE_D_SLEEP
             sleep_init();
 #endif
 #if ENABLE_D_SLEEP
-            ESP_LOGW(TAG, "mcu will deep sleep...");
+            ESP_LOGW(TAG, "sleep_flag: %d, mcu will deep sleep...", sleep_flag);
 #if TEST
             /* 尝试停止其他定时器导致深度休眠复苏 */
             My_timer_stop(MAIN_TASK);
